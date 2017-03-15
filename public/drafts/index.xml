@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drafts on My New Hugo Site</title>
+    <link>http://example.org/drafts/index.xml</link>
+    <description>Recent content in Drafts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://example.org/drafts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/1357/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/1357/</guid>
+      <description>
+
+&lt;p&gt;title: Guava Veri Yapıları : MultiSet, MultiMap, BiMap
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1357&#34;&gt;http://orhanbalci.net/tr/?p=1357&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 1357
+created: 2015/03/05 22:20:51
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;guava-veri-yapıları-multiset-multimap-bimap&#34;&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/1560/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/1560/</guid>
+      <description>
+
+&lt;p&gt;title: Practical Rust Iterator Examples
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1560&#34;&gt;http://orhanbalci.net/tr/?p=1560&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 1560
+created: 2016/05/09 21:40:57
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;practical-rust-iterator-examples&#34;&gt;Practical Rust Iterator Examples&lt;/h1&gt;
+
+&lt;p&gt;Rust programming language has powerful mechanism of iterators to work with collections. Although documentation is fairly good, seeing working examples of iterators helps new learners of the language in grasping the concepts a lot. This post is a collection of rust iterator code snippets and their explanations. let longest_sequence_index = longest_sequence_counter.iter() .enumerate() .max_by_key(|&amp;amp;(index, &amp;elem;)| elem) .unwrap() .0; //If you are transititoning from an imperative language to a functional one, first and most frequent thing to do is conve //One of the challenges in converting imperative loop constructs to their functional programming counterparts&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/216/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/216/</guid>
+      <description>
+
+&lt;p&gt;title: Arazi / Radyo Seyrüsefer Sunucu Yazılımı
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=216&#34;&gt;http://orhanbalci.net/tr/?p=216&lt;/a&gt;
+author: admin
+description:
+post_id: 216
+created: 2009/07/22 22:00:21
+created_gmt: 2009/07/22 19:00:21
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;arazi-radyo-seyrüsefer-sunucu-yazılımı&#34;&gt;Arazi / Radyo Seyrüsefer Sunucu Yazılımı&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+HELSİM projesi kapsamında ihtiyaç duyulan arazi verisi sorgularını hesaplayan yazılımın geliştirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+C++, Qt, NTP&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sunucu konfigürasyonu yönetim biriminin geliştirilmesi.&lt;/li&gt;
+&lt;li&gt;Sunucu yazılım test biriminin geliştirilmesi.&lt;/li&gt;
+&lt;li&gt;Sunucu zamanının Network Time Protokolü ile güncel tutulması.&lt;/li&gt;
+&lt;li&gt;Sunucu donanım kontrol bileşeninin geliştirilmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/222/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/222/</guid>
+      <description>
+
+&lt;p&gt;title: MES (Mühimmat Eğitim Simulatörü)
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=222&#34;&gt;http://orhanbalci.net/tr/?p=222&lt;/a&gt;
+author: admin
+description:
+post_id: 222
+created: 2009/07/28 13:49:56
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;mes-mühimmat-eğitim-simulatörü&#34;&gt;MES (Mühimmat Eğitim Simulatörü)&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+Helikopterden yerdeki hareketli veya hareketsiz hedeflere atılan füze(mühimmat) dinamiğinin incelenmesi amacıyla silahçı ve pilot kullanıcılarına yönelik yazılımın geliştirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+C++, Qt, Presagis Vega, OPCODE çarpışma kontrol kütüphanesi&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Senaryodaki hareketli ve hareketsiz cisimlerin AABB algoritmasını kullanan OPCODE ile çarpışma kontrollerinin yapılması&lt;/li&gt;
+&lt;li&gt;Proje hata takibi için BugZilla altyapısının kurulması&lt;/li&gt;
+&lt;li&gt;Proje genelindeki yazılım hatalarının giderilmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/249/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/249/</guid>
+      <description>
+
+&lt;p&gt;title: Baytar (Veteriner Hekim Klinik Yönetim Sistemi)
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=249&#34;&gt;http://orhanbalci.net/tr/?p=249&lt;/a&gt;
+author: admin
+description:
+post_id: 249
+created: 2009/08/13 20:44:14
+created_gmt: 2009/08/13 17:44:14
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;baytar-veteriner-hekim-klinik-yönetim-sistemi&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/h1&gt;
+
+&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
+
+&lt;p&gt;Proje Tanımı:
+Veteriner hekimlerin klinikteki müşterileri, hayvanları, hayvanlara uygulanan aşıları ve diğer tedavileri kaydetmeye yönelik yazılım.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Kişisel Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+Java, MySQL, HSQLDB&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yazılım mimarisi tasarımı ve gerçeklenmesi.&lt;/li&gt;
+&lt;li&gt;Veritabanı tasarımı ve gerçeklenmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/327/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/327/</guid>
+      <description>
+
+&lt;p&gt;title: NetBeans Yerelleştirme
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=327&#34;&gt;http://orhanbalci.net/tr/?p=327&lt;/a&gt;
+author: admin
+description:
+post_id: 327
+created: 2009/09/16 09:54:32
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;netbeans-yerelleştirme&#34;&gt;NetBeans Yerelleştirme&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+NetBeans tümleşik geliştirme ortamının Türkçe&amp;rsquo;ye çevirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Açık Kaynak Kod&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+Community Translation Interface&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yazılım yerelleştirilmesinde aktif rol almak.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</guid>
+      <description>
+
+&lt;p&gt;title: NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=120&#34;&gt;http://orhanbalci.net/tr/?p=120&lt;/a&gt;
+author: admin
+description:
+post_id: 120
+created: 2009/05/06 11:10:47
+created_gmt: 2009/05/06 09:10:47
+comment_status: open
+post_name: netbeans-yerellestirmesi-icin-gonulluler-araniyor
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;netbeans-yerelleştirmesi-için-gönüllüler-aranıyor&#34;&gt;NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor&lt;/h1&gt;
+
+&lt;p&gt;NetBeans 6.7 versiyonunu İngilizce bilmeyenlerin de kullanabilmesi amacıyla Türkçeleştirmeye çalışıyoruz. Bu konuda çeviri ve test başta olmak üzere her türlü desteğe ihtiyacımız var. Çevirilere ben de el atmak istiyorum derseniz benimle &lt;strong&gt;orhanbalci@gmail.com&lt;/strong&gt; adresinden iletişime geçebilirsiniz.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</guid>
+      <description>
+
+&lt;p&gt;title: Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=206&#34;&gt;http://orhanbalci.net/tr/?p=206&lt;/a&gt;
+author: admin
+description:
+post_id: 206
+created: 2009/07/22 21:04:25
+created_gmt: 2009/07/22 18:04:25
+comment_status: open
+post_name: radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;radyo-seyrüsefer-cihazları-veritabanı-güncelleme-yazılımı&#34;&gt;Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı :
+HELSİM projesi kapsamında hava taşıtlarının gereksinim duyduğu seyrüsefer cihazlarınıın bilgilerinin güncellenmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler :
+C++, Qt, PostgreSQL, PostGis, OGR, ARINC 424&lt;/p&gt;
+
+&lt;p&gt;Rol :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Harita altlık yapısının PostGis ve Qt yardımı ile gerçeklenmesi&lt;/li&gt;
+&lt;li&gt;ARINC 424 verisinin ayrıştırılması ve veritabanına aktarılması&lt;/li&gt;
+&lt;li&gt;VOR, TACAN, DME, Airport, Runway, FIR/UIR, Restricted Airspace, Controlled Airspace verilerinin vektörel olarak haritaya çizilmesi&lt;/li&gt;
+&lt;li&gt;Yukarıda sayılan verilerin ICAO kodu vs. anahtarlara göre sorgulanması&lt;/li&gt;
+&lt;li&gt;Verilerin belirli aralıklarla yedeğinin alınması&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

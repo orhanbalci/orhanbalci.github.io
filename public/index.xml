@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://example.org/index.xml</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/1357/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/1357/</guid>
+      <description>
+
+&lt;p&gt;title: Guava Veri Yapıları : MultiSet, MultiMap, BiMap
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1357&#34;&gt;http://orhanbalci.net/tr/?p=1357&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 1357
+created: 2015/03/05 22:20:51
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;guava-veri-yapıları-multiset-multimap-bimap&#34;&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/1560/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/1560/</guid>
+      <description>
+
+&lt;p&gt;title: Practical Rust Iterator Examples
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1560&#34;&gt;http://orhanbalci.net/tr/?p=1560&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 1560
+created: 2016/05/09 21:40:57
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;practical-rust-iterator-examples&#34;&gt;Practical Rust Iterator Examples&lt;/h1&gt;
+
+&lt;p&gt;Rust programming language has powerful mechanism of iterators to work with collections. Although documentation is fairly good, seeing working examples of iterators helps new learners of the language in grasping the concepts a lot. This post is a collection of rust iterator code snippets and their explanations. let longest_sequence_index = longest_sequence_counter.iter() .enumerate() .max_by_key(|&amp;amp;(index, &amp;elem;)| elem) .unwrap() .0; //If you are transititoning from an imperative language to a functional one, first and most frequent thing to do is conve //One of the challenges in converting imperative loop constructs to their functional programming counterparts&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/216/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/216/</guid>
+      <description>
+
+&lt;p&gt;title: Arazi / Radyo Seyrüsefer Sunucu Yazılımı
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=216&#34;&gt;http://orhanbalci.net/tr/?p=216&lt;/a&gt;
+author: admin
+description:
+post_id: 216
+created: 2009/07/22 22:00:21
+created_gmt: 2009/07/22 19:00:21
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;arazi-radyo-seyrüsefer-sunucu-yazılımı&#34;&gt;Arazi / Radyo Seyrüsefer Sunucu Yazılımı&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+HELSİM projesi kapsamında ihtiyaç duyulan arazi verisi sorgularını hesaplayan yazılımın geliştirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+C++, Qt, NTP&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sunucu konfigürasyonu yönetim biriminin geliştirilmesi.&lt;/li&gt;
+&lt;li&gt;Sunucu yazılım test biriminin geliştirilmesi.&lt;/li&gt;
+&lt;li&gt;Sunucu zamanının Network Time Protokolü ile güncel tutulması.&lt;/li&gt;
+&lt;li&gt;Sunucu donanım kontrol bileşeninin geliştirilmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/222/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/222/</guid>
+      <description>
+
+&lt;p&gt;title: MES (Mühimmat Eğitim Simulatörü)
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=222&#34;&gt;http://orhanbalci.net/tr/?p=222&lt;/a&gt;
+author: admin
+description:
+post_id: 222
+created: 2009/07/28 13:49:56
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;mes-mühimmat-eğitim-simulatörü&#34;&gt;MES (Mühimmat Eğitim Simulatörü)&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+Helikopterden yerdeki hareketli veya hareketsiz hedeflere atılan füze(mühimmat) dinamiğinin incelenmesi amacıyla silahçı ve pilot kullanıcılarına yönelik yazılımın geliştirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+C++, Qt, Presagis Vega, OPCODE çarpışma kontrol kütüphanesi&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Senaryodaki hareketli ve hareketsiz cisimlerin AABB algoritmasını kullanan OPCODE ile çarpışma kontrollerinin yapılması&lt;/li&gt;
+&lt;li&gt;Proje hata takibi için BugZilla altyapısının kurulması&lt;/li&gt;
+&lt;li&gt;Proje genelindeki yazılım hatalarının giderilmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/249/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/249/</guid>
+      <description>
+
+&lt;p&gt;title: Baytar (Veteriner Hekim Klinik Yönetim Sistemi)
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=249&#34;&gt;http://orhanbalci.net/tr/?p=249&lt;/a&gt;
+author: admin
+description:
+post_id: 249
+created: 2009/08/13 20:44:14
+created_gmt: 2009/08/13 17:44:14
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;baytar-veteriner-hekim-klinik-yönetim-sistemi&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/h1&gt;
+
+&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
+
+&lt;p&gt;Proje Tanımı:
+Veteriner hekimlerin klinikteki müşterileri, hayvanları, hayvanlara uygulanan aşıları ve diğer tedavileri kaydetmeye yönelik yazılım.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Kişisel Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+Java, MySQL, HSQLDB&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yazılım mimarisi tasarımı ve gerçeklenmesi.&lt;/li&gt;
+&lt;li&gt;Veritabanı tasarımı ve gerçeklenmesi.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/327/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/327/</guid>
+      <description>
+
+&lt;p&gt;title: NetBeans Yerelleştirme
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=327&#34;&gt;http://orhanbalci.net/tr/?p=327&lt;/a&gt;
+author: admin
+description:
+post_id: 327
+created: 2009/09/16 09:54:32
+created_gmt:
+comment_status: open
+post_name:
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;netbeans-yerelleştirme&#34;&gt;NetBeans Yerelleştirme&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı:
+NetBeans tümleşik geliştirme ortamının Türkçe&amp;rsquo;ye çevirilmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Açık Kaynak Kod&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler:
+Community Translation Interface&lt;/p&gt;
+
+&lt;p&gt;Rol:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yazılım yerelleştirilmesinde aktif rol almak.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</guid>
+      <description>
+
+&lt;p&gt;title: NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=120&#34;&gt;http://orhanbalci.net/tr/?p=120&lt;/a&gt;
+author: admin
+description:
+post_id: 120
+created: 2009/05/06 11:10:47
+created_gmt: 2009/05/06 09:10:47
+comment_status: open
+post_name: netbeans-yerellestirmesi-icin-gonulluler-araniyor
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;netbeans-yerelleştirmesi-için-gönüllüler-aranıyor&#34;&gt;NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor&lt;/h1&gt;
+
+&lt;p&gt;NetBeans 6.7 versiyonunu İngilizce bilmeyenlerin de kullanabilmesi amacıyla Türkçeleştirmeye çalışıyoruz. Bu konuda çeviri ve test başta olmak üzere her türlü desteğe ihtiyacımız var. Çevirilere ben de el atmak istiyorum derseniz benimle &lt;strong&gt;orhanbalci@gmail.com&lt;/strong&gt; adresinden iletişime geçebilirsiniz.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</guid>
+      <description>
+
+&lt;p&gt;title: Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=206&#34;&gt;http://orhanbalci.net/tr/?p=206&lt;/a&gt;
+author: admin
+description:
+post_id: 206
+created: 2009/07/22 21:04:25
+created_gmt: 2009/07/22 18:04:25
+comment_status: open
+post_name: radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi
+status: draft
+post_type: post&lt;/p&gt;
+
+&lt;h1 id=&#34;radyo-seyrüsefer-cihazları-veritabanı-güncelleme-yazılımı&#34;&gt;Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı&lt;/h1&gt;
+
+&lt;p&gt;Proje Tanımı :
+HELSİM projesi kapsamında hava taşıtlarının gereksinim duyduğu seyrüsefer cihazlarınıın bilgilerinin güncellenmesi.&lt;/p&gt;
+
+&lt;p&gt;Proje Türü:
+Ticari&lt;/p&gt;
+
+&lt;p&gt;Teknolojiler :
+C++, Qt, PostgreSQL, PostGis, OGR, ARINC 424&lt;/p&gt;
+
+&lt;p&gt;Rol :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Harita altlık yapısının PostGis ve Qt yardımı ile gerçeklenmesi&lt;/li&gt;
+&lt;li&gt;ARINC 424 verisinin ayrıştırılması ve veritabanına aktarılması&lt;/li&gt;
+&lt;li&gt;VOR, TACAN, DME, Airport, Runway, FIR/UIR, Restricted Airspace, Controlled Airspace verilerinin vektörel olarak haritaya çizilmesi&lt;/li&gt;
+&lt;li&gt;Yukarıda sayılan verilerin ICAO kodu vs. anahtarlara göre sorgulanması&lt;/li&gt;
+&lt;li&gt;Verilerin belirli aralıklarla yedeğinin alınması&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/</guid>
+      <description>
+
+&lt;p&gt;title: Sekkaşı&amp;rsquo;nın Bayırı
+description: Bayatlı&amp;rsquo;nın Düşünce Değirmeninden Sızanlar
+author_display_name:
+author_login:
+author_email:
+base_site_url: &lt;a href=&#34;http://orhanbalci.net/tr&#34;&gt;http://orhanbalci.net/tr&lt;/a&gt;
+base_blog_url: &lt;a href=&#34;http://orhanbalci.net/tr&#34;&gt;http://orhanbalci.net/tr&lt;/a&gt;
+export_date: 2017/03/08 09:07:49&lt;/p&gt;
+
+&lt;h1 id=&#34;sekkaşı-nın-bayırı&#34;&gt;Sekkaşı&amp;rsquo;nın Bayırı&lt;/h1&gt;
+
+&lt;p&gt;Bayatlı&amp;rsquo;nın Düşünce Değirmeninden Sızanlar * 2009-07-28 13:49:56: &lt;a href=&#34;http://example.org/?p=222&#34;&gt;MES (Mühimmat Eğitim Simulatörü)&lt;/a&gt; * 2009-09-16 09:54:32: &lt;a href=&#34;http://orhanbalci.net/tr/?p=327&#34;&gt;NetBeans Yerelleştirme&lt;/a&gt; * 2015-03-05 22:20:51: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1357&#34;&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/a&gt; * 2016-05-09 21:40:57: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1560&#34;&gt;Practical Rust Iterator Examples&lt;/a&gt; * 2007-03-17 19:16:06: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=2&#34;&gt;Hakkında&lt;/a&gt; * 2007-03-18 00:32:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=3&#34;&gt;Sekkaşı ve Bayırı&lt;/a&gt; * 2007-03-20 23:19:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=4&#34;&gt;Java&amp;rsquo;yı Özgürleştirmek&lt;/a&gt; * 2007-03-25 19:01:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=5&#34;&gt;Gölle ve Dibek Taşı Anısına&lt;/a&gt; * 2007-03-29 23:00:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; * 2007-05-08 22:46:55: &lt;a href=&#34;http://orhanbalci.net/tr/?p=7&#34;&gt;Haşkeş Gafeliler&lt;/a&gt; * 2007-06-10 11:26:50: &lt;a href=&#34;http://orhanbalci.net/tr/?p=10&#34;&gt;Güneş İstanbul&amp;rsquo;da Tutuldu - Eclipsİst 2007 -&lt;/a&gt; * 2007-06-20 23:57:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=11&#34;&gt;Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti&lt;/a&gt; * 2007-06-21 22:20:03: &lt;a href=&#34;http://orhanbalci.net/tr/?p=12&#34;&gt;Eclipse Update Manager Proxy Ayarı&lt;/a&gt; * 2007-07-24 21:36:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=14&#34;&gt;Swing Programlama: JTable Temel Kullanım&lt;/a&gt; * 2007-07-26 21:59:30: &lt;a href=&#34;http://orhanbalci.net/tr/?p=15&#34;&gt;NetBeans Javadoc Entegrasyonu&lt;/a&gt; * 2007-08-02 19:41:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=16&#34;&gt;Swing Programlama : JTable Hücre Editörleri&lt;/a&gt; * 2007-08-31 23:47:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=17&#34;&gt;İkili Ağaç Veri Yapısı (Binary Search Tree)&lt;/a&gt; * 2007-11-17 15:32:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=18&#34;&gt;Işık Atlası&lt;/a&gt; * 2008-02-06 19:33:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=19&#34;&gt;Kendimle Hasbihal&lt;/a&gt; * 2008-03-01 13:59:57: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=20&#34;&gt;Kitaplık&lt;/a&gt; * 2008-03-08 20:15:11: &lt;a href=&#34;http://orhanbalci.net/tr/?p=21&#34;&gt;Seçim Sıralama(Selection Sort) Algoritma Appleti&lt;/a&gt; * 2008-03-15 17:27:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=22&#34;&gt;Eklemeli Sıralama (Insertion Sort) Algoritma Appleti&lt;/a&gt; * 2008-03-15 17:48:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=23&#34;&gt;JTable İp Uçları&lt;/a&gt; * 2008-04-15 19:38:40: &lt;a href=&#34;http://orhanbalci.net/tr/?p=24&#34;&gt;Biletofobi&lt;/a&gt; * 2008-04-25 18:51:38: &lt;a href=&#34;http://orhanbalci.net/tr/?p=25&#34;&gt;Yanık Fotoğraflar&lt;/a&gt; * 2008-07-23 19:23:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=26&#34;&gt;Eclipse Video Ders (Screencast) #1 Extract Method Refactoring&lt;/a&gt; * 2008-07-23 19:29:43: &lt;a href=&#34;http://orhanbalci.net/tr/?p=27&#34;&gt;Eclipse Video Ders (Screencast) #2 Extract Super Class Refactoring&lt;/a&gt; * 2008-08-24 16:02:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=28&#34;&gt;Eclipse Video Ders (Screencast) #3 Introduce Parameter Refactoring&lt;/a&gt; * 2008-09-13 12:33:04: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=29&#34;&gt;Gelecek Makaleler&lt;/a&gt; * 2008-09-13 12:47:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; * 2008-09-17 07:34:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=32&#34;&gt;Netbeans Video Ders (Screencast) #1 JUnit Birim Test &lt;/a&gt; * 2008-10-21 10:44:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=35&#34;&gt;Kd Ağacı (Kd Tree) Veri Yapısı Görselleştirmesi&lt;/a&gt; * 2008-11-14 20:23:10: &lt;a href=&#34;http://orhanbalci.net/tr/?p=41&#34;&gt;NetBeans Video Ders (Screencast) #2 GUI Tasarımcısı Özellik Bağlama Kipi &lt;/a&gt; * 2009-01-17 21:59:38: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=49&#34;&gt;İndir&lt;/a&gt; * 2009-02-15 20:11:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=54&#34;&gt;NetBeans Video Ders (Screencast) #3 Kod Şablonları&lt;/a&gt; * 2009-04-01 21:50:17: &lt;a href=&#34;http://orhanbalci.net/tr/?p=31&#34;&gt;Duvarlara Sinen Yıllar&lt;/a&gt; * 2009-04-08 22:06:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; * 2009-04-12 18:52:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; * 2009-04-26 13:56:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; * 2009-05-05 20:19:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; * 2009-05-06 11:10:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=120&#34;&gt;NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor&lt;/a&gt; * 2009-06-19 00:11:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=128&#34;&gt;K-Orta Kümeleme Algoritması&lt;/a&gt; * 2009-06-23 10:56:37: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=139&#34;&gt;Yazılım Pratikleri&lt;/a&gt; * 2009-06-24 20:12:28: &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; * 2009-07-13 21:49:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; * 2009-07-14 10:24:15: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=180&#34;&gt;Java Dersleri&lt;/a&gt; * 2009-07-22 21:04:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=206&#34;&gt;Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı&lt;/a&gt; * 2009-07-22 21:08:57: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=209&#34;&gt;Projeler&lt;/a&gt; * 2009-07-22 22:00:21: &lt;a href=&#34;http://orhanbalci.net/tr/?p=216&#34;&gt;Arazi / Radyo Seyrüsefer Sunucu Yazılımı&lt;/a&gt; * 2009-08-04 13:33:43: &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri&lt;/a&gt; * 2009-08-11 20:20:08: &lt;a href=&#34;http://orhanbalci.net/tr/?p=252&#34;&gt;Berber Dükkânından Diyaloglar&lt;/a&gt; * 2009-08-13 20:44:14: &lt;a href=&#34;http://orhanbalci.net/tr/?p=249&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/a&gt; * 2009-08-23 15:43:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=291&#34;&gt;NetBeans Video Ders (Screencast) #4 İkilik (Binary) Dosya Okuma &lt;/a&gt; * 2009-09-04 13:27:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=310&#34;&gt;Her Çocuğun Rüyası Charlie&amp;rsquo;nin Çikolata Fabrikası&lt;/a&gt; * 2009-09-17 23:30:51: &lt;a href=&#34;http://orhanbalci.net/tr/?p=334&#34;&gt;Sobel Kenar Algılama Algoritması&lt;/a&gt; * 2009-10-01 20:12:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; * 2009-10-05 22:41:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri&lt;/a&gt; * 2009-10-10 21:07:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=372&#34;&gt;Otobüste Fahiş Fiyatlı Akbile Hayır&lt;/a&gt; * 2009-10-27 22:54:19: &lt;a href=&#34;http://orhanbalci.net/tr/?p=393&#34;&gt;Tehlike Anında Camı Kırınız!&lt;/a&gt; * 2009-10-30 21:42:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=8&#34;&gt;İki Tepe, İki Dağ Ortasında Bizim Bağ&lt;/a&gt; * 2009-11-18 21:58:50: &lt;a href=&#34;http://orhanbalci.net/tr/?p=416&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 50&lt;/a&gt; * 2009-11-18 22:45:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=420&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 49&lt;/a&gt; * 2009-11-20 00:11:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=428&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 48&lt;/a&gt; * 2009-11-20 01:15:03: &lt;a href=&#34;http://orhanbalci.net/tr/?p=435&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 47&lt;/a&gt; * 2009-11-20 14:22:49: &lt;a href=&#34;http://orhanbalci.net/tr/?p=438&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 46&lt;/a&gt; * 2009-11-24 22:05:04: &lt;a href=&#34;http://orhanbalci.net/tr/?p=440&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 45&lt;/a&gt; * 2009-12-02 21:49:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=449&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 44&lt;/a&gt; * 2009-12-02 22:20:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=453&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 43&lt;/a&gt; * 2009-12-03 21:41:16: &lt;a href=&#34;http://orhanbalci.net/tr/?p=462&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 42&lt;/a&gt; * 2009-12-06 14:29:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=468&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 41&lt;/a&gt; * 2009-12-06 19:15:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=470&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 40&lt;/a&gt; * 2009-12-08 00:18:19: &lt;a href=&#34;http://orhanbalci.net/tr/?p=481&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 39&lt;/a&gt; * 2009-12-11 20:54:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=496&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 38&lt;/a&gt; * 2009-12-13 18:57:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=503&#34;&gt;Birleştirmeli Sıralama (Merge Sort) Algoritma Appleti&lt;/a&gt; * 2009-12-26 20:15:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=516&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 – Soru 37&lt;/a&gt; * 2010-01-06 14:16:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=531&#34;&gt;Proje Bülbül&lt;/a&gt; * 2010-01-13 20:02:32: &lt;a href=&#34;http://orhanbalci.net/tr/?p=553&#34;&gt;2009&amp;rsquo;un Getirdikleri 2010&amp;rsquo;dan Beklentiler&lt;/a&gt; * 2010-01-18 01:16:36: &lt;a href=&#34;http://orhanbalci.net/tr/?p=560&#34;&gt;HSQLDB İpuçları&lt;/a&gt; * 2010-01-24 23:18:53: &lt;a href=&#34;http://orhanbalci.net/tr/?p=575&#34;&gt;Asansör&lt;/a&gt; * 2010-01-27 00:14:02: &lt;a href=&#34;http://orhanbalci.net/tr/?p=584&#34;&gt;Fruchterman-Reingold Graf Yerleşim Algoritması&lt;/a&gt; * 2010-02-02 14:25:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=593&#34;&gt;Python Deneyimleri 1&lt;/a&gt; * 2010-02-04 15:07:26: &lt;a href=&#34;http://orhanbalci.net/tr/?p=620&#34;&gt;Python Deneyimleri 2&lt;/a&gt; * 2010-02-17 12:05:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=639&#34;&gt;Python Deneyimleri 3&lt;/a&gt; * 2010-02-17 21:39:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 - Koleksiyon API (Collection API) Listeler&lt;/a&gt; * 2010-02-19 14:49:36: &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; * 2010-03-09 21:35:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=685&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 – Soru 36&lt;/a&gt; * 2010-03-17 18:31:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; * 2010-03-18 22:50:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; * 2010-04-03 22:22:59: &lt;a href=&#34;http://orhanbalci.net/tr/?p=727&#34;&gt;Swing Programlama : JFileChooser&lt;/a&gt; * 2010-05-27 21:17:52: &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 - JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; * 2010-07-28 13:05:39: &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama - UDP&lt;/a&gt; * 2010-08-13 10:16:11: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=786&#34;&gt;CV&lt;/a&gt; * 2010-08-20 23:32:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=805&#34;&gt;Eclipse Video Ders (Screencast) #4 - Hibernate Kullanımı&lt;/a&gt; * 2010-10-08 13:27:31: &lt;a href=&#34;http://orhanbalci.net/tr/?p=849&#34;&gt;Swing Programlama : JTree&lt;/a&gt; * 2010-10-29 12:36:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=874&#34;&gt;Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri&lt;/a&gt; * 2010-12-03 20:20:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=923&#34;&gt;Iki Yeni Kitap&lt;/a&gt; * 2010-12-14 14:43:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 - İstisnai Durumlar (Exceptions) &lt;/a&gt; * 2011-01-09 14:24:07: &lt;a href=&#34;http://orhanbalci.net/tr/?p=957&#34;&gt;Ocak Ayı Kitapları&lt;/a&gt; * 2011-05-28 19:27:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=986&#34;&gt;Niyet, Sebat, Sabır, Tevekkül Çerçevesinden Başarı&lt;/a&gt; * 2011-06-07 17:27:00: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1010&#34;&gt;Ödevler&lt;/a&gt; * 2011-06-08 22:47:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; * 2011-07-07 00:43:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; * 2011-07-20 23:33:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1066&#34;&gt;İstanbul Antalya Yolu Üzerinde Keyifli Bir Mola : Afium&lt;/a&gt; * 2011-07-21 20:58:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1070&#34;&gt;Ağva-Göksu Motor Turu&lt;/a&gt; * 2011-08-04 23:26:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1083&#34;&gt;Kabuk Sıralama (Shell Sort) Algoritma Appleti&lt;/a&gt; * 2011-08-06 11:23:49: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1092&#34;&gt;Swing Programlama : 2D Çizim İp Uçları&lt;/a&gt; * 2011-08-11 23:31:52: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 - Multi Thread Programlama&lt;/a&gt; * 2011-08-30 11:28:04: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1110&#34;&gt;İstanbul&amp;rsquo;da Arefe Sabahı : Hoşgeldin Oğlum&lt;/a&gt; * 2012-01-19 14:20:53: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection ve Annotation Kullanımı&lt;/a&gt; * 2012-11-20 14:10:02: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1148&#34;&gt;İzlediklerim&lt;/a&gt; * 2012-12-18 14:40:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1137&#34;&gt;Java 7 İle Gelen Yeni Özellikler&lt;/a&gt; * 2013-03-12 14:23:22: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 - Final Anahtar Kelimesi&lt;/a&gt; * 2013-03-17 00:22:59: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1205&#34;&gt;Google Java Kütüphanesi : Guava String İşlemleri&lt;/a&gt; * 2013-03-18 14:45:18: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1222&#34;&gt;Google Java Kütüphanesi : Guava Functions Predicates&lt;/a&gt; * 2013-03-19 14:38:37: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1230&#34;&gt;Google Java Kütüphanesi : Guava Preconditions&lt;/a&gt; * 2013-03-22 15:12:11: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1235&#34;&gt;Google Java Kütüphanesi : Guava Cache&lt;/a&gt; * 2013-03-28 12:07:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1239&#34;&gt;2013 Okuma Listesi&lt;/a&gt; * 2014-10-14 10:23:55: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1273&#34;&gt;Java 8 İle Gelen Yeni Özellikler&lt;/a&gt; * 2014-11-19 13:31:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt; * 2014-11-21 21:22:46: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1326&#34;&gt;Dependency Injection : Guice&lt;/a&gt; * 2015-01-14 14:53:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1339&#34;&gt;Java İle Json İşlemleri : Jackson&lt;/a&gt; * 2015-04-11 04:36:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1371&#34;&gt;Hizli Siralama Algoritmasi (Quicksort)&lt;/a&gt; * 2015-04-12 04:16:06: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1373&#34;&gt;Yapay Zeka&lt;/a&gt; * 2015-04-13 23:33:15: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1376&#34;&gt;Ikili Arama Algoritmasi (Binary Search)&lt;/a&gt; * 2015-04-19 05:43:26: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1380&#34;&gt;Breadth First Search (Yuzey Ocelikli Arama)&lt;/a&gt; * 2015-04-19 19:44:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1384&#34;&gt;Depth First Search (Derinlik Oncelikli Arama)&lt;/a&gt; * 2015-07-08 22:13:16: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1401&#34;&gt;Rust Ornekleri&lt;/a&gt; * 2015-07-09 00:10:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1404&#34;&gt;Rust Programlama Giris&lt;/a&gt; * 2015-07-14 20:54:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1421&#34;&gt;Java Compiler Api&lt;/a&gt; * 2015-09-04 00:45:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1427&#34;&gt;Rust Temel Veri Yapıları Struct ve Enum&lt;/a&gt; * 2015-09-11 22:16:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1441&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/a&gt; * 2015-09-14 23:04:37: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1452&#34;&gt;Rust Akış Kontrol İfadeleri&lt;/a&gt; * 2015-10-07 10:14:17: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1461&#34;&gt;Lastik Basınç Uygulamamız Yayında&lt;/a&gt; * 2015-10-13 22:29:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1459&#34;&gt;Rust Trait&lt;/a&gt; * 2015-10-16 08:28:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1472&#34;&gt;Rust Closure&lt;/a&gt; * 2015-11-29 10:17:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1489&#34;&gt;Mario Gomez Button Uygulamamiz Yayinda&lt;/a&gt; * 2015-12-09 19:35:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1492&#34;&gt;Rust Dökümantasyon&lt;/a&gt; * 2015-12-18 11:26:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1501&#34;&gt;Rust Cheatsheet&lt;/a&gt; * 2016-01-27 09:28:14: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1512&#34;&gt;Rust Program Düzeni : Modüller&lt;/a&gt; * 2016-03-30 02:58:31: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1527&#34;&gt;Vergi Uzmanim Android Uygulamamiz Yayinda&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/cv/</guid>
+      <description>
+
+&lt;p&gt;title: CV
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=786&#34;&gt;http://orhanbalci.net/tr/?page_id=786&lt;/a&gt;
+author: admin
+description:
+post_id: 786
+created: 2010/08/13 10:16:11
+created_gmt: 2010/08/13 07:16:11
+comment_status: open
+post_name: cv
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;cv&#34;&gt;CV&lt;/h1&gt;
+
+&lt;p&gt;[gview file=&amp;ldquo;&lt;a href=&#34;http://orhanbalci.net/tr/wp-content/uploads/orhanbalcicv.pdf&amp;quot;&#34;&gt;http://orhanbalci.net/tr/wp-content/uploads/orhanbalcicv.pdf&amp;quot;&lt;/a&gt;]&lt;/p&gt;
+
+&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4203&#34; title=&#34;2010-10-24 23:25:37&#34;&gt;handan&lt;/a&gt;:&lt;/strong&gt; örnek uygulama koysa idin keşke bu kadarına bile teşekkür&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/gelecek-makaleler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/gelecek-makaleler/</guid>
+      <description>
+
+&lt;p&gt;title: Gelecek Makaleler
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=29&#34;&gt;http://orhanbalci.net/tr/?page_id=29&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 29
+created: 2008/09/13 12:33:04
+created_gmt: 2008/09/13 09:33:04
+comment_status: open
+post_name: gelecek-makaleler
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;gelecek-makaleler&#34;&gt;Gelecek Makaleler&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strike&gt;Kd Ağacı (Kd Tree) Veri Yapısı Görselleştirmesi&lt;/strike&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strike&gt;Duvarlara Sinen Yıllar&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;İki Tepe İki Dağ Ortasında Bizim Bağ&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #1(Screencast) JUnit Testleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #2(Screencast) GUI Tasarımcısı Özellik Bağlama Kipi&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #3(Screencast) Kod Şablonları&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;K-Orta Kümeleme Algoritması&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Quad Tree Veri Yapısı&lt;/li&gt;
+&lt;li&gt;Tahta Kaşık Bulgur Pilavı Ayran&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt; Java Dersleri 3 - Kontrol Yapıları&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Netbeans Video Ders #4(Screencast) Debugging&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;2D Nokta Test Kümesi Oluşturma Programı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 5 - Kalıtım, Soyut Sınıflar&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Evans-Sutherland Kırpma Algoritması&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Sobel Kenar Tanıma Algoritması&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 9 - Dosya Okuma - Yazma İşlemleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 10 - Nesne Akımları ve Serileştirme(Object Streams and Serialization)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Her Çocuğun Rüyası Charlie&amp;rsquo;nin Çikolata Fabrikası&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 12 - Temel String İşlemleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 13 - Koleksiyon API &lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 14 - Enum Yapısı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 15 - JDBC API&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 16 - Çoklu Thread Programlama&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 17 - Network Programlama&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Tehlike Anında Camı Kırın&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Birleştirmeli Sıralama (Merge Sort)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Ulusal Bilgisayar Olimpiyat Soruları ve Çözümleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Kuvvet Yönelimli Graf Yerleşim Algoritması (Fruchterman-Reingold)&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Çarpışma Algılama Yöntemleri ve Algoritmaları 1: Matematik Temelleri&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;90&amp;rsquo;ların Bilgisayar Oyunları&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Swing Programlama : JFileChooser Kullanımı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Swing Programlama : Sihirbaz (Wizard) Yapımı&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Swing Programlama : JTree Kullanımı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Masaüstü Programlarında Hibernate Kullanımı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Hibernate Sorgu Dili&lt;/li&gt;
+&lt;li&gt;Java Plugin Framework&lt;/li&gt;
+&lt;li&gt;Swing Programlama : Çizim İşlemleri&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 18 - İstisnai Durumlar&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 19 - Reflection&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 20 - Generics &lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;B-Tree Veri Yapısı&lt;/li&gt;
+&lt;li&gt;B+Tree Veri Yapısı&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Niyet,Sebat,Sabır,Tevekkül Penceresinden Başarı&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 21 - JAXB API - Java Nesnelerini XML Dökümanları ile Bağlama&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Java Dersleri 22 - Web Servisleri&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Quick Sort Sıralama Algoritması&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Shell Sort Sıralama Algoritması&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Dijkstra En Kısa Yol Algoritması&lt;/li&gt;
+&lt;li&gt;Swing Programlama : JTabbedPane Kullanımı&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java 7 İle Gelen Yeni Özellikler&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Strategy Pattern Nasıl İşime Yaradı&lt;/li&gt;
+&lt;li&gt;Java Dersleri 23 - NİO Api&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java Dersleri 24 - Final Anahtar Kelimesi&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java İle Json İşlemleri : Jackson&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Google Java Kütüphanesi : Guava&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Java Bean Validasyonu : Hibernate Validator&lt;/li&gt;
+&lt;li&gt;Java Dersleri 25 - JPA Java Persistence Api&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Java 8 İle Gelen Yeni Özellikler&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Dependency Injection : Guice&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Şablon Kullanımı İle Kod Üretme Teknikleri : StringTemplate&lt;/li&gt;
+&lt;li&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/li&gt;
+&lt;li&gt;Java Dersleri 26 : Java Compiler API&lt;/li&gt;
+&lt;li&gt;Google Protocol Buffers&lt;/li&gt;
+&lt;li&gt;Java İle REST Servisleri&lt;/li&gt;
+&lt;li&gt;Message Queue Örnekleri&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Breadth First Arama Algoritmasi&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Depth First Arama Algoritmasi&lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;A* Arama Algoritmasi&lt;/li&gt;
+&lt;li&gt;Evrimsel Algoritmalar&lt;/li&gt;
+&lt;li&gt;Java Ile Klasor Izleme&lt;/li&gt;
+&lt;li&gt;Rust Ownership&lt;/li&gt;
+&lt;li&gt;Rust Borrowing&lt;/li&gt;
+&lt;li&gt;Rust Lifetime&lt;/li&gt;
+&lt;li&gt;Rust Program Düzeni : Modüller&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt;Rust Closure &lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Rust Iteratorler&lt;/li&gt;
+&lt;li&gt;Rust Generics&lt;/li&gt;
+&lt;li&gt;Rust Pointer Turleri&lt;/li&gt;
+&lt;li&gt;Rust Test&lt;/li&gt;
+&lt;li&gt;&lt;strike&gt; Rust Dokumentasyon &lt;/strike&gt;&lt;/li&gt;
+&lt;li&gt;Rust Hata Yonetimi&lt;/li&gt;
+&lt;li&gt;Suffix Array ile Longest common Substring Cozumu&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1748&#34; title=&#34;2009-10-11 06:16:18&#34;&gt;Osman&lt;/a&gt;:&lt;/strong&gt; Tahta Kaşık Bulgur Pilavı Ayran ne zaman cikacak?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1749&#34; title=&#34;2009-10-11 10:56:06&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Osman hocam onu bilinmez geleceğe kadar erteledim.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#3377&#34; title=&#34;2010-07-30 10:57:57&#34;&gt;kernel32&lt;/a&gt;:&lt;/strong&gt; Java hakkında NetBeans ile video dersler hazırlayabilirmisiniz. Daha faydalı olur bence. iyi çalışmalar :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#3380&#34; title=&#34;2010-07-30 11:48:15&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Sitede birkaç tane mevcut zaten etiket bulutundan Vide Ders etiketini seçerek ulaşabilirsin&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4124&#34; title=&#34;2010-09-16 11:36:11&#34;&gt;aykut64&lt;/a&gt;:&lt;/strong&gt; Merhabalar1 Yoğunluğunuzu bilemiyorum ve geleck makalelerden istek yapmak biraz bencilce geliyor bana ama şuana kadar bulduğum en iyi Türkçe JAVA kaynağı sizsiniz.35 nci sıraya koyduğunuz 90&amp;rsquo;lı yılların oyunları ve onun öncesindeki çarpışma algılama yöntemleri ve algoritmaları konusunu yayınlayabilirseniz bu site favorilerim arasında en tepeye yerleşecektir. Şaka bir yana çok özverili güzel bir bilgi paylaşım sitesi.Çok başarılı olmasını dilerim size de hayatınızda başarılar dilerim.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4125&#34; title=&#34;2010-09-16 12:10:06&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Aykut bey yorumunuz için teşekkürler. Şunu belirtmek isterim ki isteğinizin bencillikle yakından uzaktan alakası yok. Daha öncede kullanıcılarımdan siteye bu yönde katkıda bulunmalarını istemiştim. Ben günlük hayatta aklıma gelen konuları buraya listeliyorum. Buradan makale seçerken herhangi bir sıra gözetmiyorum. En sonda olanı ilk önce yayınlayabilirim. Bunların dışında sizin de istediğiniz bir konu olursa listeye ekleyebilirim.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/hakkinda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/hakkinda/</guid>
+      <description>
+
+&lt;p&gt;title: Hakkında
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=2&#34;&gt;http://orhanbalci.net/tr/?page_id=2&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 2
+created: 2007/03/17 19:16:06
+created_gmt: 2007/03/17 16:16:06
+comment_status: open
+post_name: hakkinda
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;hakkında&#34;&gt;Hakkında&lt;/h1&gt;
+
+&lt;p&gt;Bu web sitesi Orhan Balcı&amp;rsquo;nın boş vakitlerinde kaleme aldığı yazılardan mütevellittir. Bahsettiğimiz Orhan has be has, öz mü öz Afyon Bayat&amp;rsquo;li olup taklitlerinden ayrilmalidir :). Efendim bu web site daha doğru tabir ile blog işi nereden çıktı sualine gelecek olursak, aynı zamanda bilgisayar mühendisi olan müellifin hayat serüveni boyunca edindiği deneyimleri siz sevgili okurlarla paylaşma isteği ve arzusu bu sitenin temellerinin atılmasında en büyük itici guç olmuştur. Genel olarak yazilarini Bayat, teknik ve taktik eğitimler ve anılar üçgeninde kurgulayacak olan yazarımızın duşunce kazanında kaynattıkları da ağzımızda bir parmak bal nevinden tad bırakacaktır. Gel gelelim blogumuzun başlığının hikayesine. Burada kısa bir şekilde değinelim aslını blogumuzn ilk yazısına saklayalım. Bayat&amp;rsquo;lı hemşehrilerim hemen gülümseyeceklerdir zira &amp;ldquo;Sekkaşı&amp;rdquo;, güzide ilçemizin güneyinde kalan ve yaş olarak diğer mahallelerden genç olan Cumhuriyet mahallemizin yerli halk arasındaki ismidir. İşte bu şirin mahalleyi beldemizin diğer yerleşkelerine bağlayan yokuşun adı da &amp;ldquo;Sekkaşı bayırı&amp;rdquo;. Peki neden bu isim? Bu blog fikri yazarın hafızasında oldu olalı isim arayışı da beraberinde geldi. Tabiki de bu isim yazarı yansıtan bir kelime olmalıydı. İlkokul yılları boyunca Cumhuriyet mahallesinde, namı diğer &amp;ldquo;sekkası&amp;rdquo;, ikamet eden yazarımız hafta sonu sabahları aile fertleri(hepsinin ellerinden öperim) tarafından fırından ekmek almaya zorlandığından bu yokuşu bisikletle önce büyük bir zevkle inerek çarşıya ulaşır ardından ekmeklerle beraber soluk soluğa geri dönerdi&amp;hellip; Yazarımızda bu ve bunun gibi bir çok hatıra bırakan coğrafi şekil elbette ki onun blogunun ismini almayı hakediyor. Sözü daha fazla uzatmadan sizi yazarımızın engin, efsunlu dünyasında yol almaya davet ediyorum. Orhan BALCI&lt;/p&gt;
+
+&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1164&#34; title=&#34;2008-10-11 16:13:03&#34;&gt;arif balcı&lt;/a&gt;:&lt;/strong&gt; Abiciğim siten çok güzel olmuş ama siteni fotoğraf, video, müzik gibi değişik şeylerlerle de süslendireblirsin.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1347&#34; title=&#34;2009-02-16 20:04:58&#34;&gt;alp kaan&lt;/a&gt;:&lt;/strong&gt; merhabalar hocam netbeans ile ilgili video larınızı çok beğeniyorum ve netbeans çalışıyorum acaba netbeans genel bir tanımlamalı video yapabilirmisiniz bir de kod nasıl yazılır buton ların görevleri gibi gibi tşkler&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1339&#34; title=&#34;2009-02-08 23:05:43&#34;&gt;yasin özsaglam&lt;/a&gt;:&lt;/strong&gt; hocam merhaba netbeans ile ilgili videolarınızı çok beğendim. Javayı ve netbeans&amp;rsquo;i yeni öğrenmeye başladım. size bir sorum olacaktı. jprogressbar componentini thread kullanarak artırmak istiyorum. bir döngü içerinden gelen değere göre progressbarın değerini nasıl artırabilirim.? yardım ederseniz sevinirim.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1357&#34; title=&#34;2009-02-27 09:52:04&#34;&gt;Recep Atalr&lt;/a&gt;:&lt;/strong&gt; merhaba öncelikle amacınız ne olrusa olsun emeğinizi kutluyorum şugünlerde ciddi kaynak sikintisi çektiğim javayla ilgil atılım olarak sitenizi ziyaret etmek hep aklımın köşesinde olmuştur. javayı hep dosla öğretmeye başlarlar pekişsin diye ben bir grafikeim gördüğümü unutmam bu eğitim metodunun çok yalnış olduğun başta söylemet isterim. sizin görsel olarak hazırlamış olduğunuz dersleri özellikle netbeans dersini takip ediyorum, isterdimki netbean bu işe yarar ve şöyle dosla açılır. nedenide şu java netbeansı açtığınzda farklı diğer programa dilelerinde farklı bda yeni meraklıları kafakarışıklığına neden olacaktır. ama insanların araştırmasinada neden olacaktır . neticede siteniz türkiyedeki sitelerde en iyilerdendir. aylardı araştırmadayım çünkü&amp;hellip;..&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1712&#34; title=&#34;2009-09-28 06:58:20&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Süleyman bey değerli yorumlarınız için teşekkür ederim.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1702&#34; title=&#34;2009-09-23 16:36:22&#34;&gt;Süleyman&lt;/a&gt;:&lt;/strong&gt; Site de yazılar da güzel. Başka bir Afyon&amp;rsquo;lu blog yazarı bilgisayar mühendisimsi olarak :) sıkılmadan devam etmeni dilerim&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1909&#34; title=&#34;2009-12-04 11:02:55&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Yazılar bu aralar olimpiyad soru çözümleri ağırlıklı olacak ama yine de ayda 1 yada 2 tane java dersi eklemeyi düşünüyorum.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1907&#34; title=&#34;2009-12-04 01:00:42&#34;&gt;Tayfun Yaşar&lt;/a&gt;:&lt;/strong&gt; tanıtım kısmına bayıldım. Java konusunda takipte olacağım bloglardan olacak. yazılarınızın devamını bekliyorum&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2549&#34; title=&#34;2010-03-26 20:33:42&#34;&gt;mesut&lt;/a&gt;:&lt;/strong&gt; orhan emek verip, guzel bir site olusturmussun, tebrikler.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2543&#34; title=&#34;2010-03-25 15:25:51&#34;&gt;Fatih UYSAL&lt;/a&gt;:&lt;/strong&gt; Dostum güzel olmuş gerçekten siten. Biraz daha vakit ayırabilsen cok daha güzel olacak eminiki :D&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2686&#34; title=&#34;2010-04-29 21:45:14&#34;&gt;çağrı çakır&lt;/a&gt;:&lt;/strong&gt; teşekkürler, yaşasın gerekli bilgi paylaşmak! :eek:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2705&#34; title=&#34;2010-05-15 03:41:29&#34;&gt;semih&lt;/a&gt;:&lt;/strong&gt; Orhan siteni resimlerle süslendir.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4402&#34; title=&#34;2010-12-06 16:53:28&#34;&gt;Savaş DAVAZ&lt;/a&gt;:&lt;/strong&gt; Bir bilgisayar mühendisi olarak çalışmalarını ve türk eğitim sistemine desteklerinizi takdir ile karşılıyor ayakta alkışlıyorum&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7317&#34; title=&#34;2012-12-18 23:54:34&#34;&gt;Hasan Ünlü Kılınç&lt;/a&gt;:&lt;/strong&gt; Java&amp;rsquo;da birşey ararken siteye denk geldim galiba artık takipcisi olacağım :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/indir/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/indir/</guid>
+      <description>
+
+&lt;p&gt;title: İndir
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=49&#34;&gt;http://orhanbalci.net/tr/?page_id=49&lt;/a&gt;
+author: admin
+description:
+post_id: 49
+created: 2009/01/17 21:59:38
+created_gmt: 2009/01/17 18:59:38
+comment_status: open
+post_name: indir
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;indir&#34;&gt;İndir&lt;/h1&gt;
+
+&lt;p&gt;[page_download]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/izlediklerim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/izlediklerim/</guid>
+      <description>
+
+&lt;p&gt;title: İzlediklerim
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1148&#34;&gt;http://orhanbalci.net/tr/?page_id=1148&lt;/a&gt;
+author: admin
+description:
+post_id: 1148
+created: 2012/11/20 14:10:02
+created_gmt: 2012/11/20 11:10:02
+comment_status: open
+post_name: izlediklerim
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;izlediklerim&#34;&gt;İzlediklerim&lt;/h1&gt;
+
+&lt;p&gt;Film
+Yönetmen
+Yıl
+İzleme Tarihi&lt;/p&gt;
+
+&lt;p&gt;1
+&lt;a href=&#34;http://www.imdb.com/title/tt0339291/&#34;&gt;Lemony Snicket&amp;rsquo;s A Series of Unfortunate Events Poster &lt;/a&gt;
+[Brad Silberling]
+2004
+19.11.2012&lt;/p&gt;
+
+&lt;p&gt;2
+&lt;a href=&#34;http://www.imdb.com/title/tt1392170/&#34;&gt;The Hunger Games &lt;/a&gt;
+[Gary Ross]
+2012
+07.01.2013&lt;/p&gt;
+
+&lt;p&gt;3
+&lt;a href=&#34;http://www.imdb.com/title/tt1975249/&#34;&gt;6 Bullets&lt;/a&gt;
+[Ernie Barbarash]
+2012
+09.01.2013&lt;/p&gt;
+
+&lt;p&gt;4
+&lt;a href=&#34;http://www.imdb.com/title/tt1148204&#34;&gt;Orphan&lt;/a&gt;
+[Jaume Collet-Serra]
+2009
+19.06.2015&lt;/p&gt;
+
+&lt;p&gt;5
+&lt;a href=&#34;http://www.imdb.com/title/tt3235888&#34;&gt;It Follows&lt;/a&gt;
+[David Robert Mitchell]
+2014
+20.06.2015&lt;/p&gt;
+
+&lt;p&gt;6
+&lt;a href=&#34;http://www.imdb.com/title/tt2267998&#34;&gt;Gone Girl&lt;/a&gt;
+[David Fincher]
+2014
+04.07.2015&lt;/p&gt;
+
+&lt;p&gt;7
+&lt;a href=&#34;http://www.imdb.com/title/tt2388715&#34;&gt;Oculus&lt;/a&gt;
+[Mike Flanagan]
+2013
+05.07.2015&lt;/p&gt;
+
+&lt;p&gt;8
+&lt;a href=&#34;http://www.imdb.com/title/tt1392214&#34;&gt;Prisoners&lt;/a&gt;
+[Denis Villeneuve]
+2013
+12.07.2015&lt;/p&gt;
+
+&lt;p&gt;9
+&lt;a href=&#34;http://www.imdb.com/title/tt0464141&#34;&gt;The Orphanage&lt;/a&gt;
+[J.A. Bayona]
+2007
+12.07.2015&lt;/p&gt;
+
+&lt;p&gt;10
+&lt;a href=&#34;http://www.imdb.com/title/tt1823672&#34;&gt;Chappie&lt;/a&gt;
+[Neill Blomkamp]
+2015
+26.07.2015&lt;/p&gt;
+
+&lt;p&gt;11
+&lt;a href=&#34;http://www.imdb.com/title/tt2321549/&#34;&gt;The Babadook&lt;/a&gt;
+[Jenifer Kent]
+2014
+20.08.2015&lt;/p&gt;
+
+&lt;p&gt;12
+&lt;a href=&#34;http://www.imdb.com/title/tt1921149/&#34;&gt;Trash&lt;/a&gt;
+[Stephen Daldry, Christian Duurvoort]
+2014
+06.09.2015&lt;/p&gt;
+
+&lt;p&gt;13
+&lt;a href=&#34;http://www.imdb.com/title/tt1706620&#34;&gt;Snowpiercer&lt;/a&gt;
+[Joon-ho Bong]
+2013
+07.09.2015&lt;/p&gt;
+
+&lt;p&gt;14
+&lt;a href=&#34;http://www.imdb.com/title/tt2053463&#34;&gt;Side Effects&lt;/a&gt;
+[ Steven Soderbergh]
+2013
+13.09.2015&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/page/java-dersleri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/page/java-dersleri/</guid>
+      <description>
+
+&lt;p&gt;title: Java Dersleri
+link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=180&#34;&gt;http://orhanbalci.net/tr/?page_id=180&lt;/a&gt;
+author: Orhan Balci
+description:
+post_id: 180
+created: 2009/07/14 10:24:15
+created_gmt: 2009/07/14 07:24:15
+comment_status: open
+post_name: java-dersleri
+status: publish
+post_type: page&lt;/p&gt;
+
+&lt;h1 id=&#34;java-dersleri&#34;&gt;Java Dersleri&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://example.org/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 – Koleksiyon API (Collection API) Listeler&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 – JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama – UDP&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 – İstisnai Durumlar (Exceptions)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 – Multi Thread Programlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection Ve Annotation Kullanımı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 – Final Anahtar Kelimesi&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4782&#34; title=&#34;2011-03-20 17:42:53&#34;&gt;iicocuk&lt;/a&gt;:&lt;/strong&gt; Java Dersleri 10 nerde :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7784&#34; title=&#34;2013-02-21 12:43:21&#34;&gt;mesut&lt;/a&gt;:&lt;/strong&gt; Kafamda şekillenen yapıda cloud sıstemler uzerınde kullanıcıların yaptıklarına paralel şirketlerin kullanabilecegi bilgiler sunmak.Hadoopu derın ınceledım standalone da da kıurdum eclipse ile.Lakin somut baglantılarım olmadıgı ıcın elımde big data yok:)KEndım ogrenciyim&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#8899&#34; title=&#34;2013-05-23 13:11:02&#34;&gt;tayfun&amp;rdquo;&lt;/a&gt;:&lt;/strong&gt; sayın hocam netbeans java me ile ilgili örnekleriniz varmı acaba bana ulaşırsanız çok sevinirim&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7416&#34; title=&#34;2012-12-26 21:42:54&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Mesut bey merhabalar. hadoop tarzı devasa boyutta veri işleyen frameworkler çok yeni gelişmeye başladı. Onun için henüz bilgi sahibi değilim. Aklınızda bir proje varsa paylaşırsanıaz üzerinde artıları eksileri konusunda tartışabiliriz.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7372&#34; title=&#34;2012-12-23 21:57:21&#34;&gt;Mesut&lt;/a&gt;:&lt;/strong&gt; SAyın hocam elınıze emegınıze klavyenıze saglık.Hadoop hakkında bır yazı klavyenıze alırsanız sevınırım.Benım aklımda olan hıbernate ıle hadoopu big data konspetı ıcınde birlikte kullanabılmek.Umarım engın bılgı ve tecrubelerınız arasındadır.Saygılar iyi çalısmalar&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
