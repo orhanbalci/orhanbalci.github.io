@@ -1,6 +1,6 @@
 +++
 title = "Yanık Fotoğraflar"
-created= "2008/04/25 18:51:38
+created= "2008/04/25 18:51:38"
 +++
 
 # Yanık Fotoğraflar
