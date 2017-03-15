@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-ile-json-islemleri-jackson/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java İle Json İşlemleri : Jackson
+link: <a href="http://orhanbalci.net/tr/?p=1339">http://orhanbalci.net/tr/?p=1339</a>
+author: Orhan Balci
+description:
+post_id: 1339
+created: 2015/01/14 14:53:54
+created_gmt: 2015/01/14 11:53:54
+comment_status: open
+post_name: java-ile-json-islemleri-jackson
+status: publish
+post_type: post</p>
+
+<h1 id="java-ile-json-işlemleri-jackson">Java İle Json İşlemleri : Jackson</h1>
+
+<p>Jackson kütüphanesi Java ile JSON işlemek için kullanışlı bir kütüphane. Bu makalede kütüphanenin temel işlemlerini göstermeye çalışacağım. Öncelikle işleyeceğimiz JSON örneğini verelim: [javascript] { &ldquo;sebzeler&rdquo; : [{ &ldquo;sebze&rdquo; : &ldquo;marul&rdquo;, &ldquo;gram&rdquo; : 100 }, { &ldquo;sebze&rdquo; : &ldquo;domates&rdquo;, &ldquo;gram&rdquo; : 100 }, { &ldquo;sebze&rdquo; : &ldquo;salatalık&rdquo;, &ldquo;gram&rdquo; : 100 } ], &ldquo;zeytinyağı&rdquo; : true, &ldquo;sirke&rdquo; : false, &ldquo;limon&rdquo; : true } [/javascript] Jackson kütüphanesini temel olarak üç değişik şekilde kullanabiliriz. Bunlar :</p>
+
+<ol>
+<li>Streaming API :
+[java] import com.fasterxml.jackson.core.JsonFactory; import com.fasterxml.jackson.core.JsonParser; import com.fasterxml.jackson.core.JsonToken; import java.io.FileInputStream; import java.io.IOException; public class JacksonStreamingSample { public static void main(String[] args) { JacksonStreamingSample jss = new JacksonStreamingSample(); jss.jsonStreamingExample(); } public void jsonStreamingExample() { try { JsonFactory jf = new JsonFactory(); jf.enable(JsonParser.Feature.ALLOW_COMMENTS); FileInputStream fis = new FileInputStream(getClass().getClassLoader().getResource(&ldquo;salata.json&rdquo;).getFile()); JsonParser jp = jf.createParser(fis); jp.nextToken(); while (jp.nextToken() != JsonToken.END_OBJECT) { String fieldName = jp.getCurrentName(); jp.nextToken(); //System.out.println(fieldName); String sebzeAdi = new String(&ldquo;&rdquo;); double sebzeGramaj = 0.0; if (&ldquo;sebzeler&rdquo;.equals(fieldName)) { while(jp.nextToken() != JsonToken.END_ARRAY){ String fName = jp.getCurrentName(); // fieldname token //jp.nextToken(); //value token if(&ldquo;sebze&rdquo;.equals(fName)){ jp.nextValue(); sebzeAdi = jp.getValueAsString(); } else if(&ldquo;gram&rdquo;.equals(fName)){ jp.nextValue(); sebzeGramaj = jp.getValueAsDouble(); } if(!sebzeAdi.isEmpty() &amp;&amp; sebzeGramaj!= 0.0){ System.out.printf(&ldquo;Salatada %s gram %s var%n&rdquo;, sebzeGramaj, sebzeAdi); sebzeAdi = &ldquo;&rdquo;; sebzeGramaj = 0.0; } } } else if(&ldquo;zeytinyağı&rdquo;.equals(fieldName)){ boolean hasZeytinyagi = jp.getValueAsBoolean(); System.out.printf(&ldquo;Salatada zaytinyagi %s%n&rdquo;, hasZeytinyagi ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;); } else if(&ldquo;sirke&rdquo;.equals(fieldName)){ boolean hasSirke = jp.getValueAsBoolean(); System.out.printf(&ldquo;Salatada sirke %s%n&rdquo;, hasSirke ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;); } else if(&ldquo;limon&rdquo;.equals(fieldName)){ boolean hasLimon = jp.getValueAsBoolean(); System.out.printf(&ldquo;Salatada limon %s%n&rdquo;, hasLimon ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;); } } } catch (IOException e) { e.printStackTrace(); //To change body of catch statement use File | Settings | File Templates. } } } [/java] Örnekten de anlaşılacağı üzere streaming api kullanımı biraz zor ve karışık bir api. Avantajı ise büyük boyutlu veriden istenilene kısa sürede ulaşılmasını sağlıyor. İşlemeniz gereken mb mertebesinde veya daha büyük bir json verisi varsa kullanmak mantıklı olacaktır. Pek kullanışlı bulmadım. Token vs. gibi kavramlar ilk kullanan için kafa karıştırıcı.</li>
+<li>Tree Model API :
+[java] public void jsonTreeModelExample() { ObjectMapper om = new ObjectMapper(); om.enable(JsonParser.Feature.ALLOW_COMMENTS); try { FileInputStream fis = new FileInputStream(getClass().getClassLoader().getResource(&ldquo;salata.json&rdquo;).getFile()); JsonNode rootNode = om.readTree(fis); Iterator<String> fieldNames = rootNode.fieldNames(); while (fieldNames.hasNext()) { String next = fieldNames.next(); if (rootNode.get(next).isValueNode()) { //object veya array node değil System.out.printf(&ldquo;Salatada %s %s%n&rdquo;, next, rootNode.get(next).booleanValue() ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;); } else if (rootNode.get(next).isArray()) { // array node Iterator<JsonNode> arrayElements = rootNode.get(next).elements(); while (arrayElements.hasNext()) { JsonNode n = arrayElements.next(); if (n.isObject()) { System.out.printf(&ldquo;Salatada %s gram %s var%n&rdquo;, n.get(&ldquo;gram&rdquo;).doubleValue(), n.get(&ldquo;sebze&rdquo;).textValue()); } } } } } catch (IOException e) { e.printStackTrace(); } }[/java] Tree model api ise tüm verinin diskten okunup bir ağaç olarak ram de tutulmasına olanak sağlıyor. Bu ağaç üzerinde klasik ağaç algoritmalarını kullanarak istenilen veriye erişmek mümkün. Bu yöntemle çok büyük boyutlu verilerin işlenmesi bellek kullanımı açısından verimli olmayacaktır. Streming API a göre Nispeten daha anlaşılabilir bir api. küçük boyutlu json verilerinin sadece belirli bir bölümüne ulaşmak istiyorsanız tercih edebilirsiniz.</li>
+<li>POJO &lt;-&gt; JSON Mapping API
+[java] public class Salata{ private static class Sebze{ private String sebze; private int gram; public Sebze() { } int getGram() { return gram; } void setGram(int gram) { this.gram = gram; } String getSebze() { return sebze; } void setSebze(String sebze) { this.sebze = sebze; } @Override public String toString() { return String.format(&ldquo;Salatada %d gram %s var&rdquo;, gram, sebze); } }; public Salata(){ } Sebze[] getSebzeler() { return sebzeler; } void setSebzeler(Sebze[] sebzeler) { this.sebzeler = sebzeler; } boolean isZeytinyağı() { return zeytinyagi; } void setZeytinyağı(boolean zeytinyagi) { this.zeytinyagi = zeytinyagi; } boolean isLimon() { return limon; } void setLimon(boolean limon) { this.limon = limon; } boolean isSirke() { return sirke; } void setSirke(boolean sirke) { this.sirke = sirke; } @Override public String toString() { StringBuilder sb = new StringBuilder(); for (int i = 0; i &lt; sebzeler.length; i++) { Sebze sebze = sebzeler[i]; sb.append(sebze); sb.append(&rdquo;\n&rdquo;); } sb.append(String.format(&ldquo;Salatada sirke %s\n&rdquo;, isSirke() ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;)); sb.append(String.format(&ldquo;Salatada zeytinyağı %s\n&rdquo;, isZeytinyağı() ? &ldquo;var&rdquo; : &ldquo;yok&rdquo;)); sb.append(String.format(&ldquo;Salatada limon %s\n&rdquo;, isLimon()? &ldquo;var&rdquo; : &ldquo;yok&rdquo;)); return sb.toString(); } private Sebze[] sebzeler; private boolean zeytinyagi; private boolean limon; private boolean sirke; }; [/java] [java] public void jsonObjectMapperExample(){ ObjectMapper om = new ObjectMapper();</li>
+</ol>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-kurulum/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-9-dosya-okumayazma-islemleri/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

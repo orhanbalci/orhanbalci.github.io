@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-4-erisim-denetleyicileri-access-modifiers/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers)
+link: <a href="http://orhanbalci.net/tr/?p=92">http://orhanbalci.net/tr/?p=92</a>
+author: Orhan Balci
+description:
+post_id: 92
+created: 2009/04/12 18:52:05
+created_gmt: 2009/04/12 16:52:05
+comment_status: open
+post_name: java-dersleri-4-erisim-denetleyicileri-access-modifiers
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-4-erişim-denetleyicileri-access-modifiers">Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers)</h1>
+
+<p>[caption id=&ldquo;attachment_794&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 4&rdquo;]<img src="/wp-content/uploads/java_banner_4.png" alt="Java Dersleri 4" />[/caption] Bu dersimizde Java&rsquo;nın metodlar ve sınıflar üzerinde erişim kurallarını düzenleyen anahtar kelimelerini ve nasıl kullanıldıklarını örnekleriyle öğreneceğiz. Java&rsquo;da dört adet erişim düzeyi bulunmakla birlikte üç adet erişim denetleyici anahtar kelime vardır. Dördüncü erişim düzeyi ise bu kelimelerin bulunmadiği seviyedir. Erişim kontrolü yazılımda her birimin kendi işine odaklanmasına yardımcı olur. Temelde nesne yönelimli programanın ana unsrlarındandır. Veri kapsülleme, miras ve çok biçimlilik paradigmalarının hayata geçirilmesine olanak tanırlar. Java&rsquo;da erişim denetleyici anahtar kelimeler şunlardır: **1)Public 2)Protected 3)Private ** Bu anahtar kelimelerle işaretlenmemiş her türlü Java yapısı default erişim seviyesine sahip olur ki bu da dördüncü erişim seviyesidir. Sırasıyla bu seviyeleri ve aralarındaki erişim ilişkilerini açıklamaya çalışalım. <strong>1)Public Erişim Seviyesi</strong> Bu anahtar kelime önüne geldiği sınıfı,değişkeni, methodu diğer bütün kod bloklarından erişilebilir olarak işaretler. Sınıf seviyesinde kullanılabildiği gibi sınıf elemanları seviyesinde de kullanılabilir. Örneğin : [java] public class FrmVet extends JPanel implements IDataChangeListener, ListSelectionListener { } [/java] FrmVet sınıfı tanımında kullanılan public anahtar kelimesi bu sınıfın proje kapsamında diğer tüm sınıflar tarafından kullanılabilieceğini belirtir. Bu örnekte ise : [java] public abstract class QueryManagerBase { public ResultSet runSelectQuery(String query) throws SQLException { Statement s = (Statement) connection.getConnection().createStatement(); return (ResultSet) s.executeQuery(query); } } [/java] public anahtar kelimesi runSelectQuery(String query) metodunu diğer sınıflar tarafından kısıtlama olmadan erişilebilir olarak işaretlemiştir. <strong>2)Protected Erişim Seviyesi</strong> Bu erişim seviyesi sınıflara uygulanamamakla birlikte metodlara ve sınıf değişkenlerine uygulanır. Önünen geldiği elemana &ldquo;alt sınıflardan&rdquo; ve &ldquo;aynı pakette bulunan sınıflardan&rdquo; ulaşılmasına izin verir. Örneğin : [java] public abstract class QueryManagerBase { protected IDatabaseConnection connection; protected ArrayList<idatachangelistener> dataChangeListeners; } [/java] bu sınıftaki connection ve dataChangeListeners değişkenlerine ancak QueryManagerBase sınıfının alt sınıflarından yada bu sınıfla aynı pakette yer alan sınıflardan erişilebilir. Yukarıdaki sınıfın alt sınıfı olan bu örnekte kullanımı görelim : [java] public class QueryManager extends QueryManagerBase { public boolean addClient(EntityClient client) throws SQLException { java.sql.PreparedStatement ps = connection.getConnection() .prepareStatement(_insertClientQuery); ps.setString(1, client.getAd()); ps.setString(2, client.getSoyad()); ps.setString(3, client.getAdres()); ps.setString(4, client.getTelefonEv()); ps.setString(5, client.getTelefonCep()); ps.setString(6, client.getAciklama()); int result = ps.executeUpdate(); notifyDataChangeListeners(DataChangeKey.CLIENT); return result == 1; } } [/java] Bu örnekte QueryManager sınıfı QueryManagerBase sınıfının alt sınıfıdır. QueryManagerBase sınıfında protected olarak işaretlenen connection değişkeni [java] java.sql.PreparedStatement ps = connection.getConnection() .prepareStatement(_insertClientQuery); [/java] satırında kullanılmıştır. <strong>3)Private Erişim Seviyesi</strong> Protected erişim seviyesine benzer olarak sadece sınıf elemanlarına yani sınıf değişkenlerine ve metodlarına uygulanabilir, sınıf seviyesinde uygulanamaz. İşaretlediği elemanı sadece sınıf içerisinden erişilebilir kılar. Yani ne aynı paketteki diğer sınıflar ne de alt sınıftan bu elemanlara erişilemez. Örnek : [java] public class MYSQLDatabaseConnection implements IDatabaseConnection { private Connection mysqlConnection; } [/java] Buradaki MYSQLDatabaseConnection sınıfına ait olan mysqlConnection değişkeni private olarak işaretlenmiş yani sadece sınıf elemanları tarafından kullanılabilir, MYSQLDatabaseConnection sınıfı haricinde kullanılamaz. <strong>4) Default Erişim Seviyesi</strong> Java&rsquo;da sınıf seviyesinde veya sınıf üyeleri seviyesinde herhangi bir erişim belirleyici anahtar kelimenin kullanılmadığı durumdur. Bu tip sınıflara ve elemanlara kullanıldıkları sınıf içerisinden ve aynı paketteki diğer sınıflardan erişilebilir. Anlattıklarımızı aşağıdaki tabloda özetleyebiliriz:</p>
+
+<p>Erişimci
+Sınıf
+Paket
+Alt Sınıf
+Diğer</p>
+
+<p>Public
+Erişim Var
+Erişim Var
+Erişim Var
+Erişim Var</p>
+
+<p>Protected
+Erişim Var
+Erişim Var
+Erişim Var
+Erişim Yok</p>
+
+<p>Default
+Erişim Var
+Erişim Var
+Erişim Yok
+Erişim Yok</p>
+
+<p>Private
+Erişim Var
+Erişim Yok
+Erişim Yok
+Erişim Yok
+Kaynaklar:</p>
+
+<ul>
+<li><a href="http://java.sun.com/docs/books/tutorial/java/javaOO/accesscontrol.html">Sun Java Sitesi</a></li>
+</ul>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#4788" title="2011-03-22 16:27:02">iicocuk</a>:</strong> Hocam iyi güzel de bu alt sınıf üst sınıf olayına girmişsin biz sınıfı anlamadan. alt sınıf ne üst sınıf ne ayrımcılık mı var :) böyle public private in mantığı nedir yani? başka sınıflarda yazacağımız kodlarda aynı isimde sınıflar falan varsa karışmasın diye mi? işte java bu yüzden kasıyor herkesi ya çok not tutman lazım ya da çok kafa tüketmen lazım yanılıyor muyum?</p>
+
+<p><strong><a href="#5375" title="2012-03-27 00:35:15">Hooop</a>:</strong> Hocam çok teşekkürler.Başka yerde vidyolar var.Bir konuyu 2-3 saatte anlatıyor.Burdada bayağı kısaymış :)Ortası tutturursanız daha mı iyi olur acaba? Nasıl yapsak ki onu? Yazmasam mı ki artık? Bu Leyla ile Mecnun&rsquo;u izleyince insanın konuşması mı değişiyor ki? Nasıl oluyor acaba? Nasıııııl?</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-5-kalitim/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-3-kontrol-yapilari/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

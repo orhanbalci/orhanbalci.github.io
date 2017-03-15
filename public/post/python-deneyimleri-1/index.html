@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/python-deneyimleri-1/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Python Deneyimleri 1
+link: <a href="http://orhanbalci.net/tr/?p=593">http://orhanbalci.net/tr/?p=593</a>
+author: Orhan Balci
+description:
+post_id: 593
+created: 2010/02/02 14:25:54
+created_gmt: 2010/02/02 11:25:54
+comment_status: open
+post_name: python-deneyimleri-1
+status: publish
+post_type: post</p>
+
+<h1 id="python-deneyimleri-1">Python Deneyimleri 1</h1>
+
+<p>[caption id=&ldquo;attachment_605&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;470&rdquo; caption=&ldquo;Python Logo&rdquo;]<img src="/wp-content/uploads/python_logo.png" alt="Python Logo" />[/caption]</p>
+
+<ol>
+<li><a href="http://www.istihza.com">http://www.istihza.com</a> buradaki python2.x derslerini takip ediyorum</li>
+<li>from &hellip; import &hellip; ifadeleri sayfanın başına yazılmalıymış</li>
+<li>from&rsquo;dan sonra gelen şeyin paket importtan sonra gelen şeyin sınıf tarzı bir şey olduğunu zannediyorum</li>
+<li>Türkçe karakterleri kullanabilmek için #<em>*</em> coding: utf-8 <em>*</em> yazıyoruz. Yine sayfamızın en başına ekliyoruz bunu</li>
+<li>print fonksiyonuna birden fazla argüman verirken , kullanıyoruz</li>
+<li>Kullanıcıdan girdi input() ve raw_input() fonksiyonları ile alınıyor. input() nümerik değer dönerken, raw_input() string değer dönüyor</li>
+<li>pre/post increment/decrement (++/&ndash;) operatörleri mevcut değil. [python] a = 1 while a &lt; 10: print &ldquo;Daha Bitmedi&rdquo; ++a; [/python] ifadesi sonsuz döngüye sebep oluyor. Syntax hatası vermedi ilginç!</li>
+<li>döngülerde range() fonksiyonu kullanılıyor. Bu fonksiyon Matlab&rsquo;dan tanıdık geldi bana.</li>
+<li>Java ve C++ dan bildiğim liste veri yapısı Python&rsquo;da built in type olarak karşıma çıktı. Kullanımı çok kolay. append(), insert() gibi fonksiyonlarla düzenleme yapmak pratik.</li>
+<li>Liste içinde farklı veri tipleri barınabiliyor.</li>
+<li>Listeler + operatörü ile birleştirlebiliyor fakat - operatörü tanımlı değil</li>
+<li>pop() listenin son elemanını atıyor</li>
+<li>Listeler tersten indekslenebiliyor liste[-1] son elemanı gösteriyor. Büyük kolaylık</li>
+<li>Matlab&rsquo;da bulunan aralık indeksleme yöntemi mevcut. Liste[1:3] 1. eleman dahil 3. eleman dahil olmamak kaydıyla aralıktaki elemanları belirtiyor</li>
+<li>Değiştirilemeten bir liste yapısı (tuple) var. Bunun tam olarak ne işe yaradığından emin değilim.</li>
+<li>HashTable benzeri sözlük veri yapısı da built in type olarak mevcut. Farklı bir özellik olarak tüm anahtarlar aynı tipte olmak zorunda değil. Scripting diye buna diyorlar herhalde</li>
+</ol>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#2183" title="2010-02-04 18:33:40">istihza</a>:</strong> Evet, C ve C++&lsquo;dan gelenler Python&rsquo;da &ldquo;pre/post increment/decrement operator&rdquo; gibi bir kavram olmamasına şaşırıyor. Python&rsquo;da bu işlece en yakın şey &ldquo;+=&rdquo; veya &ldquo;-=&rdquo; gibi birleşik işleçler olur. Gerçi bunun C/C++ programcılarını pek tatmin edeceğini sanmıyorum&hellip; :) Bu arada, istihza.com&rsquo;un işinize yaramasına sevindim. Size iyi çalışmalar dilerim.</p>
+
+<p><strong><a href="#2181" title="2010-02-04 16:34:15">istihza</a>:</strong> Aslında o while döngüsünün sözdizimi hatası vermemesi normal. Çünkü Python ++a ifadesini ++1 olarak algılıyor. Yani pozitif bir sayı olarak&hellip; O yüzden herhangi bir hata mesajı göstermiyor. Eğer print -a yazarsanız -1 çıktısı alırsınız. Eğer print &ndash;1 yazarsanız, iki negatif sayı bir pozitif sayı ürettiği için +1 olur. Siz o while döngüsünde ++a (yani ++1) sayısını print yardımıyla ekrana basmadığınız için çıktıda görünmüyor. Eğer bu ifadeyi print ile yazarsanız &ldquo;Daha bitmedi&rdquo; ve 1 çıktılarını birlikte alırsınız.</p>
+
+<p><strong><a href="#2182" title="2010-02-04 17:24:20">admin</a>:</strong> Değerli ve öğretici yorumunuz için teşekkür ederim. Python&rsquo;la ilgilenmeye yeni başladım. Aslında odaklandığım nokta syntax hatası değildi de klasik manada pre/post increment/decrement operatörlerinin olmamasıydı. C++ ve Java tecrübem olduğu için onlarla çok sık yaptığım şeyleri burada denemek istedim. Bu örnek de C++&lsquo;dan Python&rsquo;a geçiş yapmak isteyen birisinin hataya düşmesi muhtemel bir örnek. Tıpkı benim düştüğüm gibi :). Bu arada sitenizdeki anlatım çok düzenli ve öğretici. Böyle bir kaynağı Türkçe olarak nette yayınladığınız için teşekkür ederim.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/python-deneyimleri-2/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/proje-bulbul/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

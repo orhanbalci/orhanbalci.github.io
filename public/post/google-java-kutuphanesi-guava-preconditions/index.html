@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-preconditions/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Google Java Kütüphanesi : Guava Preconditions
+link: <a href="http://orhanbalci.net/tr/?p=1230">http://orhanbalci.net/tr/?p=1230</a>
+author: Orhan Balci
+description:
+post_id: 1230
+created: 2013/03/19 14:38:37
+created_gmt: 2013/03/19 11:38:37
+comment_status: open
+post_name: google-java-kutuphanesi-guava-preconditions
+status: publish
+post_type: post</p>
+
+<h1 id="google-java-kütüphanesi-guava-preconditions">Google Java Kütüphanesi : Guava Preconditions</h1>
+
+<p>İyi kod yazmanın önemli bir unsuruda defansif kod yazmaktır. Yani olabilecek hataları önceden sezip önlem almaktır. Defansif programlamanın önemli unsurlarından biriside kullanıcı tarafından verilen girdilerin, method parametrelerinin istenilen şartları sağlayıp sağlamadığının kontrolüdür. Bu ihtiyaca yönelik olarak çeşitli validasyon kütüphaneleri geliştirilmiş olmakla birlikte burada Guava&rsquo;nın çözümünü anlatacağım. Guava&rsquo;da parametre, değişken vs. validasyonu için Preconditions sınıfı geliştirilmiştir. Validasyonlar statik methodlar aracılığıyla yapılır. Bu methodların statik import edilmesiyle kod kalabalığından ciddi oranda kurtulabilirsiniz. Örneğin aşağıda Guava varken ve yokken parametre validasyonu yapan kodları inceleyelim : [java] package net.orhanbalci.guavasamples; import static com.google.common.base.Preconditions.*; public class GuavaPreconditions { public static void main(String[] args) { parameterCheckingWithoutGuava(null); parameterCheckingWithGuava(null); parameterCheckingWithoutGuava(5); parameterCheckingWithGuava(4); } public static void parameterCheckingWithGuava(Integer a) { checkNotNull(a,&ldquo;a null olamaz&rdquo;); checkArgument(a &gt; 5, &ldquo;a 5 ten küçük olamaz&rdquo;); } public static void parameterCheckingWithoutGuava(Integer a) { if (a == null) { throw new NullPointerException(&ldquo;a null olamaz&rdquo;); } if ( a &lt; 5) { throw new IllegalArgumentException(&ldquo;a 5 ten küçük olamaz&rdquo;); } } } [/java] Örnekte <strong>parameterCheckingWithGuava()</strong> methodu **Preconditions **sınıfından static olarak import edilen **checkNotNull **ve **checkArgument **methodlarını kullanıyor. Guava kullanımı yazılımdaki kod kalabalığını önlemiş oluyor. Örnekde bahsedilenlerin dışında array indeks kontrolüne yönelik de hazır methodlar bulunmakta. Aslında Java çekirdek kütüphanesinde bu işe yarayan **assert() **methodları bulunmakta. Fakat bu methodun işlevi compiler parametreleriyle düzenlenmiş durumda. Guava&rsquo;yı yazılımın dış dünyayla haberleştiği arayüzlerde kullanıcı tarafından girilen verilerin doğrulamasında kullanıp, yazılımın kendi iç dünyasında assert() methodlarını tercih edebiliriz.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-functions-predicates/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

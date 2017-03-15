@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-23-final-anahtar-kelimesi/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 23 - Final Anahtar Kelimesi
+link: <a href="http://orhanbalci.net/tr/?p=1187">http://orhanbalci.net/tr/?p=1187</a>
+author: admin
+description:
+post_id: 1187
+created: 2013/03/12 14:23:22
+created_gmt: 2013/03/12 11:23:22
+comment_status: open
+post_name: java-dersleri-23-final-anahtar-kelimesi
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-23-final-anahtar-kelimesi">Java Dersleri 23 - Final Anahtar Kelimesi</h1>
+
+<p>Merhabalar bu kısa derste javada final anahtar kelimesinin kullanım alanlarını açıklamaya çalışacağım. Java&rsquo;da final anahtar kelimesi farklı üyelere uygulandığında farklı anlamlara gelmektedir. Genellikle c++ const anahtar kelimesiyle aynı olduğu düşünülsede aksine çok büyük farkları vardır. Final anahtar kelimesinin kullanıldığı yerlerden birincisi sınıf tanımlamalarıdır (class decleration). Final olarak nitelenen bir sınıftan türetme yoluyla yeni alt (çocuk) sınıflar üretilemez. Genellikle framework sınıflarında hatta java kütüphanelerinde karşımıza çıkan bu kullanımı şu şekilde örnekleyebiliriz. [java] package net.orhanbalci.finalkeyword; public final class FinalClass { protected int myMemberVariable; public FinalClass() { } } [/java]  yukarıdaki sınıftan bir alt (çocuk) sınıf türetmeye çalışalım [java] package net.orhanbalci.finalkeyword; public class ChildClass extends FinalClass { } [/java] bu sınıfı derlemeye çalıştığımızda compiler tarafından verilen hata mesajı şu şekildedir: <code>java: cannot inherit from final net.orhanbalci.finalkeyword.FinalClass</code> Buradan yola çıkarak final kelimesinin method tanımlamalarında kullanıldığında ne işe yaradığını tahmin etmek güç değil aslında. Final anahtar kelimesi method tanımlamalarında kullanıldığında methodun alt (çocuk) sınıflarda override edilmesini engeller. Şu şekilde final bir methodumuz olsun : [java] package net.orhanbalci.finalkeyword; /** * User: ob005273 * Date: 12.03.2013 * Time: 13:17 * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class FinalMethod { private int a = 5; public final int getA() { return a; } } [/java] Alt sınıfta getA() metodumuzu override etmeye çalışalım. [java] package net.orhanbalci.finalkeyword; /** * User: ob005273 * Date: 12.03.2013 * Time: 13:18 * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class OverrideFinalMethod extends FinalMethod { public OverrideFinalMethod() { } public int getA() { return 1300; } } [/java] Compilerin verdiği hata mesajı şu şekilde olacaktır. <code>java: getA() in net.orhanbalci.finalkeyword.OverrideFinalMethod cannot override getA() in net.orhanbalci.finalkeyword.FinalMethod overridden method is final</code> Son olarak final değişkenlere değinelim. Final olarak tanımlanan sınıf üye değişkenlerine ya tanımlandıkları anda değer atanmalıdır yada constructor içinde değer atanmalıdır. Final snıf üye değişkenlerine sadece bir defa değer ataması yapılabilir. Final üye değişkenine değer atanmadığı durumda compile time hatası oluşacaktır. Örneğin : [java] package net.orhanbalci.finalkeyword; public class FinalMemberVariable { private final int a; private final int b = 5; private final int c; public FinalMemberVariable(int a) { this.a = a; } } [/java] Bu sınıf tanımında final a değişkenine constructor içinde ilk değeri verilmiş, b değişkenine ise tanımlama esnasında ilk değer verilmiştir. Bu değişkenler java kurallarına uygun olarak tanımlanmıştır. Fakat c değişkeninine değer ataması yapılmadığı için compile time hatası oluşacaktır. Compiler hata mesajı şu şekildedir : <code>java: variable c might not have been initialized</code> Sınıf üye değişkenlerinden sonra method kapsamında tanımlanan final değişkenlere değinerek dersi sonlandıralım. Method kapsamında tanımlanan final değişkenlere tanımlandıkları anda yada method içerisinde kullanımından önce herhangi bir noktada değer ataması yapılmalıdır. Yine yukarıdaki kullanımlarla ortak olduğu şekilde final değişkene birden fazla atama yapmaya çalışmak hata olacaktır. [java] public void FinalMethodScope() { final int d; d = 3; System.out.println(d); d = 5; System.out.println(d); } [/java] Bu örnekte ilk üç satırda problem olmamakla birlikte final edğişkene 2. defa atama yapmak istediğimizde aşağıdaki compiler hatasını alacağız <code>java: variable d might already have been assigned</code> [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-3-kontrol-yapilari/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-22-%E2%80%93-reflection-ve-annotation-kullanimi/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

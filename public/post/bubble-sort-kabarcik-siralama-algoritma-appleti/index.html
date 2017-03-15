@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/bubble-sort-kabarcik-siralama-algoritma-appleti/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti
+link: <a href="http://orhanbalci.net/tr/?p=11">http://orhanbalci.net/tr/?p=11</a>
+author: Orhan Balci
+description:
+post_id: 11
+created: 2007/06/20 23:57:48
+created_gmt: 2007/06/20 21:57:48
+comment_status: open
+post_name: bubble-sort-kabarcik-siralama-algoritma-appleti
+status: publish
+post_type: post</p>
+
+<h1 id="kabarcık-sıralama-bubble-sort-algoritma-appleti">Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti</h1>
+
+<p><strong>Algoritma Adı:</strong> Kabarcık Sıralama Algoritması (Bubble Sort) <strong>Algoritma Türü:</strong> Sıralama Algoritması <strong>Açıklama:</strong> Sıralanacak eleman kümesinden ilk eleman alınır. Eğer kendinden sonrakinden büyükse yerleri değiştirilir. Sonraki elemana geçilir ve aynı işlem tekrarlanır. Dizinin sonuna varıldığında en büyük eleman sonda yer alır. Dizinin başına dönerek bu işlem sondan birinci elemana kadar tekrarlanır. Her adımda bir eleman daha azaltılarak devam eden iterasyon bütün elemanların yerini bulmasıyla sonlanır. Algoritmanın javada implement edilmiş hali : [java] for (int i = 1; i &lt; sortArray.length; i++) { for (int j = 0; j &lt; sortArray.length - i; j++) { if(sortArray[j] &gt; sortArray[j+1]) { temp = sortArray[j+1]; sortArray[j+1] = sortArray[j]; sortArray[j] = temp; } } } [/java] Algoritmanin JavaScript implementasyonu : [javascript] /** * Created by Orhan Balci on 10.04.2015. */ var bubleSort = function(arrayToBeSorted){ for(var i = 1; i &lt; arrayToBeSorted.length; i++){ for (var j = 0; j &lt; arrayToBeSorted.length-1; j++) { if(arrayToBeSorted[j+1] &lt; arrayToBeSorted[j]){ var tempSwap = arrayToBeSorted[j]; arrayToBeSorted[j] = arrayToBeSorted[j+1]; arrayToBeSorted[j+1] = tempSwap; } } } } var printNumbers = function(arrayTobePrinted){ var logMessage = &ldquo;&rdquo;; for (var i = 0; i &lt; arrayTobePrinted.length; i++) { logMessage += arrayTobePrinted[i] + &ldquo; &ldquo;; } console.log(logMessage); } var testSorting = function() { var numberArray = []; numberArray.length = 100; for (var i = 0; i &lt; numberArray.length; i++) { numberArray[i] = Math.round(Math.random() * 100); } printNumbers(numberArray); bubleSort(numberArray); printNumbers(numberArray); } testSorting(); [/javascript]</p>
+
+<p>[ad#Yazi Ici]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#29" title="2007-06-29 20:26:13">Osman N. Yogurtcu</a>:</strong> Orhan, bu applet çalışmıyor. Sebep? :)</p>
+
+<p><strong><a href="#30" title="2007-06-30 13:54:56">Orhan</a>:</strong> Niye çalışmasın güzel kardeşim :). Browserinda Java plugini varsa çalışır. Belki birde JRE&rsquo;ni update etmen gerekebilir</p>
+
+<p><strong><a href="#242" title="2008-02-29 13:50:34">hazan_06</a>:</strong> Sıralama uygulaman güzel olmuş. Benim de bir projem var ama nasıl yapacağımı bilmiyorum sıralama algoritmasından.Ben 10 tane resmi büyükten küçüğe doğru sıralayacağım sıralama algoritmasıyla. Bana yardımcı olursanız nasıl yapacağım konusunda teşekkür ederim. Mailinizi bekleyeceğim.</p>
+
+<p><strong><a href="#1434" title="2009-05-24 13:09:13">mdesigner</a>:</strong> paylşım için teş.ler benim final ödevim bu dersten mesela 5,7,28,64,2,3,67 bu sayıları bu yöntemle yazmam lazımmış yardımcı olursan sevinirim</p>
+
+<p><strong><a href="#1446" title="2009-06-02 10:12:52">mavzeroglu</a>:</strong> benim bir final ödevim var yardimci olabilirseniz sevinirim c++ da bubble sort yöntemiyle sayilarin siralanmasi icin bir program yazmamiz gerekiyo ama ben bilmiyorum bu konuda bana yardimci olabilirseniz sevinirim programda su özellikler isteniyo programın basinda kisiden kac sayi girilecegi istenecek ve teker teker sayilar istenecek ardindan büyükten küçüge mi yoksa kücükten büyügemi siralanacagi sorulacak siralama bittikten sonra ise cikmak istiyorsan h ye devam etmek istiyorsan e ye bas diye soracak ve e ye basinca program tekrar basa alip bizden aynı seyleri tekrar yapmamizi isteecek yani program tek seferlik olmayacak bo konuda yardim edebilirseniz cok sevinirim cünkü bu benim final ödevim yardiminiz icin simdiden tesekkür ederim</p>
+
+<p><strong><a href="#1443" title="2009-06-01 12:40:22">mahmut</a>:</strong> arkadaşlar bu sitenin neresinde yazılmış halini bulabilirim ?</p>
+
+<p><strong><a href="#5448" title="2012-05-08 13:45:19">admin</a>:</strong> Ödevlere yardımcı olmuyorum :). Sadece takıldığın yer varsa orayı cevaplayabilirim</p>
+
+<p><strong><a href="#5449" title="2012-05-08 14:53:38">isimsiz kahraman</a>:</strong> Kırnap mısın?Aksöz mü?(Ahmet) :smile:</p>
+
+<p><strong><a href="#5444" title="2012-05-06 00:36:50">ahmet</a>:</strong> Yüksekliği h ve 1’den 2h+1-1 , e kadar anahtarı olan mükemmel bir şekilde dengelenmiş ikili ağacı üretmek için bir fonksiyon yazınız. hocam ödev var yardımcı olur musunuz?</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/breadth-first-search-yuzey-ocelikli-arama/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

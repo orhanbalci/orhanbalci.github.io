@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/insertion-sort-algoritmasi-appleti/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Eklemeli Sıralama (Insertion Sort) Algoritma Appleti
+link: <a href="http://orhanbalci.net/tr/?p=22">http://orhanbalci.net/tr/?p=22</a>
+author: Orhan Balci
+description:
+post_id: 22
+created: 2008/03/15 17:27:54
+created_gmt: 2008/03/15 15:27:54
+comment_status: open
+post_name: insertion-sort-algoritmasi-appleti
+status: publish
+post_type: post</p>
+
+<h1 id="eklemeli-sıralama-insertion-sort-algoritma-appleti">Eklemeli Sıralama (Insertion Sort) Algoritma Appleti</h1>
+
+<p><strong>Algoritma Adı:</strong> Eklemeli Sıralama Algoritması(Insertion Sort) <strong>Algoritma Türü:</strong> Sıralama Algoritması <strong>Açıklama:</strong> Bu sıralama algoritması düzensiz dizi elemanlarını tek tek ele alarak her birini dizinin sıralanmış kısmındaki uygun yerine yerleştirme esasına dayanır. Genellikle günlük hayatımızda farketmeden sıkça kullandığımız bir çözüm yöntemidir. 2. elemandan başlayarak elemanın kendinden önceki elemanlarla karşılaştırılması suretiyle büyük elemanlar dizide sağa doğru kaydırılır. Böylelikle açılan uygun pozisyona o anda sıralanmakta olan eleman yerleştirilir.  Örnek İterasyonlar: İlk hal : 9 5 4 8 1 1. İterasyon : Dizinin birinci elemanı 9 dizide kendinden bir sonraki elemandan büyük olduğu için 9 elemanı bir sağa kaydırılır 9&rsquo;dan boşalan yere 5 elemanı yerleştirilir. 1. İterasyon : 5 9 4 8 1 2. İterasyon : Dizinin 2. elemanı 9 dizide kendinden bir sonraki elemandan büyük olduğu için 9 elemanı bir sağa kaydırılır. 2. İterasyon : 5 4 9 8 1 3. İterasyon : Dizinin 1. elemanı 5 sıralanmak istenen 4&rsquo;ten büyük olduğu için 5 elemanı bir sağa kaydırılır. 5&rsquo;ten boşalan yere sıralanmak istenen 4 yerleştirilir. 3. İterasyon : 4 5 9 8 1 4. İterasyon : 4 5 8 9 1 5. İterasyon : 4 5 8 9 1 6. İterasyon : 4 5 8 1 9 7. İterasyon : 4 5 1 8 9 8. İterasyon : 4 1 5 8 9 9. İterasyon : 1 4 5 8 9 10.İterasyon : 1 4 5 8 9</p>
+
+<p>Algoritmanin javascript implementasyonu : [javascript] function insertionSort(sortArray) { for (var i = 1; i &lt; sortArray.length; i++) { var k = i; while (k&gt;0 &amp;&amp; sortArray[k] &lt; sortArray[k - 1]) { var swapTemp = sortArray[k]; sortArray[k] = sortArray[k-1]; sortArray[k-1] = swapTemp; k&ndash;; } } console.log(sortArray); } [/javascript]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#5469" title="2012-05-17 17:20:13">admin</a>:</strong> Sayıların yerini hangi kurala göre değiştiriyorsunuz. Bunu söylerseniz algoritmayı söyleyebilirim.</p>
+
+<p><strong><a href="#5468" title="2012-05-17 16:05:02">esma</a>:</strong> Merhaba, sıralamayı; 9 5 4 8 1 5 9 4 8 1 5 4 9 8 1 5 4 8 9 1 5 4 8 1 9 4 5 8 1 9 4 5 1 8 9 4 1 5 8 9 1 4 5 8 9.. şeklinde yapılamaz mı_? bu sıralama yönteminin kodlarını bilmiyorum. yazdıgınız sıralama üzerinden yorum yapıyorum..yda yaptıgım srıalama belki başka bir sıralama yöntemidir. bilgilendirirseniz sevinirim.</p>
+
+<p><strong><a href="#5582" title="2012-06-10 16:59:49">Eren</a>:</strong> @Esma bubble sort yapmış</p>
+
+<p><strong><a href="#8948" title="2013-06-02 12:41:45">Can</a>:</strong> 2.elemandan başlayarak sol taraf ile karşılaştırılmalı yazmışsınız fakat hep sağ tarfı ile karşılaştırıyorsunuz. üstelik 1. elemandn başlamışsınz. bu algoritma uygulaması hatalı bence</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/isik-atlasi/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/ikili-arama-algoritmasi-binary-search/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

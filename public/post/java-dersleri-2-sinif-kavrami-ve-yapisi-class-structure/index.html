@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-2-sinif-kavrami-ve-yapisi-class-structure/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)
+link: <a href="http://orhanbalci.net/tr/?p=30">http://orhanbalci.net/tr/?p=30</a>
+author: Orhan Balci
+description:
+post_id: 30
+created: 2008/09/13 12:47:13
+created_gmt: 2008/09/13 10:47:13
+comment_status: open
+post_name: java-dersleri-2-sinif-kavrami-ve-yapisi-class-structure
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-2-sınıf-kavramı-ve-yapısı-class-structure">Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)</h1>
+
+<p>[caption id=&ldquo;attachment_790&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 2&rdquo;]<img src="/wp-content/uploads/java_banner_2.png" alt="Java Dersleri 2" />[/caption] JDK kurulumunu ve derleyici kullanımını öğrendikten sonra kod geliştirmeye başlayabiliriz. Kod geliştirmeye başlamanın ilk adimi olarak Java&rsquo;nın yapıtaşı olan sınıf (class) kavramını öğreneceğiz. Gerçek hayattaki kalıpların yazılım dünyasındaki karşılıkları sınıflardır. Sınıflar yazılım içerisinde tanımlamak istediğimiz nesneler için şablon görevi görürler. Nasıl ki gerçek hayatta her nesnenin belirli özellikleri vardır ve her nesne belirli aksiyonları gerçekleştirir, yazılım dünyasındaki nesnelerinde aynı şekilde özellikleri vardır ve belirli işlevleri yerine getirirler.  Genel olarak bir Java sinifinin yapısı şu şekildedir : <code>[Paket Deklerasyonu] (package) [Dış Kütüphane Referansları] (import) [Sınıf Yorum Bloğu] (/***/) [Sınıf İmzası] (class extends implements) { [Sınıf Değişkenleri](int double ... MyClass) [Metod Yorum Blokları] [Sınıf Metodları] }</code> Bu yapının koda dökülmüş haline göz atalım : [java] package net.orhanbalci.mp3tagreader; //Paket Deklerasyonu import java.io.DataInputStream; //Dış Kütüphane Referansları import java.io.FileInputStream; import java.io.FileNotFoundException; import java.io.IOException; import java.io.RandomAccessFile; import java.util.logging.Level; import java.util.logging.Logger; /** * Bu sınıf MP3 dosyaları içindeki ID3 bilgi etiketlerini //Sınıf Yorum Bloğu * okumaya yarar. * @author 04000041 */ public class Mp3TagReader { //Sinif İmzası public static long readMp3Tag() throws FileNotFoundException, IOException { //Sınıf Metodu DataInputStream dis = new DataInputStream(new FileInputStream(&ldquo;deneme.mp3&rdquo;)); long availableBytes = dis.available(); long tagLocation = availableBytes - 128; dis.skip(tagLocation); &hellip; dis.close(); return tagLocation; } public static void writeMp3Tag(long tagLocation) throws FileNotFoundException, IOException { RandomAccessFile raf = new RandomAccessFile(&ldquo;deneme.mp3&rdquo;, &ldquo;rw&rdquo;); String title = &ldquo;Hasanova&rdquo;; raf.seek(0); raf.seek(tagLocation + 3); raf.write(title.getBytes(), 0, title.getBytes().length); raf.close(); } public static void main(String[] args) { //Sınıf Metodu try { long loc = readMp3Tag(); writeMp3Tag(loc); } catch (FileNotFoundException ex) { Logger.getLogger(Mp3TagReader.class.getName()).log(Level.SEVERE, null, ex); } catch (IOException ex) { Logger.getLogger(Mp3TagReader.class.getName()).log(Level.SEVERE, null, ex); } } } [/java] Şimdi teker teker yukarıda bahsettiğimiz şeyleri anlamaya çalışalım. Paketler yazılımımızdaki sınıfların gruplanmış halidir. Yazılım mimarisini oluşturmada yardım sağlarlar. Genellikle birbiriyle ilintili olan ve hep birlikte yazılımın belirli bir gereksinimini karşılayan sınıflar aynı paket altına toplanır. Paket denilince akla karmaşık gibi gelsede dosya sisteminde birer klasörden ibarettirler. Yani yeni bir paket oluşturduğumuzda yazılım geliştirme ortamımız bizim için yeni bir klasör oluşturur be bu paket içindeki sınıflara ait .java dosyaları aynı klasör içinde tutulurlar. Örneğin : [java] package net.orhanbalci.mp3tagreader [/java] yukarıdaki paket deklarasyonunu içeren sınıfa ait .java dosyası <strong>net</strong> klasörünün içinde bulunan <strong>orhanbalci</strong> klasörünün içinde bulunan <strong>mp3tagreader</strong> klasörünün içindedir. Bu noktada paket isimlendirme genel geçer kuralına da değinmek gerekir. Gördüğünüz üzere paketime isim verirken net.orhanbalci ile başladım. Bu reklam yapmak amacıyla yapılan bir isimlendirme değildir :). Dünya çapında farklı yerlerde aynı isimle yazılan sınıfların birbirleriyle karıştırılmaması için alan adlarının tersine yapılmış paket adlandırma şablonu kullanılmaktadır. Şu anda gezinmekte olduğunuz alan adı da bana ait olduğu için paket isimlendirmeme bu şekilde başlıyorum. Paketler erişim seviyelerinin belirlenmesinde de rol oynarlar. İkinci harici kütüphanelere nasıl referans verildiğini öğrenelim. Herhangi bir kütüphanede bulunan sınıfı kullanabilmemiz için o sınıfı kullanacağımızı belirtmeliyiz. Aksi takdirde yazılım içinde her referans verişimizde tüm ismini kullanmamız gereklidir. Bu kuralı şöyle örnekleyelim : [java] RandomAccessFile dosya1 = new java.io.RandomAccessFile(&ldquo;rw&rdquo;,&ldquo;deneme.mp3&rdquo;); [/java] Bu örnekte yazılımımızda java.io paketinde bulunana RandomAccessFile adlı sınıfı kullanmak istiyoruz. Herhangi bir harici kütüphane referansı olmaksızın kullanım şekli yukarıdaki gibi tüm paket yolunun yazılması şeklinde olacaktır oysaki sınıfımızın başına : [java] import java.io.RandomAccessFile; [/java] harici kütüphane referansını koysaydık sınıf içerisinde [java] RandomAccessFile dosya1 = new RandomAccessFile(&ldquo;rw&rdquo;,&ldquo;deneme.mp3&rdquo;); [/java] şeklinde bir kullanıma gidebilirdik. Buradaki sıralamada dikkat etmemiz gereken birkaç husus var. Eğer sinifimiz herhangi bir paket içinde bulunacaksa Paket Deklerasyonunu sinifin en başında yapmamız zorunludur. Paket deklerasyonundan sonra ise dış kütüphane referansları gelir. Tabi eğer herhangi bir dış kütüphane kullanılmayacaksa bunlara gerek yoktur. Sınıf değişkenleri ile metodlarının yazımında herhangi bir sıralama söz konusu değildir. Yani önce metodları tanımlayıp sonra da değişkenleri tanımlayabilirsiniz. Üzerinde durmamız gereken diğer bir hususta sinif ismimizle dosya ismimizin aynı olması gerektiğidir. Yani QueryManagerBase sinifimizi QueryManagerBase.java dosyamızda bulundurmalıyız. Bu konuda bir kaç istisna var bunlara ileride değinilecektir</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#1433" title="2009-05-24 04:43:36">ercan</a>:</strong> biraz daha kod uzerinden anlatim daha iyi olurdu sanki biraz da kısa olmus tesekkurler.</p>
+
+<p><strong><a href="#1906" title="2009-12-04 00:57:18">Tayfun Yaşar</a>:</strong> yeni başlayanlar için hiç açıklayıcı değil misal ben :)</p>
+
+<p><strong><a href="#1908" title="2009-12-04 10:56:59">admin</a>:</strong> Bu makaleyi toparlayıp yeniden yazmam gerek. Eksik olduğunun farkındayım zira oylamada en düşük oy alan makale. Yorumunuz için teşekkürler.</p>
+
+<p><strong><a href="#2869" title="2010-06-24 14:24:01">osman</a>:</strong> hic aciklayici olmamis bence, onceden birseyler bilmeyen birisi cok zorlanir. ornekler uzerinden anlatilmasi da yarar saglar&hellip;</p>
+
+<p><strong><a href="#4398" title="2010-12-03 01:40:54">hakan</a>:</strong> Hocam ellerinize sağğlık ama benim gibi javayı en baştan öğrenmeye kalkanlar için sınıf kavramı baya baş döndürüyor ve bu kadar kısa sınıf kavramından bişe anladığımı söyleyemiyecem ama packet kavramını anladım:D :smile: :smile:</p>
+
+<p><strong><a href="#4790" title="2011-03-22 18:29:50">admin</a>:</strong> Siteyi maalesef çok sık güncelleyemiyorum. Örneklerin çalışmamasına gelince genellikle derslerde tamamen çalışan bir örnek vermek yerine sadece konuyu anlatan kod parçaları veriyorum ki okuyan insan alsın bunu çalışır hale getirmek için çaba sarfetsin ve bişeyler öğrensin. Çalışan kod verdiğimde durum bunun tam tersi oluyor. Son olarak bilgisayarım bozulduğu için siteyle ilgilenemiyorum. Bilgisayarım tamir olsun sizin için bu makaleyi elden geçireyim. Hatta video ders şeklinde bi ekleme yapabilirim.</p>
+
+<p><strong><a href="#4784" title="2011-03-21 16:00:44">erdo</a>:</strong> tmm ii guzelde yeni baslayanlar ıcın kafa karıstırıcı.oyle değilmi. yine de tesekkur ederım:))</p>
+
+<p><strong><a href="#4786" title="2011-03-22 15:50:42">iicocuk</a>:</strong> Hocam, teşekkürler eline sağlık ama arkadaşlar 2009 yılından beri &ldquo;açıklayıcı olmamış, bilmeyenler zorlanır&rdquo; şeklinde açıklamada bulunmuşlar. siz de 4 Aralık 2009&rsquo;da bu makaleyi toplayıp yeniden yazmam gerek demişsiniz ama aynı duruyor :) siteye yeni gelenler (benim gibi) hala anlamıyor. Kodlar da çalışmıyor zaten &ldquo;Could not find main class&rdquo; hatası veriyor. Hevesimiz kaçmasın yeniden el atar mısın bi zahmet. Tabi onca dehşet ötesi projeden (<a href="http://orhanbalci.net/tr/?page_id=209">http://orhanbalci.net/tr/?page_id=209</a>) vakit bulursan. iyi günler.</p>
+
+<p><strong><a href="#5864" title="2012-07-10 09:42:26">admin</a>:</strong> Kafanızın karışması normal. İnternette çok fazla bilgi kirliliği var. Bunu önlemek için tek bir kaynağı takip etmenizde fayda var. Elektronik programlama ile nesne odaklı programlamanın mantıkları tamamen farklıdır. Elektroniğe yönelik birşeyler öğrenmek istiyorsanız PIC programlama ve C dillerini öğrenebilirsiniz.</p>
+
+<p><strong><a href="#5855" title="2012-07-09 19:31:47">devkartal</a>:</strong> Ustad ,slm kısaca yazılım programla vs konuları hiç bilmiyorum desem yalan olmaz,Java programla konusu ilgimi çekti ve merakımdan bu java nedir derken yazılım programclık vs konular hakkında epey bir yazı okudum ufak tek bir şeyler anlamaya çalıştım diyebilirim java ile ilgili pek çok makalede okudum fakat ya bende bir sorun var yada farklı anlatımlar yuzunden epey kafam karıştı bu java ile aslında kişisel fikrim olacak, nesne geliştirme kısmı ilgimi çekmişti fakat web uygulamaları da yapıldıgını biraz ogrenmiştim yeni ve bu konu ya uzak birsi olduğuma gore nerden başlamak gerekir daha çok elektronik teknoloji geliştirme gibi konularına uygun bir programla hangisi java mıdır bu işin adresi yoksa başka dillermi sizden yardımcı olmanız istiyorum . Teşekkur ederim saygılarımla</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-20-%E2%80%93-generics/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-18-istisnai-durumlar-exceptions/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

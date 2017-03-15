@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-8-ic-gomulu-ve-isimsiz-siniflar-inner-nested-and-anonymous-classes/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes)
+link: <a href="http://orhanbalci.net/tr/?p=176">http://orhanbalci.net/tr/?p=176</a>
+author: Orhan Balci
+description:
+post_id: 176
+created: 2009/07/13 21:49:12
+created_gmt: 2009/07/13 18:49:12
+comment_status: open
+post_name: java-dersleri-8-ic-gomulu-ve-isimsiz-siniflar-inner-nested-and-anonymous-classes
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-8-iç-gömülü-ve-isimsiz-sınıflar-inner-nested-and-anonymous-classes">Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes)</h1>
+
+<p>[caption id=&ldquo;attachment_824&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 8 İç, Gömülü Sınıflar&rdquo;]<img src="/wp-content/uploads/java_banner_8.png" alt="Java Dersleri 8 İç, Gömülü Sınıflar" />[/caption] Bu dersimizde Java&rsquo;nın gömülü sınıf yapısını öğreneceğiz. Java programlama dili kullanıcıya bir sınıf içerisinde başka bir sınıf tanımlama olanağı sağlar. Bu tür sınıflara <strong>Gömülü Sınıf</strong> (Nested Class) adı verilir. Gömülü sınıflar statik ve statik olmayan gömülü sınıflar olmak üzere ikiye ayrılırlar. Statik olmayan gömülü sınıflara <strong>İç Sınıf</strong>(Inner Class) adı verilir. Gömülü sınıfların üç temel faydası vardır. Bunlar :</p>
+
+<ol>
+<li>Sınıfların Mantıksal Gruplanması : Ortak iş yapan sınıfların bir arada bulunmasını sağlayarak daha sağlıklı API&rsquo;ler oluşturmanızı sağlar</li>
+<li>Daha İyi Kapsülleme : Sınıf değişkenlerinin private kalmasını sağlayarak daha iyi kapsülleme sağlar</li>
+<li>Kod Okunabilirliği : Üst seviye sınıflar altında iş gören gömülü sınıflar kod okunabilirliğini arttırır.
+Gömülü sınıf hiyerarşisi aynı zamanda arayüzler için de geçerlidir. Yani arayüzlerde birbirleri içerisinde tanımlanabilirler. Java JDK içerisinde gömülü sınıf kullanımına örnek olabilecek çok sayıda sınıf ve arayüz vardır. Bunlardan bir tanesini inceleyelim : [java] //üst seviye arayüz tanımı public interface Map<K ,V> { int size(); boolean isEmpty(); boolean containsKey(Object key); boolean containsValue(Object value); V get(Object key); V put(K key, V value); V remove(Object key); void putAll(Map&lt;? extends K, ? extends V&gt;m); void clear(); Set<K> keySet(); Collection<V> values(); //gömülü arayüze referans var Set<Map.Entry<K, V>&gt;; entrySet(); //gömülü arayüz tanımı interface Entry<K ,V> { K getKey(); V getValue(); V setValue(V value); boolean equals(Object o); int hashCode(); } boolean equals(Object o); int hashCode(); } [/java] Örnekte görüldüğü üzere Map arayüzünün altında Entry gömülü arayüzü tanımlanmış ve [java] //gömülü arayüze referans var Set<Map.Entry<K, V>&gt;entrySet(); [/java] metod imzasında gömülü arayüz kullanılmıştır. Bu kullanımdan yola çıkarak gömülü arayüz/sınıf tanımlarına nasıl ulaşabiliriz onu görelim. Burada yine statik gömülü sınıflar ve iç sınıflar arasında ayrım yapmalıyız. Statik gömülü sınıftan bir nesne oluşturmak istiyorsak : [java] ÜstSeviyeSınıf.StatikGömülüSınıf s = new ÜstSeviyeSınıf.StatikGömülüSınıf(); [/java] Statik gömülü sınıftan bir nesne oluşturmak için üst seviye sınıftan nesne oluşturmamıza gerek yoktur. Oysa ki iç sınıflar üst seviye sınıf olmadan oluşturulamazlar. Yani statik olmayan iç sınıfların varlığı üst seviye sınıfa bağlıdır. Herhangi bir iç sınıfdan nesne oluşturmak için ise : [java] ÜstSeviyeSınıf s = new ÜstSeviyeSınıf(); ÜstSeviyeSınıf.İçSınıf i = s.new İçSınıf(); [/java] Burada en çok dikkat etmemiz gereken kullanım <strong>s.new</strong> kullanımıdır. Sınıf tanımı veya herhangi bir metod tanımı içinde isim vermeden yeni bir sınıf tanımı yapılabilir. Bu şekilde tanımlanan sınıflara isimsiz (anonymous) sınıflar denir.  İsimsiz sınıflar sadece tanımlandıkları yerde kullanılırlar.  En klasik kullanım alanları &hellip;Listener (ActionListener,MouseMotionListener vs) gerçeklemeleridir. Örneğin NetBeans tarafından düğme kontrolü için üretilen kodları inceleyelim : [java] jButton1.addActionListener(new java.awt.event.ActionListener() { public void actionPerformed(java.awt.event.ActionEvent evt) { jButton1ActionPerformed(evt); } }); [/java] Burada <strong>addActionLisener</strong> metodu parametre olarak <strong>ActionListener</strong> arayüzünü gerçekleyen bir nesne alır.  Bu nesne isimsiz olarak tanımlanıp **ActionListener&rsquo;da **gerçeklenmesi gereken **actionPerformed **metodunu içerir. Görüldüğü gibi sadece sınıf tanımı yapılıp sınıfa herhangi bir isim verilmemiştir.  İsimsiz sınıf tanımlama sentaksı [java] new Sınıfİsmi/Arayüzİsmi () {} [/java] şeklindedir. Eğer **Sınıfİsmi **verilmişse isimsiz sınıf bu sınıftan türer. Eğer **Arayüzİsmi **verilmişse isimsiz sınıf bu arayüzü gerçekler. İsimsiz sınıf sentaksını kullanarak koleksiyonlarımızı kısayoldan ilk elemanlarını ekleyebiliriz. Çifte parantez (Double Bracing) yöntemine bir örnek verelim : [java] List<Integer> numberList = new ArrayList<Integer>(){{ add(1);add(2);add(3);add(4);add(5);add(6); }}; [/java] [ad#Yazi Ici Buyuk]</li>
+</ol>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#1591" title="2009-07-14 10:51:54">mustafa ulu</a>:</strong> Yazıyı örnek kodlarla desteklesen daha güzel olurdu.</p>
+
+<p><strong><a href="#1592" title="2009-07-14 11:41:33">admin</a>:</strong> Mustafa Bey yorumunuz için teşekkür ederim. Not yazmayı unutmuşum ama şu anda zaten dersi tamamlamadım. Örneklerle birlikte devamını bu akşam yazmayı planlıyorum.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-9-dosya-okumayazma-islemleri/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-7-cok-bicimlilik-polymorphism/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

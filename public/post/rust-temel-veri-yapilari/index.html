@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/rust-temel-veri-yapilari/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Rust Temel Veri Yapıları Struct ve Enum
+link: <a href="http://orhanbalci.net/tr/?p=1427">http://orhanbalci.net/tr/?p=1427</a>
+author: Orhan Balci
+description:
+post_id: 1427
+created: 2015/09/04 00:45:23
+created_gmt: 2015/09/03 21:45:23
+comment_status: open
+post_name: rust-temel-veri-yapilari
+status: publish
+post_type: post</p>
+
+<h1 id="rust-temel-veri-yapıları-struct-ve-enum">Rust Temel Veri Yapıları Struct ve Enum</h1>
+
+<p>Rust ile nesne yonelimli ve fonksiyonel programlama yapabilmek mumkun. Bu yazida biraz nesne yonelimli programlamaya yonelik temel veri yaplarindan ornekler verecegim. En temel veri yapilari enum ve struct. Enum ve struct yapilarini c/c++ daki gibi kullanmak da mumkunken rustta ek birkac ozellik de bulunuyor. Temel bir simulasyon catisi olusturarak bu yapilari ogrenelim. Enumlarla baslayalim. Simulasyon catisinda kullanacagimiz eksen ve carpisma kontrolunda kullanilacak geometri cesitlerini enum olarak tanimlayalim :  Ornekte tamamen c/c++ tarzinda bir enum tanimi goruyorsunuz. Aslinda rustta enumlar union tipine daha yakindir. Dokumanda enumlar birkac farkli variant tipinde olabilien verileri tanimlayan tipler olarak anlatiliyor. Ve bu variantlar farkli veri tipinde deger tutabiliyorlar. Java&rsquo;da da enum tipleri ekstra veri tasiyabilirler fakat enuma ait tum elemanlar ayni tipte veri tutarlar, homojen bir yapisi vardir. Bahsettigimiz enum kullanimina bir ornek verelim :  Rustta enum ve structlarin yaptiklari isler birbirine cok benzemektedir. Dolayisiyla ikisinin ayni anda varolmasiyla ilgili ciddi tartismalar var. Structlar syntactic sugar olarak nitelendirilmektdir. Structlarin varolus sebebi birbiriyle ilintili verilerin isimlendirilerek bir arada tutulmasi olarak gorunuyor. Basit simulasyon catimizda kullanacagimiz structlari asagidaki gibi tanimlayalim :  Verilerimizi saklayacak yapilari yazdigimiza gore verileri isleyecek aksiyonlari tanimlamaya sira geldi. Rust da fonksiyonlar standalone (fonksiyon) olarak tanimlanip kullanilabildikleri gibi herhangi bir struct uzerinde islem yapmak uzere de tanimlanabilir (method). Bu hususta ilk dikkati ceken veri blogu ile method bloklarinin birbirinden ayrilmis olmasi. Bunun icin <code>impl</code> anahtar kelimesini kullanarak method blogu tanimliyoruz. <code>this</code> pointeri yerine de <code>self</code> anahtar kelimesi kullaniliyor. Tanimlamis oldugumuz structlara ait methodlari gorelim. Ornegin Orientation structi icin rotate methodumuzu ve digerlerini inceleyelim :  Yukaridaki kod blogunda struclarin nasil ilklendirilmesi gerektigine dair ornekler de bulunmakta. Herhangi bir structi ilklendirmek icin <code>alan adi : deger</code> ikililerini kullanmamiz gerekiyor. Ornek olarak 25. satirda Vector structimizi ilklendirirken <code>position : Vector{x:0,y:0,z:0},</code> kod satirini kullandik. Main fonksiyonumuzu da tanimlayarak ornegimizi tamamlayalim.  [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/rust-trait/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/rust-programlama-giris/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

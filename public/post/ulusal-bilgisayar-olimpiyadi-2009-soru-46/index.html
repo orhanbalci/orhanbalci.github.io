@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/ulusal-bilgisayar-olimpiyadi-2009-soru-46/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Ulusal Bilgisayar Olimpiyadı 2009 - Soru 46
+link: <a href="http://orhanbalci.net/tr/?p=438">http://orhanbalci.net/tr/?p=438</a>
+author: Orhan Balci
+description:
+post_id: 438
+created: 2009/11/20 14:22:49
+created_gmt: 2009/11/20 11:22:49
+comment_status: open
+post_name: ulusal-bilgisayar-olimpiyadi-2009-soru-46
+status: publish
+post_type: post</p>
+
+<h1 id="ulusal-bilgisayar-olimpiyadı-2009-soru-46">Ulusal Bilgisayar Olimpiyadı 2009 - Soru 46</h1>
+
+<p>Aşağıdaki programın derlenip çalıştırılması sonucu ne basılır? [cpp] int a,b,c; int main(void) { a = 9; { int b = 8; c = b; { int c=7; a = b;}} printf(&ldquo;%d %d %d&rdquo;,a,b,c);} [/cpp] A) 8 7 8 B) 8 0 8 C) 9 8 7 D) 7 0 8 E) Derleme hatası vereceğinden çalıştırılamaz. CEVAP: Yine klasik sayılabilecek bir değişken kapsamı (scope) ve gölgeleme (shadowing) sorusu. C&rsquo;de değişkenlerin kapsamları ve ömürleri kapsama alanı içinde bulundukları süslü parantezlerle {} belirlenir. Örneğin programın başında tanımlanan int a,b,c, değişkenleri herhangi bir parantez içinde olmadıklarından evrensel(global) değişkenlerdir ve kod içinde her yerden ulaşılabilirler. Ömürleri programın başlamasıyla başlar bitişiyle sona erer. main fonksiyonu gövdesi içinde içiçe iki kod bloğu var. Bunlardan birincisinde tanımlanan int b = 8 ifadesi global b değişkenini gölgeler. Yani bu ifadededen sonra gelen ve blok içinde kalan tüm b&rsquo;ler bu tanımdaki b&rsquo;ye işaret eder. yine aynı şekilde ikinci iç blokta tanımlanan int c = 7 ifadesi evrensel c değişkenini gölgeler. Bu kurallar gözönünde bulundurarak değişkenlerimize atanan değerleri iç bloktan dış bloğa doğru takip edersek kolayca çözüme ulaşırız. En iç bloktaki a = b ifadesi ile evrensel a değişkenine 8 değeri atanır. İlk bloktaki c = b ifadesi ile de aynı şekil de evrensel c değişkenine 8 değeri atanır. kod bloklarına dikkatlice bakılacak olursa evrensel b değişkenine herhangi bir değer atanmamıştır dolayısıyla varsayılan değer olarak 0 değerindedir. Doğru cevabımız B seçeneği olacaktır.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/ulusal-bilgisayar-olimpiyadi-2009-soru-47/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/ulusal-bilgisayar-olimpiyadi-2009-soru-45/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

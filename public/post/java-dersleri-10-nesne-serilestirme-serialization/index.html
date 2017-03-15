@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-10-nesne-serilestirme-serialization/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 10 - Nesne Serileştirme (Serialization)
+link: <a href="http://orhanbalci.net/tr/?p=1052">http://orhanbalci.net/tr/?p=1052</a>
+author: Orhan Balci
+description:
+post_id: 1052
+created: 2011/07/07 00:43:05
+created_gmt: 2011/07/06 21:43:05
+comment_status: open
+post_name: java-dersleri-10-nesne-serilestirme-serialization
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-10-nesne-serileştirme-serialization">Java Dersleri 10 - Nesne Serileştirme (Serialization)</h1>
+
+<p>Bu makalede nesnelerin serileştirilmesi ve serileştirilmiş ortamdan tekrar nesnelerimizi oluşturmayı öğreneceğiz. Serileştirme işlemi elimizde bulunan nesneleri belirli bir binary formatta kaydetme işlemidir. Java bu işleme özel bir önem atfettiği için dilin temeline bu işlemleri kolaylaştıracak yapılar eklemiştir ve çoğu işlemi kullanıcının haberi olmadan otomatik gerçekleştirmektedir. Serileştirme işlemi özellikle networkten veri aktarma ve persistence işlemlerinde sıkça kullanılmaktadır. Serileştirme işlemini yapmak için kullanacağımız en temel üç öğe Serializable arayüzü, ObjectInputStream ve ObjectOutputStream akım sınıflarıdır. Serializable arayüzü bir işaretleyici arayüzdür. Arayüzleri anlattığım makalade işaretleyici arayüzlerşn özelliklerine değinmiştim. Herhangi bir metod içermeyen bu arayüzler implement edildiği sınıfları özel işlemler için işaretler. Serializable arayüzünü gerçekleyen herhangi bir sınıf JVM tarafından serileştirilebilir olarak nitelendirilmiş olur. Serileştirme işlemlerini daha iyi kavrayabilmek için bir örnek verelim. Bu örneğimizde bir insanı yazılımsal olarak tanımlamaya çalışalım. Kolaylık olması amacıyla insanın iki el ve bu ellerinde bulunan beşer parmaktan oluştuğunu varsayalım. Ve her bir sınıfın birer &ldquo;isim&rdquo; özelliği bulunsun sınıflarımız şu şekilde olacaktır :  [java] package net.orhanbalci.serialization; import java.io.Serializable; /** * * @author orhan */ public class Insan implements Serializable { private El[] _eller; private String _isim; public Insan(String _isim) { this._isim = _isim; _eller = new El[2]; _eller[0] = new El(&ldquo;Sağ El&rdquo;); _eller[1] = new El(&ldquo;Sol El&rdquo;); } @Override public String toString() { StringBuilder sb = new StringBuilder(); sb.append(&ldquo;İnsan{isim=&rdquo;).append(_isim).append(&ldquo;}&rdquo;).append(&rdquo;\n&rdquo;); for (El e : _eller) { sb.append(e.toString()); sb.append(&rdquo;\n&rdquo;); } return sb.toString(); } } [/java] [java] package net.orhanbalci.serialization; import java.io.Serializable; /** * * @author orhan */ public class El implements Serializable { private String _isim; private Parmak[] _parmaklar; public El(String _isim) { this._isim = _isim; _parmaklar = new Parmak[5]; _parmaklar[0] = new Parmak(&ldquo;Bas Parmak&rdquo;); _parmaklar[1] = new Parmak(&ldquo;İşaret Parmak&rdquo;); _parmaklar[2] = new Parmak(&ldquo;Orta Parmak&rdquo;); _parmaklar[3] = new Parmak(&ldquo;Yüzük Parmak&rdquo;); _parmaklar[4] = new Parmak(&ldquo;Serçe Parmak&rdquo;); } @Override public String toString() { StringBuilder sb = new StringBuilder(); sb.append(&ldquo;El{isim=&rdquo;).append(_isim).append(&ldquo;}&rdquo;).append(&rdquo;\n&rdquo;); for (Parmak p : _parmaklar) { sb.append(p.toString()); sb.append(&rdquo;\n&rdquo;); } return sb.toString(); } } [/java] [java] package net.orhanbalci.serialization; import java.io.Serializable; /** * * @author orhan */ public class Parmak implements Serializable { private String _isim; public Parmak(String _isim) { this._isim = _isim; } public String getIsim() { return _isim; } public void setIsim(String _isim) { this._isim = _isim; } @Override public String toString() { return &ldquo;Parmak{&rdquo; + &ldquo;isim=&rdquo; + _isim + &lsquo;}&rsquo;; } } [/java] Sınıflarımızı tanımladıktan sonra bir adet insan nesnesi oluşturup bunu öncelikle bir dosyaya serileştirip daha sonra aynı dosyadan tekrar okuyan örneğimize bakalım. Bu örnekte nesnemizin özellikleri dosyaya serileştirilmeden önce ve sonra ekrana yazdırılıyor böylelikle iki nesne arasında fark olmadığı anlaşılabilir : [java] package net.orhanbalci.serialization; import java.io.File; import java.io.FileInputStream; import java.io.FileNotFoundException; import java.io.FileOutputStream; import java.io.IOException; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; /** * * @author orhan */ public class Main { public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException { Insan ali = new Insan(&ldquo;ali&rdquo;); System.out.println(ali); FileOutputStream fos = new FileOutputStream(new File(&ldquo;ali.bin&rdquo;)); ObjectOutputStream ous = new ObjectOutputStream(fos); ous.writeObject(ali); FileInputStream fis = new FileInputStream(&ldquo;ali.bin&rdquo;); ObjectInputStream ois = new ObjectInputStream(fis); Insan okunmusAli = (Insan) ois.readObject(); System.out.println(okunmusAli); } } [/java] 23. ve 27. satırlardaki çağrımlarla nesneyi serileştirip, tekrar oluşturuyoruz. Burada Java&rsquo;nın bizim adımıza yaptığı birden fazla iş vardır. Örneğin Insan sınıfı komposit bir sınıf olduğu için bu sınıfa ait bir nesne serileştirildiğinde bu nesneye ait olan El nesneleri dolayısıyla da Parmak nesneleri de otomatik olarak serileştirilir. İçerisinde serileştirilemeyen bir üye taşıyan sınıflar serileştirilemez. Bunu yukarıdaki örnekte El veya Parmak sınıfının Serializable interface&rsquo;ini kaldırarak deneyebilirsiniz. Bu durumda &ldquo;NotSerializableException&rdquo; çalışma zamanı hatası alacaksınız. Peki herhangi bir üye elemanı serileştirmeden bu üyeye sahip nesneyi nasıl serileştirebilirim? Bunun için de <strong>&ldquo;transient&rdquo;</strong> anahtar kelimesi mevcuttur. Yine yukarıdaki örnekte Parmek sınıfının Serializable interfaceini kaldıralım ve El sınıfında [java] transient private Parmak[] _parmaklar; [/java] değişikliğini yaparsak serileştirme açısından problem yaşamayacağız. Fakat nesnemizi serileştirilmiş veriden tekrar oluştururken bu bilgileri kaybedeceğiz. Peki Java bu işleri bizim için yapmasına karşılık kendi serileştirme mekanizmamızı yazmak istersek ne yapmalıyız? Sınıfımıza şu metodları eklememiz yeterli olacaktır : [java] private void writeObject(ObjectOutputStream out) throws IOException; private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException; [/java] [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-11-xml-okuma-yazma-islemleri/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-compiler-api/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

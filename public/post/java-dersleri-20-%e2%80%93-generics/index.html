@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-20-%E2%80%93-generics/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 24 – Generics
+link: <a href="http://orhanbalci.net/tr/?p=1304">http://orhanbalci.net/tr/?p=1304</a>
+author: Orhan Balci
+description:
+post_id: 1304
+created: 2014/11/19 13:31:33
+created_gmt: 2014/11/19 10:31:33
+comment_status: open
+post_name: java-dersleri-20-%e2%80%93-generics
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-24-generics">Java Dersleri 24 – Generics</h1>
+
+<p>Javada generics yapısı tiplerin sınıf ve method tanımlarında parametre olarak kullanılmasını sağlayan bir teknolojidir. Bu teknolojinin kodlama yaparken programcıya kazandırdıkları kısaca şunlardır :</p>
+
+<ul>
+<li>Tip uyuşmazlığından kaynaklanan hataların çalışma zamanı (runtime) yerine derleme zamanında (compile time) yakalanabilmesi.</li>
+<li>Tip dönüşümü ihtiyacının azaltılması.</li>
+<li>Tipten bağımsız olarak algoritmaların bir seferde yazılması. Kod tekrarının önüne geçilmesi.
+Basit bir örnek ile generics kullanımını görelim : [java]package net.orhanbalci.generics; import java.util.ArrayList; import java.util.List; public class Sepet<T> { private List<T> meyveler = new ArrayList(); public T meyveGetir(int index){ return meyveler.get(index); } public void meyveEkle(T yeniMeyve){ meyveler.add(yeniMeyve); } }[/java] Burada Sepet sınıfımız bir container sınıf olup içinde meyveleri barındırmakta. Fakat bu meyvenin türünü parametre ile belirleyebiliyoruz. Elma sepeti için ayrı armut sepeti için ayrı kod yazmıyoruz. Peki yazdığımız bu sınıftan nesnelerimizi nasıl oluşturuyoruz ona bakalım : [java] Sepet<Elma> elmaSepeti = new Sepet<Elma>(); Sepet<Armut> armutSepeti = new Sepet<Armut>(); [/java] Generic bir sınıf tanımından nesne oluştururken sınıf isminden sonra &lt;&gt; içerisinde tip argümanımızı veriyoruz. Elma ve Armut tip argümanlarıdır. Java 7.0 ile birlikte atama operatörünün (=) sağında kalan ifadelerde tip argümanları opsiyonel hale geldi. Yani derleyici tarafından tahmin edilebilir hale geldi. Yukarıdaki ifadeleri aşağıdaki şekilde de yazabiliriz : [java] Sepet<Elma> elmaSepeti = new Sepet&lt;&gt;(); Sepet<Armut> armutSepeti = new Sepet&lt;&gt;(); [/java] Peki generic olarak yazılan sınıflar daha önceki java versiyonunda yazılan kodla nasıl anlaşıyorlar? Yani geriye yönelik uyumluluğu nasıl sağlıyoruz onu inceleyelim. Generic sınıflardan tip argümanı olmadan üretilen sınıflara raw type adı veriliyor. Örneğin : [java] Sepet rawSepet = new Sepet(); [/java] Sepet sınıfımızı tip argümanı vermeden yukarıdaki şekilde kullanabiliriz. Bu kullanım generic sınıfların eski kodu kırmadan çalışmasını garanti eder. Bu kullanımda dikkat etmemiz gereken temel noktalar şunlardır :</li>
+<li>Raw type değişkene parametrize bir değişken atanabilir. Örnek : [java] Sepet<Armut> armutSepeti = new Sepet&lt;&gt;(); Sepet rawSepet = new Sepet(); rawSepet = armutSepeti; [/java]</li>
+<li>Parametrize değişkene raw type değişken atarsanız compiler&rsquo;dan uyarı alırsınız. [java] Sepet rawSepet = new Sepet(); Sepet<Elma> elmaSepeti = new Sepet&lt;&gt;(); elmaSepeti = rawSepet; [/java]
+Generic sınıf tanımlamasına tanımlıyoruz da o kadar da generic olmasını istemiyor olabiliriz. Örneğin yukarıda tanımladığımız Sepet generic sınıfına tip parametresi olarak Integer geçebiliriz. Integer sepeti pek mantıklı bir soyutlama değil. Ben sepetimde sadece meyvelerin olmasını istiyorum derseniz &ldquo;sınırlı tip parametreleri&rdquo; ni kulllanabilirsiniz. Yukarıda örneklerde kullandığımız Elma, Armut sınıflarına göz atalım : [java] class Meyve{ } class Elma extends Meyve{ } class Armut extends Meyve{ }[/java] Sepet sınıfımızı sadece Meyve sınıfı ve alt sınıflarını parametre alacak şekilde düzenleyelim. Sınıfın imzasını aşağıdaki gibi değiştiriyoruz : [java] public class Sepet<T extends Meyve> [/java] Son durumda aşağıdaki gibi bir kullanım derleme hatası(java: type argument java.lang.Integer is not within bounds of type-variable T) verecektir : [java] Sepet<Integer> a = new Sepet<Integer>(); [/java] Yukaridaki kullanima gercek hayattan bir ornek verecek olursak sadece numeric tiplerle ilgilenen tip tanimi su sekilde yapilabilir: [java] abstract class NumericIslemci<Tip extends Numeric>{} [/java] Generic sınıflar ve mothodlar geliştirirken karıştırılan noktalardan bir tanesi de generic sınıfların miras (inheritance) ilişkisidir. Altın kural şu : tip parametrelerinin birbirinden miras alması generic tipin mirası için yeterli değildir. ** Yani Sepet<Meyve> tipi Sepet<Armut> tipinin üst sınıfı değildir.** Şöyle bir fonksiyonumuz olsun : [java] public boolean sepetKontrol(Sepet<Meyve> s){ return false; } [/java] Bu fonksiyonu şu şekilde çağıramayız : [java] sepetKontrol(new Sepet<Armut>()); [/java] [ad#Yazi Ici Buyuk]</li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-21-%E2%80%93-jaxb-api-%E2%80%93-java-nesnelerini-xml-dokumanlari-ile-baglama/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-2-sinif-kavrami-ve-yapisi-class-structure/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

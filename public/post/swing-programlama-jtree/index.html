@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/swing-programlama-jtree/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Swing Programlama : JTree
+link: <a href="http://orhanbalci.net/tr/?p=849">http://orhanbalci.net/tr/?p=849</a>
+author: Orhan Balci
+description:
+post_id: 849
+created: 2010/10/08 13:27:31
+created_gmt: 2010/10/08 10:27:31
+comment_status: open
+post_name: swing-programlama-jtree
+status: publish
+post_type: post</p>
+
+<h1 id="swing-programlama-jtree">Swing Programlama : JTree</h1>
+
+<p>Java&rsquo;da sıklıkla arayüzlerde kullanılan elemanlardan birisi de tree(ağaç) görünümüdür. Hiyerarşik yapıların görüntülenmesinde kullanılan JTree&rsquo;de MVC tasarım deseni uygulanmıştır. Yani arayüzümüze eklemek istediğimiz elemanın öncelikle modelini tanımlamalıyız. En basit haliyle JTree şu şekilde oluşturulur : [java] DefaultMutableTreeNode node = new DefaultMutableTreeNode(&ldquo;Masa 1&rdquo;); DefaultMutableTreeNode node2 = new DefaultMutableTreeNode(&ldquo;oyuncu 1&rdquo;); DefaultMutableTreeNode node3 = new DefaultMutableTreeNode(&ldquo;oyuncu 2&rdquo;); DefaultMutableTreeNode node4 = new DefaultMutableTreeNode(&ldquo;oyuncu 3&rdquo;); DefaultMutableTreeNode node5 = new DefaultMutableTreeNode(&ldquo;oyuncu 4&rdquo;); node.add(node2); node.add(node3); node.add(node4); node.add(node5); JTree jt = new JTree(node); [/java]  JTree üzerinde TreeSelectionModel belirleyerek çeşitli seçim kipleri belirleyebiliriz. Örneğin ağacımızda aynı anda sadece bir düğümün seçilmesine izin verebiliriz veya bunun yerine birden çok düğümün aynı anda seçilmesine olanak sağlayabiliriz. DefaultTreeSelectionModel TreeSelectionModel arayüzünü gerçekleyen bir sınıftır. Bu sınıfı kullanarak JTree üzerinde seçimle ilgili kısıtlamalara gidebilir istediğimiz düğümü program içerisinden seçebiliriz : [java] DefaultTreeSelectionModel dtsm = new DefaultTreeSelectionModel(); dtsm.setSelectionMode(DefaultTreeSelectionModel.CONTIGUOUS_TREE<em>SELECTION); jt.setSelectionModel(dtsm); [/java] Bu örnekte tree arayüz elemanımızdan birden fazla düğümün seçilmesine izin verdik. Tree&rsquo;de meydana gelen seçim olaylarını yakalamak için TreeSelectionListener arayüzünü gerçeklememiz gerekir. Örneğin seçimde meydana gelen değişiklikleri bir JTextArea&rsquo;ya yazan örneği inceleyelim : [java] public class MySelectionListener implements TreeSelectionListener { public MySelectionListener(JTextArea jta) { jta</em> = jta; } private JTextArea jta<em>; public void valueChanged(TreeSelectionEvent e) { jta</em>.append(&ldquo;Tree seçimi değişti : \n&rdquo;); TreePath[] tp = e.getPaths(); for (TreePath t : tp) { if (e.isAddedPath(t)) { jta<em>.append(&rdquo;\tSeçime &ldquo; + t.toString() + &ldquo;eklendi\n&rdquo;); } else { jta</em>.append(&rdquo;\tSeçimden &ldquo; + t.toString() + &ldquo;çıkarıldı\n&rdquo;); } } jta<em>.append(&ldquo;Son durumda seçili düğümler : &ldquo;); JTree jt = (JTree) e.getSource(); TreePath[] selectedPath = jt.getSelectionPaths(); for (TreePath treePath : selectedPath) { jta</em>.append(treePath + &ldquo; &ldquo;); } jta<em>.append(&rdquo;\n&rdquo;); } } [/java] 11. satırda kullandığımız TreeSelectionEvent sınıfına ait getPaths() metodu seçimden kaldırılan ve seçime eklenen düğümlerin yollarını içerir. TreePath sınıfı ağacımızdaki düğümlerin yollarını hiyerarşik olarak tutmaktadır. 13. satırda kullandığımız isAddedPath(TreePath) metodu ise verilen düğüm yolunun seçime eklenip eklenmediğini kontrol eder. Tüm seçili düğümlerin listesini almak için 21 ve 22. satırları kullanıyoruz. Şimdi de tree yapısına yeni düğüm eklemeyi görelim. Bu örnekte seçili düğümün altına yeni bir düğüm eklemeyi görelim : [java] public void executeInsert() { DefaultTreeModel tm = (DefaultTreeModel)jt</em>.getModel(); String s = JOptionPane.showInputDialog(&ldquo;Düğüm adını girin :&ldquo;); TreePath tp = jt<em>.getSelectionPath(); DefaultMutableTreeNode nod = new DefaultMutableTreeNode(s); tm.insertNodeInto(nod,(MutableTreeNode)tp.getLastPathComponent(), 0); } [/java] Yukarıdaki metod seçili düğümün altına yeni bir düğüm eklemeye yarıyor. 5. satırda seçili yolu elde ederken 7. satırda DefaultTreeModel sınıfının insertNodeInto() metoduyla modelimize yeni bir düğüm ekliyoruz. Şimdi de seçili düğümü nasıl sileceğimize bakalım : [java] public void executeRemove() { TreePath tp = jt</em>.getSelectionPath(); DefaultTreeModel tm = (DefaultTreeModel)jt<em>.getModel(); tm.removeNodeFromParent((MutableTreeNode) tp.getLastPathComponent()); } [/java] Düğüm silmek için yine DefaultTreeModel sınıfının removeNodeFromParent() metodunu kullanıyoruz. İstediğimiz düğümü açıp kapamak için sırasıyla JTree&rsquo;nin expandRow() ve collapseRow() metodlarını yada sadece belirli bir düğüm yolunu açmak kapamak için expandPath() ve collapsePath() metodlarını kullanabiliriz. Aşağıdaki örnekte ağaç görünümümüzün tüm düğümlarini aynı anda açan ve kapayan metodları görebiliriz: [java] public void expandAll() { for (int i = 0; i &lt; jt</em>.getRowCount(); i++) { jt<em>.expandRow(i); } } public void collapseAll() { for (int i = 0; i &lt; jt</em>.getRowCount(); i++) { jt_.collapseRow(i); } } [/java] Tree ile ilgili temel işlemleri anlatmaya çalıştım. Bununla birlikte JTree arayüz elemanının kabiliyetleri anlattıklarımla sınırlı değil aksine çok geniştir. İsteğe bağlı olarak JTree, DefaultTreeModel sınıfları incelenebilir. Aşağıdaki resime tıklayarak anlattığımız kodların çalışan uygulamasını görebilirsiniz. [caption id=&ldquo;attachment_865&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;537&rdquo; caption=&ldquo;JTree Kullanım Ornegi&rdquo;]<img src="/wp-content/uploads/JTree-Kullanım-Ornegi.png" alt="JTree Kullanım Ornegi" />[/caption] [ad#Yazi Ici Buyuk]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#52234" title="2016-04-02 08:28:49">Aziz</a>:</strong> Güzel anlatım yalnız başlangıç için agır olmuş :neutral:</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/tehlike-aninda-cami-kiriniz/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/swing-programlama-jtable-hucre-editorleri/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

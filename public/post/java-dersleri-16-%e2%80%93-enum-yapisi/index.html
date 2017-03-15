@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-16-%E2%80%93-enum-yapisi/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 16 – Enum Yapısı
+link: <a href="http://orhanbalci.net/tr/?p=712">http://orhanbalci.net/tr/?p=712</a>
+author: Orhan Balci
+description:
+post_id: 712
+created: 2010/03/18 22:50:06
+created_gmt: 2010/03/18 19:50:06
+comment_status: open
+post_name: java-dersleri-16-%e2%80%93-enum-yapisi
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-16-enum-yapısı">Java Dersleri 16 – Enum Yapısı</h1>
+
+<p>[caption id=&ldquo;attachment_842&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 16 Enum Yapısı&rdquo;]<img src="/wp-content/uploads/java_banner_16.png" alt="Java Dersleri 16 Enum Yapısı" />[/caption] Java da enum yapıları 1.5 versiyonuyla birlikte gelmiştir. Bu versiyondan önce enum gereksinimi static final int değişkenlerle giderilmekteydi. Bu yaklaşımın tip güvenliği yoktur yani enumlar herhangi bir int, double vs değerle karşılaştırılabilirler, herhangi bir int değere eklenebilirler. Bunun yanında grup olarak kullandığınız bu int değişkenleri sırayla gezemezsiniz. Oysa ki enumlarda bu aranan bir özelliktir. Bunun gibi bir kaç yan etkiden dolayı Java&rsquo;nın 1.5 versiyonuyla birlikte enum&rsquo;lar dile eklendi. Java enumları sınıflara benzemekle birlikte çoğu özelliği kısıtlanmıştır. Öncelikle basit bir Enum tanımı ve kullanımı görelim : [java] enum AminoAsit{ALANIN,GLUTAMIN,PROLIN,SERIN}; [/java] Java&rsquo;da Enum tanımlamak için** enum** anahtar kelimesi kullanılır. Daha sonra enum elemanları süslü parantez içinde yazılır. Şimdi bu örneği biraz daha geliştirelim ve enum için bir yapıcı (constructor) metod tanımlayalım : [java] enum AminoAsit { ALANIN(&ldquo;apolar&rdquo;), GLUTAMIN(&ldquo;polar&rdquo;), PROLIN(&ldquo;nötür&rdquo;), SERIN(&ldquo;nötür&rdquo;); public String polarite<em>; AminoAsit() { } AminoAsit(String polarite) { polarite</em> = polarite; } }; [/java] Örneği biraz değiştirerek bir String alan yapıcı metodumuzu ekledik. Burada dikkat etmemiz gereken kural yapıcı metodumuzun public erişim seviyesinde olmaması. Enum&rsquo;ların sınıflardan bir farkı yapıcı metodlarının public erişim seviyesinde olamamasıdır. Enum yapılarının sınıf yapısından bir diğer farkı ise Enum yapılarının herhangi bir sınıftan miras alamamasıdır. Bunun tersine Enum yapıları herhangi bir arayüzü gerçekleyebilirler yani şu kullanım geçerlidir : [java] interface Hidropatik { public double getHidropatiKatsayi(); } enum AminoAsit implements Hidropatik { ALANIN(&ldquo;apolar&rdquo;) { @Override public double getHidropatiKatsayi() { return 1.8; } }, GLUTAMIN(&ldquo;polar&rdquo;) { @Override public double getHidropatiKatsayi() { return -3.5; } }, PROLIN(&ldquo;nötür&rdquo;) { @Override public double getHidropatiKatsayi() { return 0.0; } }, SERIN(&ldquo;nötür&rdquo;) { @Override public double getHidropatiKatsayi() { return -0.8; } }; public String polarite<em>; AminoAsit() { } AminoAsit(String polarite) { polarite</em> = polarite; } }; [/java] Yukarıda tanımladığımız Enum&rsquo;u nasıl kullanacağımızı görelim. Aşağıdaki örnekte tanımladığımız Enum&rsquo;un tüm elemanlarına ulaşıyoruz: [java] for (AminoAsit a : AminoAsit.values()) { System.out.println(a.name() + &ldquo; &rdquo; + a.polarite_ + &ldquo; &rdquo; + a.getHidropatiKatsayi()); } [/java] Tanımladığımız enumun Integer değerine ulaşmak için ordinal() metodu kullanılır. Örneğin AminoAsit enumumuzun ALANIN elemanının Integer değerine : [java] AminoAsit.ALANIN.ordinal(); [/java] kod parçasıyla ulaşabiliriz. Bu işlemin tersini yani integer değerimizi enum&rsquo;a dönüştürmek için ise : [java] AminoAsit.values()[integer değer] [/java] kod parçasını kullanıyoruz. [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-17-%E2%80%93-network-programlama-udp/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-15-%E2%80%93-koleksiyon-api-collection-api-map/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

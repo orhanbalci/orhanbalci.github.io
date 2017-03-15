@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-functions-predicates/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Google Java Kütüphanesi : Guava Functions Predicates
+link: <a href="http://orhanbalci.net/tr/?p=1222">http://orhanbalci.net/tr/?p=1222</a>
+author: admin
+description:
+post_id: 1222
+created: 2013/03/18 14:45:18
+created_gmt: 2013/03/18 11:45:18
+comment_status: open
+post_name: google-java-kutuphanesi-guava-functions-predicates
+status: publish
+post_type: post</p>
+
+<h1 id="google-java-kütüphanesi-guava-functions-predicates">Google Java Kütüphanesi : Guava Functions Predicates</h1>
+
+<p>Genelde yazıları Türkçe kaleme almaya çalışıyorum fakat predicate karşılığını tam bulamadığım için başlık yarı Türkçe yarı İngilizce oldu. Guava&rsquo;nın c++ STL tarzı programlamayı olanaklı hale getiren sınıflarını inceleyelim. STL tarzı programlama derken Fonksiyonel Programlama&rsquo;dan bahsediyorum aslında. Fonksiyonel Programlama paradigması yazılımın merkezine işlemleri yani fonksiyonları alır. Nesne odaklı mimarinin tersine veri yapıları arka plandadır. Guava ekseninde konuşacak olursak fonksiyonlar ve predicate&rsquo;ler genellikle koleksiyonları filtrelemek (predicateler aracılığıyla) ve elemanları farklı elemenlara dönüştürmek (fonksiyonlar aracılığıyla) amacıyla kullanılıyorlar. Öncelikle predicatelerin nasıl tanımlanacağını öğrenelim. Bunun için <strong>Predicate</strong> arayüzünü kullanacağız. [java] package net.orhanbalci.guavasamples; import com.google.common.base.Joiner; /** * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class AccountBalance { private double balance; private int id; public AccountBalance(double balance, int id) { this.balance = balance; this.id = id; } public double getBalance() { return balance; } public void setBalance(double balance) { this.balance = balance; } public int getId() { return id; } public void setId(int id) { this.id = id; } @Override public String toString() { return Joiner.on(&ldquo;-&gt;&rdquo;).join(id,balance); } } [/java] Örneğimiz için kullanacağımız hesap özeti entity sınıfı yukarıdaki gibi. Müşteri hesaplarından bakiyesi 0&rsquo;dan büyük olanları filtrelemek istiyoruz. Filtre kriterimizi yazacağımız predicate sınıfta belirtiyoruz.  [java] package net.orhanbalci.guavasamples; import com.google.common.base.Predicate; /** * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class AccountBalanceGreaterThanZeroPredicate implements Predicate<AccountBalance> { @Override public boolean apply(AccountBalance accountBalance) { return accountBalance.getBalance() &gt; 0; } } [/java] Şimdi de hesap özeti nesnelerinden oluşan bir listeyi istediğimiz kriterlere göre filtreden geçirelim : [java] package net.orhanbalci.guavasamples; import com.google.common.base.Joiner; import com.google.common.collect.Iterators; import com.google.common.collect.UnmodifiableIterator; import java.util.ArrayList; import java.util.List; /** * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class GuavaPredicates { private static List<AccountBalance> accountBalances = new ArrayList<AccountBalance>(); static { accountBalances.add(new AccountBalance(1000,1)); accountBalances.add(new AccountBalance(2000,2)); accountBalances.add(new AccountBalance(-3000,3)); } public static void main(String[] args) { UnmodifiableIterator<AccountBalance> it = Iterators.filter(accountBalances.iterator(), new AccountBalanceGreaterThanZeroPredicate()); System.out.println(Joiner.on(&ldquo;,&rdquo;).join(it)); } } [/java] Hesap özeti nesnelerinden oluşan bir listeyi filtrelemek için <strong>Iterators</strong> sınıfının filter static methodundan faydalandık. Burada <strong>filter</strong> methodunun dönüş değerinin <strong>UnmodifiableIterator</strong> olduğuna dikkat edelim. <strong>filter</strong> methodları uygulandıkları koleksiyonların read-only görünümlerini dönerler. Orjinal koleksiyonlar üzerinde değişiklik yapmazlar. <strong>Predicate</strong> sınıfları tek başlarına iş görebildikleri gibi &ldquo;<strong>or</strong>&rdquo; ve &ldquo;<strong>and</strong>&rdquo; lenerek birlikte de çalışabilirler. Bunun için <strong>Predicates</strong> sınıfının <strong>and</strong>, <strong>or</strong> statik methodları kullanılmalıdır. Fonksiyon nesnelerinin kullanımı da oldukça benzer. Bunun için de **Function **interface&rsquo;ini gerçeklemek yeterli olacaktır. Örneğin sayıların karelerini bulan bir fonksiyon tanımı : [java] package net.orhanbalci.guavasamples; import com.google.common.base.Function; public class SquareFunction implements Function<Integer,Integer> { @Override public Integer apply(Integer input) { return input * input; } } [/java] Bu fonksiyonu sayılardan oluşan bir listeye uygulamak için Iterables.Transaform statik methodunu kullanıyoruz. Çıktıyı oluşturmak için yine Guava,2dan yararlanarak Joiner sınıfını kullanıyoruz : [java] package net.orhanbalci.guavasamples; import com.google.common.base.Joiner; import com.google.common.collect.Iterables; import java.util.Arrays; import java.util.List; public class GuavaFunctions { public static void main( String[] args ) { List<Integer> numbers = Arrays.asList( 1,2,3,4,5,6); System.out.println(Joiner.on(&rdquo;:&ldquo;).join( Iterables.transform( numbers, new SquareFunction()))); } } [/java] Kod parçasının çıktısı şu şekilde olacaktır : <code>1:4:9:16:25:36</code></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-preconditions/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-cache/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

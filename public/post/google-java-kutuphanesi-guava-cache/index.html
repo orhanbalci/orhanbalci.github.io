@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-cache/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Google Java Kütüphanesi : Guava Cache
+link: <a href="http://orhanbalci.net/tr/?p=1235">http://orhanbalci.net/tr/?p=1235</a>
+author: Orhan Balci
+description:
+post_id: 1235
+created: 2013/03/22 15:12:11
+created_gmt: 2013/03/22 12:12:11
+comment_status: open
+post_name: google-java-kutuphanesi-guava-cache
+status: publish
+post_type: post</p>
+
+<h1 id="google-java-kütüphanesi-guava-cache">Google Java Kütüphanesi : Guava Cache</h1>
+
+<p>[java] package net.orhanbalci.guavasamples; import com.google.common.base.Joiner; import com.google.common.base.Stopwatch; import com.google.common.cache.Cache; import com.google.common.cache.CacheBuilder; import java.math.BigInteger; import java.util.concurrent.Callable; import java.util.concurrent.ExecutionException; import java.util.concurrent.TimeUnit; /** * User: ob005273 * Date: 22.03.2013 * Time: 13:24 * Kullanıldığında <a href="http://orhanbalci.net">http://orhanbalci.net</a> adresi referans verilmelidir */ public class GuavaCache { private Cache<Integer,BigInteger> factorialCache; //private final Integer[] sampleArray = new Integer[] {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}; public GuavaCache() { factorialCache = CacheBuilder.newBuilder().maximumSize(1000).expireAfterWrite(3, TimeUnit.MINUTES).build(); } public static void main(String[] args) { GuavaCache gc = new GuavaCache(); try { gc.measureIt(); } catch (ExecutionException e) { e.printStackTrace(); } } public void measureIt() throws ExecutionException { BigInteger[] resultArray = new BigInteger[100]; Stopwatch s = new Stopwatch(); s.start(); for(int i = 0; i &lt; 1000; i++) { resultArray[i] = factorial(i % 15); } s.stop(); System.out.println(Joiner.on(&ldquo;,&rdquo;).join(resultArray)); System.out.println(&ldquo;Cache olmadan : &ldquo; + s.elapsed(TimeUnit.MILLISECONDS)); s.reset(); s.start(); for(int i = 0; i &lt; 1000; i++) { resultArray[i] = factorialWithGuavaCache( i % 15); } s.stop(); System.out.println(Joiner.on(&ldquo;,&rdquo;).join(resultArray)); System.out.println(&ldquo;Guava cache : &ldquo; + s.elapsed(TimeUnit.MILLISECONDS)); } public BigInteger factorialWithGuavaCache(final Integer a) throws ExecutionException { if(a == 1) { return BigInteger.valueOf(1); } return factorialCache.get(a, new Callable<BigInteger>() { @Override public BigInteger call() throws Exception { return BigInteger.valueOf(a).multiply(factorialWithGuavaCache( a - 1)); } }); } public BigInteger factorial(final Integer a) { if(a == 1) { return BigInteger.valueOf(1); } else { return BigInteger.valueOf(a).multiply(factorial(a - 1)); } } } [/java]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/google-java-kutuphanesi-guava-functions-predicates/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/golle-ve-dibek-tasi-anisina/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

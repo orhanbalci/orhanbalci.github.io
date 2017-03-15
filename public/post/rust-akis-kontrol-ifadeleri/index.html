@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Rust Akış Kontrol İfadeleri
+link: <a href="http://orhanbalci.net/tr/?p=1452">http://orhanbalci.net/tr/?p=1452</a>
+author: Orhan Balci
+description:
+post_id: 1452
+created: 2015/09/14 23:04:37
+created_gmt: 2015/09/14 20:04:37
+comment_status: open
+post_name: rust-akis-kontrol-ifadeleri
+status: publish
+post_type: post</p>
+
+<h1 id="rust-akış-kontrol-ifadeleri">Rust Akış Kontrol İfadeleri</h1>
+
+<p>Rust dilinde klasik kod akis kontrol ifadeleri bulunmakla beraber çok temel sentaks ve semantik farklar da var. Ilk olarak if/else yapisini inceleyerek farkları gormeye calisalim.  Yukarıda klasik bir if else yapisi ornegi verdim. Sentaks olarak dikkat etmemiz gereken ilk husus 4. satırda conditional ifade yazilirken <code>()</code> parantezlerin opsiyonel olmasi. Varsayilan olarak kullnilmiyor bu parantezler. kullanildiginda derleyici uyari veriyor. Ikinci sentaks kurali ise if-else bloklarini bildiren <code>{}</code> parantezlerinin zorunlu olmasi. Icinde tek ifade de yer alsa bunlar zorunlu. Ikinci ornekle asil can alici farki gorelim. If-else bloklari birer expression&rsquo;dir. Yani atama ifadelerinde sag deger olarak kullanilabilirler.  Yukarıdaki örnekte 5. satırda if-else blokunun ciktisini <code>age_class</code> degiskenine atayabiliyoruz. Burada dikkat edilmesi gereken en önemli şey tum kontrol bloklarinin ayni tip veriyi donmesi gerektigidir. While dongusu c/c++ ile ayni. Do-while dongusu yok. Continue ve break ifadeleri aynen korunmus. Diger dillerden farkli olarak sonsuz dongu blogu icin <code>loop</code> bloklari mevcut. Bu bloklardan <code>break</code> ifadesi ile cikabilirsiniz.  For dongusu ise c/c++ dan farkli olarak Iterator&rsquo;lar uzerinden calisiyor. Genel sentaks <code>for degisken in expression{}</code> seklinde. Burada <code>expression</code> bir iterator uretmek zorunda. En basit haliyle for dongulerini Range iteratorleri ile kullaniyoruz.  2. satirdaki <code>1..15</code> ifadesi 1 dahil 15 haric olmak uzere bir Range iterator tanimi yapar. Birer birer degil de farkli bir artisla bir Range tanimlamak istersek :  Herhangi bir collection gezilmek istendiginde eger Iterator traitine sahipse for dongusu kullanilabilir. Ornnegin bir vektorun for loop ile guncellenmesi ornegine bakalim :  [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/rust-closure/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/python-deneyimleri-3/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

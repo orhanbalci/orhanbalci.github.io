@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/swing-programlama-jtable-hucre-editorleri/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Swing Programlama : JTable Hücre Editörleri
+link: <a href="http://orhanbalci.net/tr/?p=16">http://orhanbalci.net/tr/?p=16</a>
+author: Orhan Balci
+description:
+post_id: 16
+created: 2007/08/02 19:41:27
+created_gmt: 2007/08/02 16:41:27
+comment_status: open
+post_name: swing-programlama-jtable-hucre-editorleri
+status: publish
+post_type: post</p>
+
+<h1 id="swing-programlama-jtable-hücre-editörleri">Swing Programlama : JTable Hücre Editörleri</h1>
+
+<p>Bu yazıda kısaca JTable hücreleri için öntanımlı olan editörün dışında özel editörler tanımlamayı öğreneceğiz. Bir önceki yazımızda kullanmış olduğumuz tablodaki puan sütununun editörünü JSpinner olarak değiştireceğiz.  <strong>1)</strong> Bu işlemi gerçekleştirmek için <strong>TableColumn</strong> sınıfının <strong>public void setCellEditor(TableCellEditor cellEditor)</strong> metodunu kullanacağız. Metodun imzasında da görüldüğü üzere bize <strong>TableCellEditor</strong> cinsinden bir editör lazım. Bunun için <strong>TableCellEditor</strong> interfacini implement etmemiz lazım. Bu interface şöyle bir baktığımızda implement edilmesi gereken birçok event fire metodunun olduğunu görürüz. Bizleri düşünen Sun mühendisleri bunun için <strong>AbstractCellEditor</strong> sınıfında bu event fire metodlarını implement etmişler. Öyleyse biz de işimizi bu sınıftan türettiğimiz bir editörle görebiliriz. Fakat sadece <strong>AbstractCellEditor</strong> sınıfından türetmek yeterli değil zira bu sınıfta olmayıp da <strong>TableCellEditor</strong> interfacinde bulunan <strong>public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column)</strong> metodunu implement etmeliyiz. Şöyleki : [sourcecode language=&ldquo;java&rdquo;] public class JSpinnerTableCellEditor extends AbstractCellEditor implements TableCellEditor [/sourcecode] <strong>2)</strong> Bizim editörümüz <strong>JSpinner</strong> componenti olacak. Öyleyse bir sınıfımızda bir adet JSpinner referansı bulunmalıdır. <strong>3)</strong> Bunu da hallettikten sonra yapmamız gereken şey public <strong>Object getCellEditorValue()</strong> metodunu override etmek. [sourcecode language=&ldquo;java&rdquo;] public class JSpinnerTableCellEditor extends AbstractCellEditor implements TableCellEditor{ JSpinner spin = new JSpinner(); public JSpinnerTableCellEditor() { } public Object getCellEditorValue() { return spin.getValue(); } public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) { spin.setValue(value); return spin; } } [/sourcecode] <strong>4)</strong> Şimdi sıra bu editörü <strong>JTable</strong> nesnemize eklemekte. Bunun için yazımızın başına belirttiğimiz <strong>TableColumn</strong> sınıfının <strong>void setCellEditor(TableCellEditor cellEditor)</strong> metodunu kullanacağız. JTable&rsquo;imizin <strong>TableColumn</strong> nesnesine ise <strong>table.getColumnModel().getColumn(2);</strong> şeklinde ulaşabiliriz burada <strong>getColumn()</strong> metoduna verdiğimiz parametre sütunun tablomuzdaki yerini bildirmektedir. Bu yazımıza ait kodları <a href="/kod/jlistcustomcelleditor.rar">buradan </a>indirebilirsiniz.</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#41624" title="2015-02-03 23:34:21">Ömer</a>:</strong> Teşekkürler. Güzel siteniz var</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/swing-programlama-jtree/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/swing-programlama-jtable-1/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/birlestirmeli-siralama-merge-sort-algoritma-appleti/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Birleştirmeli Sıralama (Merge Sort) Algoritma Appleti
+link: <a href="http://orhanbalci.net/tr/?p=503">http://orhanbalci.net/tr/?p=503</a>
+author: Orhan Balci
+description:
+post_id: 503
+created: 2009/12/13 18:57:06
+created_gmt: 2009/12/13 15:57:06
+comment_status: open
+post_name: birlestirmeli-siralama-merge-sort-algoritma-appleti
+status: publish
+post_type: post</p>
+
+<h1 id="birleştirmeli-sıralama-merge-sort-algoritma-appleti">Birleştirmeli Sıralama (Merge Sort) Algoritma Appleti</h1>
+
+<p><strong>Algoritma Adı:</strong> Birleştirmeli Sıralama Algoritması (Merge Sort) <strong>Algoritma Türü:</strong> Sıralama Algoritması <strong>Açıklama:</strong> Parçala yönet mantığıyla geliştirilmiş özyinelemeli (recursive) sıralama algoritmasıdır. Temel olarak üç aşamadan oluşur. Algoritma kendine verilen diziye ikiye böler. Birinci ve ikinci parçaların sıralanmasını sağlar. Son olarak da sıralı iki altdiziyi birleştirir. Örnek olarak 6 elemanlı 6 5 4 3 2 1 dizisini sıralayalım.  1. Adım : Dizi 6 5 4 ve 3 2 1 olmak üzere ikik alt diziye ayrılır. 2. Adım : 6 5 4 alt dizisi 6 ve 5 4 olmak üzere ikiye ayrılır. 3. Adım : 6 tek elemanlı olduğu için sıralanmış kabul edilir. 4. Adım : 5 4 dizisi 5 ve 4 olmak üzere ikiye ayrılır. 5. Adım : 5 ve 4 tek elemanlı olduklarından sıralanmış kabul edilir. 6. Adım : 5 ve 4 birleştirilir. Sıralama 4 5 şeklinde olur. 7. Adım : 6 ve 4 5 dizisi birleştirilir. Sıralama 4 5 6 şeklinde olur. İlk dizimizin ilk alt dizisi sıralanmış olur. 2 8. Adım : 3 2 1 dizisi 3 ve 2 1 olarak ikiye ayrılır. 9. Adım : 3 tek elemanlı olduğundan sıralı kabul edilir. 10. Adım : 2 1 dizisi 2 ve 1 olmak üzere ikiye ayrılır. 11. Adım : 2 ve 1 tek elemanlı olduklarından sıralanmış kabul edilir. 12. Adım : 2 ve 1 birleştirilir. Sıralama 1 2 olur. 13. Adım : 3 ve 2 1 dizileri birleştirilir. Sıralama 1 2 3 şeklinde olur. İlk dizimizin ikinci alt dizisi de sıralanmış olur. 14. Adım : 4 5 6 ve 1 2 3 alt dizileri birleştirilerek 1 2 3 4 5 6 sıralı dizisi oluşur. Algoritma sonlanır.</p>
+
+<p>Algoritma Java Kodu : [java] int[] mergeSort(int[] siralanacakArray) { //eğer sıralanacak dizi uzunluğu 2&rsquo;den küçükse //dizi sıralı sayılır if (siralanacakArray.length &lt; 2) { return siralanacakArray; } //ikiye bölünen dizi boyutlarını hesaplıyoruz int ilkArrayBoyutu = siralanacakArray.length / 2; int ikinciArrayBoyutu = siralanacakArray.length - ilkArrayBoyutu; //iki alt diziyi ilklendiriyoruz int[] ilkArray = new int[ilkArrayBoyutu]; int[] ikinciArray = new int[ikinciArrayBoyutu]; //dizinin ilk parçasını bölüyoruz for (int i = 0; i &lt; ilkArrayBoyutu; i++) { ilkArray[i] = siralanacakArray[i]; } //Dizinin geri kalanını ikinci diziye atıyoruz int j = 0; for (int k = ilkArrayBoyutu; k &lt; siralanacakArray.length &amp;&amp; j &lt; ikinciArrayBoyutu; k++, j++) { ikinciArray[j] = siralanacakArray[k]; } //Böldüğümüz ilk diziyi sıralıyoruz int[] siraliIlkArray = mergeSort(ilkArray); //Böldüğümüz ikinci diziyi sıralıyoruz int[] siraliIkinciArray = mergeSort(ikinciArray); int m = 0, n = 0, y = 0; //Sıralı iki diziyi tekrar birleştiriyoruz. //Sırasıyla bütün elemanları karşılaştırarak küçük olanı önce //olmak kaydıyla ilk dizide birleştiriyoruz while (m &lt; ilkArrayBoyutu &amp;&amp; n &lt; ikinciArrayBoyutu) { if (siraliIlkArray[m] &lt;= siraliIkinciArray[n]) { siralanacakArray[y] = siraliIlkArray[m]; m++; y++; } else if (siraliIlkArray[m] &gt; siraliIkinciArray[n]) { siralanacakArray[y] = siraliIkinciArray[n]; n++; y++; } } //Eğer ilk dizide eleman kalmışsa bunları listenin sonuna ekliyoruz while (m &lt; ilkArrayBoyutu) { siralanacakArray[y] = siraliIlkArray[m]; y++; m++; } //Eğer ikinci dizide eleman kalmışsa bunları listenin sonuna ekliyoruz while (n &lt; ikinciArrayBoyutu) { siralanacakArray[y] = siraliIkinciArray[n]; y++; n++; } //Sıralanmış diziyi dışarı veriyoruz. return siralanacakArray; } [/java] Javascript implementasyonu memory kullanimi daha iyi olan bir cozum : [javascript] fs = require(&lsquo;fs&rsquo;) fs.readFile(&lsquo;./merge_sort.txt&rsquo;, &lsquo;utf8&rsquo;, function (err, unsorted_array_data) { if (err) { return console.log(err); } var array_data = unsorted_array_data.split(&rdquo;\r\n&rdquo;); var input= array_data[1].split(&rdquo; &ldquo;).map(function (item) { return parseInt(item); }) merge_sort(input, 0, input.length); console.log(input.join(&rdquo; &ldquo;)); }); function merge(unsorted_array, begin_index, middle_point, end_index) { var i = begin_index; var j = middle_point; var merge_result = new Array(end_index-begin_index); var result_counter = 0; while (i &lt; middle_point &amp;&amp; j &lt; end_index) { if(unsorted_array[i] &lt;= unsorted_array[j]){ merge_result[result_counter] = unsorted_array[i]; i++; result_counter++; }else if(unsorted_array[j] &lt; unsorted_array[i]){ merge_result[result_counter] = unsorted_array[j]; j++; result_counter++; } } while(i &lt; middle_point){ merge_result[result_counter] = unsorted_array[i]; i++; result_counter++; } while(j &lt; end_index){ merge_result[result_counter] = unsorted_array[j]; j++; result_counter++; } for (var k = begin_index; k &lt; end_index; k++) { unsorted_array[k] = merge_result[k-begin_index]; } } var merge_sort = function (unsorted_array, begin_index, end_index) { if(end_index - begin_index == 1){ return; } var middle_point = Math.floor((begin_index + end_index) / 2); arguments.callee(unsorted_array, begin_index, middle_point); arguments.callee(unsorted_array, middle_point, end_index); merge(unsorted_array, begin_index, middle_point, end_index); } [/javascript]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#2743" title="2010-05-25 22:31:56">admin</a>:</strong> O dizi tersten sıralı. Burada kastettiğim sıralama artan bir sıralamadır. Verilen algoritma herhangi bir diziyi sıralamakta kullanılır. Yani senin verdiğin dizi de aynı algoritma kullanarak sıralanabilir.</p>
+
+<p><strong><a href="#2740" title="2010-05-25 19:35:01">komagine</a>:</strong> iyide o dizi zaten sıralı karambol bi diziyi nasıl sıralıyo meselam 34 56 4 10 77 51 93 30 52 ?????? bi anlatırsan sevinirim :roll:</p>
+
+<p><strong><a href="#7337" title="2012-12-20 20:35:19">emre</a>:</strong> admin rica etsem yukarıdakı gifi indirebilme şansımız varmı bitirme sunum ıcın lazım da???</p>
+
+<p><strong><a href="#7343" title="2012-12-21 10:35:42">admin</a>:</strong> hacı abi o gif değil applet :)</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/breadth-first-search-yuzey-ocelikli-arama/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/biletofobi/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

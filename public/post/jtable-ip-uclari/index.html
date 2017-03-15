@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/jtable-ip-uclari/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: JTable İp Uçları
+link: <a href="http://orhanbalci.net/tr/?p=23">http://orhanbalci.net/tr/?p=23</a>
+author: Orhan Balci
+description:
+post_id: 23
+created: 2008/03/15 17:48:58
+created_gmt: 2008/03/15 15:48:58
+comment_status: open
+post_name: jtable-ip-uclari
+status: publish
+post_type: post</p>
+
+<h1 id="jtable-ip-uçları">JTable İp Uçları</h1>
+
+<p><strong>1) JTable Header görünmeme problemi.</strong> Jtable kullanırken tablonun başlığını görebilmeniz için tablonuzun mutlaka JScrollPane içerisinde gösterilmesi gerekmektedir.  Örnek Kullanım: [java] booksTable = new JTable(); JScrollPane jsp = new JScrollPane(); jsp.setViewportView(booksTable); [/java] Aksi takdirde direkt olarak başka bir JComponent içerisinde gösterilmek istenirse tablonun sadece gövde kısmı görülecektir. Eğer tablonun başlık kısmı da gösterilmek istenirse JTable getTableHeader() metodu ile tablo başlık kısmının da ayrı olarak gösterilmek istenen JComponent üzerine eklenmesi gerekir. <strong>2) JTableHeader Yüksekliğinin Ayarlanması</strong> Herhangi bir tablonuzun başlık yüksekliğini ayarlamak için öncelikle JTable nesnenizden JTableHedaer nesnenize getTAbleHeader() metoduyla ulaşıp bu nesne üzerinde setPreferedSize() metodunu çağırmanız gerekir. Örnek Kullanım: [java] Dimension d = booksTable.getTableHeader().getPreferredSize(); d.setSize(d.width,BOOK_TABLE_ROW_HEIGHT); booksTable.getTableHeader().setPreferredSize(d); [/java] <strong>3) JTable Seçili Hücre Değerinin Okunması</strong> JTable da seçili hücre değerini almak için tablonun veri kısmını tutan model nesnesine ulaşmamız gerek. Bunun için JTable&rsquo;dan aldığımız seçili hücre indekslerini model indekslerine çeviren convertRowIndexToModel() ve convertColumnIndexToModel() metodlarını kullanmalıyız. Daha sonra modelden bu indekslere karşılık gelen değeri almak için TableModel sınıfının getValueAt() metodunu çağırmalıyız. Örnek Kullanım: [java] int selectedTableIndex = _tblVaccineList.getSelectedRow(); int selectedModelIndex = _tblVaccineList.convertRowIndexToModel(selectedTableIndex); int selectedId = Integer.parseInt(_tblVaccineList.getModel().getValueAt(selectedModelIndex, 0).toString()); [/java] yukarıdaki örnek seçilen satırın ilk hücresindeki integer değeri almaya yarar. Burada tblVaccineList bir JTable nesnesidir.</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#5445" title="2012-05-07 19:19:37">taha</a>:</strong> Teşekkürler bilgilendirme için</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/k-orta-kumeleme-algoritmasi/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/javayi-ozgurlestirmek/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

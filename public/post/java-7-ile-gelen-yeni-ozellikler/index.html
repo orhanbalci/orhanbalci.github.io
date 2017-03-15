@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-7-ile-gelen-yeni-ozellikler/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java 7 İle Gelen Yeni Özellikler
+link: <a href="http://orhanbalci.net/tr/?p=1137">http://orhanbalci.net/tr/?p=1137</a>
+author: Orhan Balci
+description:
+post_id: 1137
+created: 2012/12/18 14:40:54
+created_gmt: 2012/12/18 11:40:54
+comment_status: open
+post_name: java-7-ile-gelen-yeni-ozellikler
+status: publish
+post_type: post</p>
+
+<h1 id="java-7-ile-gelen-yeni-özellikler">Java 7 İle Gelen Yeni Özellikler</h1>
+
+<p>Bildiğiniz üzere Java&rsquo;nın major versiyon güncellemelerinde dile ait yeni özellikler eklenmekte. Java 7 versiyonu ile birlikte gelen özelliklerden önemli gördüklerimi burada örneklerle anlatmak istedim. Faydalı olması ümidiyle&hellip; 1) Java 7 versiyonuyla birlikte switch ifadelerinde string constant kullanabilme yeteneği dile kazandırıldı. Çoğu programcının ihtiyacı olabilecek bir özellik. Örnek : [java] public class StringOnSwitch { public static void main(String[] args) { String sampleString = new String(&ldquo;sample&rdquo;); switch (sampleString) { case &ldquo;Sample&rdquo; : System.out.println(&ldquo;Case sensitivie çalışıyor mu?&rdquo;); break; case &ldquo;Örnek&rdquo; : System.out.println(&ldquo;Unicode string&rdquo;); break; case &ldquo;sample&rdquo;: System.out.println(&ldquo;Burası ekrana yazılmalı&rdquo;); break; default: System.out.println( &ldquo;Burası yazılmamalı&rdquo;); } } } [/java] 2)Try catch bloklarında kod tekrarını önleyen çoklu exception yakalama mekanizması geliştirilmiştir. Eğer benzer exceptionlar için benzer kod bloklarını çalıştırıyorsanız bu özellik kodun okunulurluğunu arttıracaktır. Catch anahtar kelimesinden sonra yakalayacağımız exceptionları &ldquo;|&rdquo; karakteri ile ayırıyoruz. Sozdizimi su sekilde &ndash;&gt; BirinciExceptionTipi | IkinciExceptionTipi &hellip;| NinciExceptionTipi exceptiondegiskeni. Örnek : [java] public class MultiCatch { public static void main(String[] args) { try { FileReader fis = new FileReader(&ldquo;test.txt&rdquo;); BufferedReader br = new BufferedReader(fis); DatagramSocket ds = new DatagramSocket(6161); } catch (FileNotFoundException | SocketException e) { e.printStackTrace(); } } } [/java] 3) Yine exception handling mekanizmasına güzel bir eklenti olarak otomatik kaynak kapamaya olanak sağlayan try-with-resources blokları eklendi. Bu özellik C#&lsquo;da mevcut olan kullanışlı ve faydalı özelliklerden bir tanesiydi. Kaynak kullanımını daha efektif hale getiriyor. Try anahtar kelimesinden sonraki parantezlere dikkat! Buradaki parantezlere yazacağımız kaynak nesneleri java.lang.AutoClosable arayüzünü gerçeklemek zorunda. Örnek : [java] public class AutomaticResources { public static void main(String[] args) throws IOException { try(InputStream is = new FileInputStream(&ldquo;girdi.txt&rdquo;); OutputStream os = new FileOutputStream(&ldquo;çıktı.txt&rdquo;)) { int i = is.read(); os.write(i); } } } [/java] 4) Jenerik sınıflarda tip bilgisini belirtmek için kullanılan &ldquo;&lt;&gt;&rdquo; operatörü tip bilgisini tahmin edebilir duruma getirildi. Yine kod okunulurluğunu artıracak bir gelişme. Örnek : [java] public class DiamondOperator { public static void main(String[] args) { //java 7&rsquo;den önce ArrayList<HashMap<Integer,TreeMap<Long,String>&gt;&gt; beforeList = new ArrayList<HashMap<Integer,TreeMap<Long,String>&gt;&gt;(); //java 7&rsquo;den sonra ArrayList<HashMap<Integer,TreeMap<Long,String>&gt;&gt; afterList = new ArrayList&lt;&gt;(); } } [/java] [ad#Yazi Ici Buyuk]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#7539" title="2013-01-18 01:17:07">İbrahim Gündüz</a>:</strong> Java 7 ile güzel ilerlemeler olmuşa benziyor. Galiba Switch içerisinde equals() methodunu kendi işliyor? IgnoreCase özelliği için nasıl bir şey yapmak gerek acaba merak ettim?</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-8-ile-gelen-yeni-ozellikler/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/istanbulda-arefe-sabahi/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

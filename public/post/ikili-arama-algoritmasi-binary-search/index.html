@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/ikili-arama-algoritmasi-binary-search/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Ikili Arama Algoritmasi (Binary Search)
+link: <a href="http://orhanbalci.net/tr/?p=1376">http://orhanbalci.net/tr/?p=1376</a>
+author: Orhan Balci
+description:
+post_id: 1376
+created: 2015/04/13 23:33:15
+created_gmt: 2015/04/13 20:33:15
+comment_status: open
+post_name: ikili-arama-algoritmasi-binary-search
+status: publish
+post_type: post</p>
+
+<h1 id="ikili-arama-algoritmasi-binary-search">Ikili Arama Algoritmasi (Binary Search)</h1>
+
+<p>Javascript implementasyonu : [javascript] var binarySearch = function(searchArray, beginIndex, endIndex, targetValue) { if (beginIndex &gt; endIndex) { return -1; } if (searchArray[Math.floor((beginIndex + endIndex) / 2)] === targetValue) return Math.floor((beginIndex + endIndex) / 2) + 1; else if (searchArray[Math.floor((beginIndex + endIndex) / 2)] &gt; targetValue) return arguments.callee(searchArray, beginIndex, Math.floor((beginIndex + endIndex) / 2)-1, targetValue); else if (searchArray[Math.floor((beginIndex + endIndex) / 2)] &lt; targetValue) return arguments.callee(searchArray, Math.floor((beginIndex + endIndex) / 2)+1, endIndex, targetValue); else console.log(&ldquo;Error&rdquo;); } [/javascript] [ad#Yazi Ici Buyuk]</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/insertion-sort-algoritmasi-appleti/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/ikili-agac-veri-yapisi-binary-search-tree/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

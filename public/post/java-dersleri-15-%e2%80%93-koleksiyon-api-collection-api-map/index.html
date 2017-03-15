@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-15-%E2%80%93-koleksiyon-api-collection-api-map/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 15 – Koleksiyon API (Collection API) Map
+link: <a href="http://orhanbalci.net/tr/?p=696">http://orhanbalci.net/tr/?p=696</a>
+author: Orhan Balci
+description:
+post_id: 696
+created: 2010/03/17 18:31:35
+created_gmt: 2010/03/17 15:31:35
+comment_status: open
+post_name: java-dersleri-15-%e2%80%93-koleksiyon-api-collection-api-map
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-15-koleksiyon-api-collection-api-map">Java Dersleri 15 – Koleksiyon API (Collection API) Map</h1>
+
+<p>[caption id=&ldquo;attachment_840&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 15 Map&rdquo;]<img src="/wp-content/uploads/java_banner_15.png" alt="Java Dersleri 15 Map" />[/caption] Map arayüzü anahtar-değer ikililerini bir arada tutmak için tasarlanmıştır. Matemetikteki fonksiyonların yazılım tarafında karşılığı olan map veri yapıları yazılım mimarisinde sıkça kullanılır. Örneğin yazılımımızda bulunan nesnelere birer kimlik numarası vererek bu numara ile nesne arasında anahtar-değer ilişkisi kurabiliriz. Böylelikle istediğimiz nesneye kimlik numarası aracılığıyla rahatlıkla erişebiliriz. Java Map arayüzü herhangi bir sıralama kısıtı getirmez. Map&rsquo;e eklenen anahtar-değer ikililerinin eklendiği sırada kalacağı garanti değildir. Map arayüzünü gerçekleyen sınıflar arasında en bilineni HashMap sınıfıdır. HashMap verilen anahtardan hash fonksiyonu yardımıyla bir array indeksi oluşturur. Verilen değer de bu array indeksindeki belleğe yerleştirilir. Hash fonksiyonları çok temel matematiksel işlemler kullandıklarından hızlıdırlar. Dolayısıyla HashMap&rsquo;de verilere erişim sabit zamanda olur. HashMap performansı için önemli olan iki parametre ilk kapasite ve yük faktörüdür. Varsayılan olarak ilk kapasite 11&rsquo;dir. Yük faktörü HashMap koleksiyonumuzun herhangi bir anda maksimum doluluk oranını ölçer. Bu değer varsayılan olarak %75 dir. HashMap&rsquo;de doluluk oranı bu değerin üzerine çıktığında kapasite arttırımına gidilerek değerler tekrar hash&rsquo;lenir. Şimdi bir örnekle Map veri yapısına eleman eklemeyi ve geri almayı görelim : [java] package net.orhanbalci.collections; import java.util.HashMap; import java.util.Iterator; import java.util.Map; import java.util.Set; public class HashMapExample { public static void main(String[] args) { Map<Integer,String> m = new HashMap<Integer,String>(); for (int i = 0; i &lt; 10; i++) { m.put(i, String.valueOf(i) + &ldquo; değer&rdquo;); } Set<Integer> ks = m.keySet(); Iterator<Integer> i = ks.iterator(); while (i.hasNext()) { Integer key = i.next(); System.out.print(key + &ldquo; &ldquo;); System.out.println(m.get(key)); } } } [/java] Örneğimizde 11. satırda yeni bir HashMap nesnesi tanımlıyoruz. Java&rsquo;nın generics özelliğini (şablon sınıflar) kullanılarak anahtarların veri tipini Integer değerlerin veri tipini ise String olarak belirttik. 14. satırda Map arayüzünün put() metodunu kullanarak HashMap koleksiyonumuza yeni eleman ekliyoruz. 24. satırda ise get() metodu yardımıyla HashMap koleksiyonumuzdan anahtar yardımıyla değerimize ulaşıyoruz. Yukarıda bahsettiğimiz ilk kapasitenin performansa olan etkisini başka bir örnekte görelim : [java] Map<Integer,String> m2 = new HashMap<Integer,String>(10); Map<Integer,String> m3 = new HashMap<Integer,String>(100); long time1 = System.currentTimeMillis(); for (int k = 0; k &lt; 10000; k++) { m2.put(k, String.valueOf(k) + &ldquo; değer&rdquo;); } long time2 = System.currentTimeMillis(); System.out.println(String.valueOf(time2-time1) + &ldquo; milisaniye&rdquo;); time1 = System.currentTimeMillis(); for (int k = 0; k &lt; 10000; k++) { m3.put(k, String.valueOf(k) + &ldquo; değer&rdquo;); } time2 = System.currentTimeMillis(); System.out.println(String.valueOf(time2-time1) + &ldquo; milisaniye&rdquo;); [/java] Bu örneğimizde ise iki adet HashMap nesnesi oluşturuken ilk kapasiteyi yapılandırıcı metoda parametre olarak veriyoruz. m2 koleksiyonumuzun ilk kapasitesi 10 iken diğerinin ilk kapasitesi 100 dür. Her iki koleksiyona arka arkaya 10000 anahtar-değer ikilisi ekleyip performansı ölçtüğümüzde ilk kapasitesi 10 olan koleksiyona ekleme işlemi 46-47 milisaniye sürerken ilk kapasitesi 100 olan koleksiyona ekleme işlemi 19-20 milisaniye sürmekte. Görüldüğü üzere kapasite artırımına gitmek zaman kaybına neden olmaktadır. Map arayüzünün birden fazla implementasyonu mevcuttur. Bunlardan en sık kullanılanları HashMap ve TreeMap&rsquo;tir. İkisi arasında en göze çarpan fark TreeMap&rsquo;in sıralı HashMap&rsquo;in ise sırasız olmasıdır. Örneğin bir TreeMap kullanıldığında : [java] public static void main(String[] args) { Map<Integer,String> map = new TreeMap<Integer,String>(); map.put(4,&ldquo;four&rdquo;); map.put(1,&ldquo;one&rdquo;); map.put(2,&ldquo;two&rdquo;); map.put(3,&ldquo;three&rdquo;); Set<Integer> keys = map.keySet(); //Kural treeset elemanları natural ordering ile sıralar Iterator<Integer> it = keys.iterator(); while(it.hasNext()) { System.out.println(map.get(it.next())); } } [/java] bu kod bloğu her zaman sıralanmış çıktı verecektir. [ad#Yazi Ici Buyuk]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#2663" title="2010-04-17 09:57:26">Java Yazılım</a>:</strong> Merhaba, java yazılım ile ilgili googleda araştırma yaparken tesadüfen websitenize ulaştım. Web tasarım açısından ve arama motoru optimizasyonu açısından çok başarılı bulduğumu söyleyebilirim.Biraz daha teknik destek ile bu websitesi daha iyi noktalara ulaşacaktır diye düşünüyorum. :lol:</p>
+
+<p><strong><a href="#7602" title="2013-01-25 21:02:12">web sitesi</a>:</strong> arkadaşa katılıyorum. başarılar dilerim</p>
+
+<p><strong><a href="#15932" title="2014-04-30 17:35:59">mustafa</a>:</strong> merhaba, google da arama yaparken karşılaştığım sitenizi makalelerinizi çok beğendim. paylaşımlarınızın devamını dilerim</p>
+
+<p><strong><a href="#43288" title="2015-03-16 22:05:21">Ahmet</a>:</strong> Çok faydalı bir yazı. Map kullanımını araştırıyodum denk geldim elinize sağlık</p>
+
+<p><strong><a href="#43455" title="2015-03-19 19:13:00">admin</a>:</strong> Map çok temel bir veri yapısıdır. Değişik varyasyonları da mevcuttur. Örneğin aynı anahtara birden fazla değer atayabildiğimiz multimap ve çift yönlü veri erişimine olanak sağlayan bimap bunlara örnektir. bahsettiğim map türleri standart java kütüphanesinde mevcut değil bunlar için Guava kütüphanesini kullanabilirsiniz.</p>
+
+<p><strong><a href="#50620" title="2015-10-31 02:28:33">sefa</a>:</strong> örnekler için teşekkürler. elimizdeki bir hashmapi dosyaya nasıl yazdırabiliriz? Şimdiden teşekkürler, iyi günler.</p>
+
+<p><strong><a href="#50732" title="2015-11-06 23:11:57">admin</a>:</strong> Hashmapi binary dosyaya yazmak istiyorsaniz serialization kullanabilirsiniz. Text dosyaya yazmak icin <a href="http://orhanbalci.net/tr/?p=1205">http://orhanbalci.net/tr/?p=1205</a> buradaki derste anlatilan guava kutuphanesi isinizi kolaylastiracaktir</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-16-%E2%80%93-enum-yapisi/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-14-koleksiyon-api-kuyruk-queue/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

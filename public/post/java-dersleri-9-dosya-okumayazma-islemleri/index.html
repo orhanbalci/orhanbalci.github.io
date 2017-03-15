@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-9-dosya-okumayazma-islemleri/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri
+link: <a href="http://orhanbalci.net/tr/?p=226">http://orhanbalci.net/tr/?p=226</a>
+author: Orhan Balci
+description:
+post_id: 226
+created: 2009/08/04 13:33:43
+created_gmt: 2009/08/04 10:33:43
+comment_status: open
+post_name: java-dersleri-9-dosya-okumayazma-islemleri
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-9-dosya-okuma-yazma-işlemleri">Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri</h1>
+
+<p>[caption id=&ldquo;attachment_826&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 9 Dosya İşlemleri&rdquo;]<img src="/wp-content/uploads/java_banner_9.png" alt="Java Dersleri 9 Dosya İşlemleri" />[/caption] Bu derste sizlere Java&rsquo;nın dosya işlemlerinden bahsedeceğim. Üç bölümlük serinin ilkinde genel dosya girdi çıktı mekanizmasından bahsedip metin dosyalarını nasıl okuyup yazabileceğimize bakacağız. Java&rsquo;da üm girdi çıktı işlemleri, bu dosya olabilir, network soketi olabilir, Stream (akım) sııfları vasıtasıyla gerçekleştirilir. Stream sınıflarını içerisinden veri akan yollar şeklinde düşünebilirsiniz. Bu sınıflar içerisindeki verilere ve buffering (tamponlama) vs gibi özelliklerine göre birbirlerinden ayrılırlar. Genel olarak taşıdıkları verilere göre üçe ayrılırlar:</p>
+
+<ol>
+<li>İkilik Veri Akımları (Byte Streams) : İkili tipteki dosyaları okuyup yazmakta kullanılırlar</li>
+<li>Karakter Akımları(Char Streams): Metin belgeleri okuyup yazmakta kullanılırlar</li>
+<li>Nesne Akımları(Object streams): Serializable olan Java nesnelerini okuyup  yazmakta kullanılırlar
+Bu sınıfların dışında akım sınıflarının özelliklerini değiştiren sarmalayıcı akım sınıfları da mevcuttur. Örneğin BufferedReader sınıfı herhangi bir Reader sınıfını sarmalayarak tamponlama özelliği katar. İlk olarak karakter akımlarını incelemeye çalışalım. Yazılım geliştirme sürecince çokça karşımıza çıkan metin dosyalarını Java&rsquo;da okumak için <strong>Reader</strong> soyut sınıfından türeyen <strong>InputStreamReader</strong> alt sınıfı olan <strong>FileReader</strong> sınıfı kullanılır. Dosyaya yazmak için ise API&rsquo;de bu sınıfın muadili <strong>FileWriter</strong> sınıfı mevcuttur. Örnek olarak herhangi bir metin dosyasının satır başlarına satır numarasını ekleyen şu kod satırlarını inceleyelim: [java] FileWriter fw = null; try { int lineNumber = 1; FileReader fr = new FileReader(fileName); fw = new FileWriter(&ldquo;linenumber.txt&rdquo;); int c = fr.read(); do { if ((char) c == &lsquo;\n&rsquo;) { lineNumber++; fw.write&copy;; fw.write( Integer.toString(lineNumber)); } else { fw.write&copy;; } c = fr.read(); } while (c != -1); } catch (IOException ex) { Logger.getLogger(FileIOUI.class.getName()).log(Level.SEVERE, null, ex); } finally { try { fw.close(); } catch (IOException ex) { Logger.getLogger(FileIOUI.class.getName()).log(Level.SEVERE, null, ex); } } [/java] Metin dosyamızı okumak için FileReader sınıfını kullandık. Öncelikle okumak istediğimiz dosya adını kullanarak bir FileReader nesnesi oluşturup, bu nesne üzerinde read() metodunu çağırdık. Bu sınıfın dosyadan okumak için birden fazla metodu bulunmakla beraber burada dosyayı karakter-karakter okumamızı sağlayan int dönüş değerine sahip olan read() metodunu kullandık. Bu metodun dışarıya verdiği int tipindeki değişken aslında char tipinde bir değişken olduğundan tür dönüşüm operatörünü uygulamamızda bir sakınca yoktur yani : [java] int c = fr.read(); if ((char) c == &lsquo;\n&rsquo;) { } [/java] kullanımı doğrudur. Burada son olarak dikkat etmemiz gereken husus read() metodunun dosya sonuna geldiğinde değer olarak -1 döndürmesidir. Yani dosya sonuna gelip gelmediğimizi dönüş değerinin -1 olup olmadığını kontrol ederek anlayabiliriz. Metin dosyası yazmak için ise FileWriter sınıfını kullandık. Yine bu sınıfta da dosyaya yazmak için birden fazla metod bulmak mümkün. Biz burada yine karakter-karakter yazmamıza olanak sağlayan write(int) metodunu kullandık. Sadece satır başlarına yazdırmak isediğimiz satır sayısını String tipine dönüştürüp write(String) metodunu kullanarak dosyaya yazdık. Bu iki farklı kullanımı gösterirsek : [java] int c = fr.read(); if ((char) c == &lsquo;\n&rsquo;) { lineNumber++; fw.write&copy;; fw.write( Integer.toString(lineNumber)); } [/java] Eğer dosyaya en baştan değil sonuna ekleme yapmak istiyorsak FileWriter sınıfının : [java] public FileWriter(File file, boolean append) [/java] yapıcı metodunu kullanabiliriz. Burada ikinci parametreye true değerini vererek dosyaya ekleme yapmak istediğimizi bildirmeliyiz. Metin dosyalarını işlerken genellikle karakter-karakter okuma/yazma yerine kelime-kelime okuma/yazma yada satır okuma/yazma işlemlerini kullanırız. FileReader ve FileWriter sınıfları bu yeteneklere sahip değildir dolayısıyla bunun için sarmalayıcı sınıflar mevcuttur. Bunlar BufferedReader ve BufferedWriter sınıflarıdır. Örneğin bir dosyayı satır satır okumak ve GUI elemanı olan JTextArea&rsquo;da göstermek için : [java] fr = new FileReader(fileName); BufferedReader bfr = new BufferedReader(fr); String s = &ldquo;&rdquo;; do { try { s = bfr.readLine(); jTextArea1.insert(s, jTextArea1.getDocument().getLength() ); jTextArea1.insert(&rdquo;\n&rdquo;, jTextArea1.getDocument().getLength() ); } catch (IOException ex) { Logger.getLogger(FileIOUI.class.getName()).log(Level.SEVERE, null, ex); } } while (s != null); [/java] Bu örnekte önemli olan <strong>s = bfr.readLine();</strong> fonksiyon çağrımıdır. Bu fonksiyon FileReader sınıfında mevcut değildir. Bu fonksiyon dosyamızdaki satırı bir String nesnesi olarak bize verir. Bu satırı tekrar ayrıştırmak programcıya düşmektedir. Burada sıklıkla ihtiyaç duyulan String fonksiyonları <a href="/?p=367">şu derste</a> anlatılmıştır. Buraya kadar anlatmış olduğumuz metodlar dosyaları Java&rsquo;da ön tanımlı olan karakter kodlamasına göre okur ki bu da içerisinde Türkçe karakter bulunan dosyalarda sıkıntı yaşamamıza sebep olur. Elimizde türkçe yazılmış bir dosya varsa ve bu dosyanın karakter kodlamasını biliyorsak (Türkçe metinler için tanımlanan birden fazla karakter kodlaması vardır) o dosyayı okumamız da gayet kolay olacaktır. Yukarıdaki örneği Türkçe karakterleri okuyacak hale getirelim : [java] fr = new FileInputStream(fileName); InputStreamReader isr = new InputStreamReader(fr,Charset.forName(&ldquo;ISO-8859-3&rdquo;)); BufferedReader bfr = new BufferedReader(isr); [/java] Burada FileReader sınıfının yerine InputStreamReader sınıfını kullanmak zorundayız. InputStreamReader nesnemize hangi karakter kodlamasını kullanması gerektiğini söylemeliyiz. Eğer doğru kodlamayı verirsek Türkçe karakterler düzgün bir şekilde okunacaktır. [ad#Yazi Ici Buyuk]</li>
+</ol>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#1725" title="2009-09-30 00:59:19">Dogan</a>:</strong> Selamlar, Öncelikle emeğiniz için teşekkürler, şunu sormak istiyorum Dosya okuma işleminde EXCEL gibi bir dosyayı kullandığımızda, Excel dosyası içerisinde bulunan türkçe karakterleri okumak mümkün olmuyor hepsi ? olarak çıkıyor. Bu konuda bir öneriniz olabilirmi?</p>
+
+<p><strong><a href="#1726" title="2009-09-30 09:13:47">admin</a>:</strong> Doğan bey merhabalar. Excel dosyalarının encodingini bilmiyorum ancak DataInputStream sınıfının read metoduyla dis.read(album, 0, 30); şeklinde okuduğunuz herhangi bir Stringin encodingini new String(album,&ldquo;iso-8859-9&rdquo;) String yapılandırma metoduyla değiştirebilirsiniz. Yine de Excel okumak için yazılan JExcel gibi kütüphaneleri kullanmanızı öneririm kolay gelsin.</p>
+
+<p><strong><a href="#1879" title="2009-11-21 21:24:29">pentagRammstein</a>:</strong> Merhabalar paylaşım için teşekkür ederim.Ancak benim aradığım konu biraz daha farklı.C programlama dilinde kullanılan konumlandırma fonksiyonu fseek javada yok,ama fseek fonksiyonunun görevini yapan başka bir kullanım şekli olmalı diye düşünüyorum.Bir türlü bulamadım,javada fseek kullanımına benzer bir kullanım varmı? Varsa nasıl kullanılır ? (fseek fonksiyonu özetle şu işi yapıyor; Dosya okuma esnasında program dışarıdan girilen bir değeri alarak o sayıdan sonraki byteları okuyor,örneğin 100 byte lık veriyi atlıyor ve 101.byte tan itibaren okumaya başlıyor.Burada zamandan birkazanım söz konusu çünkü ilk 100 byte lık veriyi okumuyor) Şimdiden çok teşekkürler&hellip;</p>
+
+<p><strong><a href="#1881" title="2009-11-22 00:46:38">admin</a>:</strong> İkilik (binary) dosyaları okumaya yarayan DataInputStream sınıfının skipBytes() metodu işinizi görecektir.</p>
+
+<p><strong><a href="#5310" title="2012-02-18 18:52:45">Gürcan Kavakçı</a>:</strong> Teşekkürler, Güzel paylaşım</p>
+
+<p><strong><a href="#10085" title="2013-11-07 17:43:14">sd</a>:</strong> txt yerine exe dosyasını nasıl yapabiliriz. Dosya yazdıktan sonra açılabilir olacak</p>
+
+<p><strong><a href="#6033" title="2012-07-27 15:17:44">pyk</a>:</strong> merhaba ben 2 tane text dosyasını okuyup bunları gui elemanı olarak 2 dosyayı ekrana gösterip iki dosyada aynı kelimeler kullanılmışsa bunları bold yapmak istiyorum bu konuda yardımcı olabilirmisiniz</p>
+
+<p><strong><a href="#6087" title="2012-08-01 14:21:29">admin</a>:</strong> Merhabalar. Ekranda gösterim için JTextPane kullanırsınız. Dosyaları okurken kelime kelime okuyup bunları bir set(TreeSet olabilir) veri tipine kaydedip teker teker gezinip diğer dosyaya ait set içinde var mı kontrolü yaparsınız.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-ile-json-islemleri-jackson/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-8-ic-gomulu-ve-isimsiz-siniflar-inner-nested-and-anonymous-classes/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

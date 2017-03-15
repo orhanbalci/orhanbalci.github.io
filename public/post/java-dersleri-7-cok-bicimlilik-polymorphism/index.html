@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-dersleri-7-cok-bicimlilik-polymorphism/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 7 - Çok Biçimlilik (Polymorphism)
+link: <a href="http://orhanbalci.net/tr/?p=154">http://orhanbalci.net/tr/?p=154</a>
+author: Orhan Balci
+description:
+post_id: 154
+created: 2009/06/24 20:12:28
+created_gmt: 2009/06/24 18:12:28
+comment_status: open
+post_name: java-dersleri-7-cok-bicimlilik-polymorphism
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-7-çok-biçimlilik-polymorphism">Java Dersleri 7 - Çok Biçimlilik (Polymorphism)</h1>
+
+<p>[caption id=&ldquo;attachment_822&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri 7 Çok Biçimlilik&rdquo;]<img src="/wp-content/uploads/java_banner_7.png" alt="Java Dersleri 7 Çok Biçimlilik" />[/caption] Bu dersimizde Java&rsquo;nın nesne odaklı programlamanın olmazsa olmazlarından çok biçimliliği nasıl gerçeklediğini öğreneceğiz. Çok biçimlilik aynı tip değişken üzerinden birbirinden farklı davranışlar elde etme tekniğidir. Programlama dillerinin dinamik bağlama (dynamic binding) yada koşum zamanı bağlama (runtime binding) özelliğinden faydalanılarak hayata geçirilir. Tabiki dinamik bağlamadan yararlanabilme için metod ezme (method overriding) tekniğini bilmemiz gerekiyor. Öncelikle bahsettiğimiz terimleri örneklerle açıklayalım. Metod ezme işlemi kalıtım esnasında ana sınıfta halihazırda tanımlı olan methodu yeniden yazarak ana sınıftaki metodu geçersiz kılma işlemidir. Örneğin :  [java] public class KMeansCluster { public String toString() { return &ldquo;KMeansCluster&rdquo;; } } [/java] yukarıdaki kod parçasında KMeansCluster sınıfı varsayılan ana sınıfı olan Object (Java&rsquo;da her sınıf Object sınıfından türer) sınıfının toString metodunu ezmiştir. Bu metod KMeansCluster cinsinden herhangi bir nesnenin print() metodlarından herhangi birine verildiği zaman çalışır yani : [java] KMeansCluster kmc = new KMeansCluster(); System.out.print(kmc); [/java] satırları ekrana KMeansCluster yazacaktır. Burada dikkat etmemiz gereken iki temel nokta var :</p>
+
+<ol>
+<li>Ezdiğimiz metodların imzaları aynı olmalıdır. Metod imzası ise metod adı, metod parametre sayısı ve metod parametre tiplerinden oluşur.</li>
+<li>static tanımlanan metodlar ezilemezler
+Dİnamik bağlama referans tiplerinin derleme zamanında değil de çalışma zamanında atanması esasında dayanır. Bir örnekle açıklarsak : [java] public class ClusteringBase { public void cluster() { System.out.println(&ldquo;Cluster Base&rdquo;); } } public class KMeansClustering extends ClusteringBase { public void cluster() { System.out.println(&ldquo;KMeansClustering&rdquo;); } } public class HierarchicalClustering extends ClusteringBase { public void cluster() { System.out.println(&ldquo;HierarchicalClustering&rdquo;); } } [/java] Yukarıda bir tane ana sınıf (ClusteringBase) iki tane de bu ana sınıftan türeyen alt sınıf tanımladık(KMeansClustering,HierarchicalClustering). Alt sınıflarda cluster(kümeleme) metodunu ezdik. Şimdi bu sınıfları kullanarak çok biçimlilik esasına göz atalım : [java] ClusteringBase cluster1 = new ClusteringBase(); ClusteringBase cluster2 = new KMeansClustering(); ClusteringBase cluster3 = new HierarchicalClustering(); cluster1.cluster(); cluster2.cluster(); cluster3.cluster(); [/java] Buradaki [java] ClusteringBase cluster2 = new KMeansClustering(); ClusteringBase cluster3 = new HierarchicalClustering(); [/java] ifadeleri kalıtım kuralları çerçevesinde doğrudur. Yani bir üst sınıf referansına alt sınıf referansı atanabilir(Tersi yanlıştır). Dikkat etmemiz gereken kısım üst sınıf referansıyla yapılam cluster() metod çağrımlarıdır. Burada referans tipi her ne kadar üst sınıf olan ClusteringBase tipinde olsa da çağrılan metodlar çalışma zamanında (runtime) belirlenerek ilgili alt sınıfların metodlarının çağırımı sağlanır. Yukarıdaki kod parçası : [java] ClusterBase KMeansClustering HierarchicalClustering [/java] çıktısını verir. Çok biçimliliğin yazılımcıya sağladığı en büyük avantaj farklı türden nesneleri ana sınıflarını baz alarak aynı ortamda yönetebilme ve gerektiğinde özel fonksiyonaliteyi tekrar kazanabilme avantajıdır.</li>
+</ol>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/java-dersleri-8-ic-gomulu-ve-isimsiz-siniflar-inner-nested-and-anonymous-classes/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-dersleri-6-arayuzler-ve-gerceklenmesi-interface-and-implementation/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

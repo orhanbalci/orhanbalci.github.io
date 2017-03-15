@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri
+link: <a href="http://orhanbalci.net/tr/?p=874">http://orhanbalci.net/tr/?p=874</a>
+author: Orhan Balci
+description:
+post_id: 874
+created: 2010/10/29 12:36:24
+created_gmt: 2010/10/29 09:36:24
+comment_status: open
+post_name: carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri
+status: publish
+post_type: post</p>
+
+<h1 id="çarpışma-algılama-yöntemleri-ve-algoritmaları-1-matematik-temelleri">Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri</h1>
+
+<p>[caption id=&ldquo;attachment_878&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Çarpışma Algılama Algoritmaları&rdquo;]<img src="/wp-content/uploads/collision_detection_banner.png" alt="" />[/caption] Yeni bir makale dizisiyle tecrübelerimi sizinle paylaşmak istiyorum. Yine uzun soluklu bir yazı dizisi olacağını tahmin ediyorum. Çarpışma algılama yöntemleri fiziksel olayların taklit edildiği veya birebir simüle edildiği yazılımlarda nesneler arasındaki etkileşimi gerçekçi kılmak için kullanılırlar. Oyunlar ve simülasyonlar temel kullanım alanları olmakla beraber haptik uygulamaları, sanal gerçeklik uygulamaları da akademik alanda çarpışma kontrol algoritmalarının ilgi alanındadır. İçerisinde çok fazla geometrik problem barındıran bu alanda geliştirilen algoritmalar tatminkar sonuçlar üretebilmektedir. Özellikle oyun sektörünün çok fazla gelişmesiyle bu konu üzerinde ilerleme de gayet hızlı olmuştur. Bu kadar girizgahtan sonra çarpışma algılama algoritmaları geliştirirken göz önünde bulundurulan kriterlere değinelim :</p>
+
+<ul>
+<li>Ölçeklenebilirlik : Üzerlerinde çarpışma kontrolü yapılacak olan nesne sayısının azaltılıp arttıralabilmesi durumudur. Az sayıda nesne üzerinde iyi sonuçlar verebilen bir algoritmanın çok fazla sayıda nesne üzerinde işe yarayacağının garantisi yoktur. Örneğin elinizle sanal ortamdaki kısıtlı sayıda nesnelerle etkileşime girmenizi sağlayan bir sanal gerçeklik uygulaması için gerekli olan algoritma ile yüzlerce aracın içerisinde bulunduğu trafiği simüle etmek için gerekli olan algoritma ölçeklenebilirlik açısından farklı olabilir.</li>
+<li>Performans : Bir önceki kriterle doğrudan ilintili olan bir problemdir. Geliştirdiğiniz çözüm yöntemi belki binlerce nesne üzerinde çalışabilir fakat bunu saniyeler mertebesinde yapıyorsa çoğu zaman kullanışsızdır. Çarpışma algılama algoritmalarının kullanıldığı uygulamaların büyük çoğunluğu gerçek zamanlıdır. Yani hesaplamalrı en kötü ihtimalle 60 hetz&rsquo;de yapılabiliyor olması gereklidir. Bu da sistemdeki tüm işlemler için elinizde yaklaşık olarak 1000ms/60 = 16.67 mili saniye var demektir. Bir işlemci için bu zaman uzun olmakla beraber çözdüğünüz problem yüzlerce hatta binlerce nesneyi içeriyorsa ciddi bir problemle karşı karşıyasınız demektir.</li>
+<li>Güvenilirlik : Bu tür algoritmalar doğası gereği çok fazla sayıda ondalık sayı işlemi gerektirir. Bu da her zaman için hataya açık bir konu olmuştur. Geometrik nesnelerin tanımlanmasından kaynaklanan hatalarda sistemi kararsız hala getirebilir. Bu tür sorunlar gözönünde bulundurulduğunda çok çeşitli çarpışma sorgu girdisine karşı algoritmanın her zaman aynı güvenilirlikte sonuç vermesi azami önem taşımaktadır.</li>
+<li>Hassasiyet : Yine yukarıdaki kriteri tamamlar niteliktedir. Uygulamanın türüne göre hassasiyet belirlemek mümkündür. Örneğin cerrahi bir simülatör için mm hassasiyet bile yeterli olmayabilecekken basit bir oyunda 10-15 cm hassasiyet sorun olmayacaktır.
+En temelde geometrik sorulara cevap aradığımız için temel lineer cebir bilgisi şarttır. Çok sayıda matris ve vektör işlemi yapacağımızdan bu işlemleri destekleyen kütüphanelerden yararlanmak işinizi büyük oranda kolaylaştıracaktır. Java tarafında bunun için Cern araştırmaları kapsamında geliştirilen <a href="http://acs.lbl.gov/software/colt/">Colt</a> kütüphanesini önerebilirim (yazacağım örneklerde bu kütüphaneyi kullanacağım). Bu kütüphaneyi kullanarak matris işlemleri yapmayı bir örnekle görelim. [java] void doSampleOperations() { DoubleFactory2D f1 = DoubleFactory2D.dense; DoubleMatrix2D m2d = f1.random(3, 3); System.out.println(&ldquo;Rastgele matrix:&ldquo;); System.out.println(m2d.toString()); Algebra a = new Algebra(); DoubleMatrix2D m2d2 = a.transpose(m2d); System.out.println(&ldquo;Transpose alınmış hali:&ldquo;); System.out.println(m2d2); DoubleMatrix2D m2dInverse = a.inverse(m2d); System.out.println(&ldquo;Tersi:&ldquo;); System.out.println(m2dInverse); System.out.println(a.det(m2d)); System.out.println(a.det(m2d2)); } [/java] [ad#Yazi Ici]</li>
+</ul>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#4349" title="2010-11-18 04:44:49">vantutiri</a>:</strong> Harika bi yazı.Bu yazının devamını bekleyemiyorum</p>
+
+<p><strong><a href="#4209" title="2010-10-30 01:37:41">KayL</a>:</strong> Yazı için teşekkürler.Sabırsızlıkla bekliyoruz</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/dependency-injection-guice/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/bubble-sort-kabarcik-siralama-algoritma-appleti/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

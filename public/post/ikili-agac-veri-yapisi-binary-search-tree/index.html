@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/ikili-agac-veri-yapisi-binary-search-tree/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: İkili Ağaç Veri Yapısı (Binary Search Tree)
+link: <a href="http://orhanbalci.net/tr/?p=17">http://orhanbalci.net/tr/?p=17</a>
+author: Orhan Balci
+description:
+post_id: 17
+created: 2007/08/31 23:47:24
+created_gmt: 2007/08/31 20:47:24
+comment_status: open
+post_name: ikili-agac-veri-yapisi-binary-search-tree
+status: publish
+post_type: post</p>
+
+<h1 id="ikili-ağaç-veri-yapısı-binary-search-tree">İkili Ağaç Veri Yapısı (Binary Search Tree)</h1>
+
+<p>İkili ağaç veri yapısı, arama ve sıralama algoritmalarındaki hızı nedeniyle sıkça kullanılan veri saklama biçimlerinden bir tanesidir. Genel olarak ağaç veri yapıları başlığı altında incelenir. Bu ağaç veri yapısını diğerlerinden ayıran ilk özellik her düğümün en fazla 2 tane dal içermesidir. İkinci özellik ise her düğümün bir değer taşımasıdır. Düğümün dalları arasında tam bir sıralama vardır. Sol daldaki değer düğümden küçük iken sağ daldaki değer düğümden büyüktür. İkili ağaç veri yapısında, bir değer ancak ve ancak bir defa ağaca dahil olabilir. Aşağıdaki resme tıklayarak uygulamalı olarak ikili ağaç veri yapısına değerler ekleyip çıkarabilirsiniz.  <img src="/wp-includes/images/netbeans/binary_search_tree_visualizer.png" alt="İkili Ağaç Veri Yapısı" /> [ad#Yazi Ici]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#34" title="2007-09-19 21:57:42">sultan BALCI</a>:</strong> orhan abı cok guzel olmus basarılarının devamını dılerım</p>
+
+<p><strong><a href="#35" title="2007-11-06 11:11:33">Fatih</a>:</strong> Merhaba, ben Marmara Üniversitesi mezunu bir bilgisayar mühendisiyim. Siteniz ilgimi çekti, web 2.0&rsquo;a güzel bir örnek teşkil ediyor ve ne yalan söyliyeyim biraz da heveslendirdi beni. Lâkin Türkçe&rsquo;ye biraz özen gösteren biriyim, yanlış mânâda kullanılan kelime olunca uyarmak ihtiyacı hissediyorum. &lsquo;Hakkında&rsquo; sayfanızı okurken ilk satırda &lsquo;mütevellit&rsquo; sözcüğünü gördüm, sanırım orada &lsquo;mürekkep&rsquo; kelimesi kullanılmalı, zirâ mütevellit &ldquo;dolayı&rdquo; demektir, örneğin &ldquo;bundan mütevellit&rdquo;, &ldquo;bundan dolayı&rdquo; anlamına gelir. Eğer İngilizce biliyorsanız önerdiğim kelime karşılık olarak &ldquo;consist of&rdquo; ifadesidir. Kusura bakmayın vaktinizi aldım. İyi çalışmalar&hellip;</p>
+
+<p><strong><a href="#36" title="2007-11-06 21:33:53">Orhan BALCI</a>:</strong> İlginiz için çok teşekkür ederim. Açıkçası Türkçe&rsquo;ye karşı olan hassasiyetiniz takdire şayan. Ne de olsa artık bu konulara dikkat eden pek fazla insan kalmadı. Ben de elimden geldiğince bu konuya dikkat etmeye çalışıyorum. Genellikle yazılarımı kaleme alırken Türk Dil Kurumu&rsquo;na ait olan web sitesinde bulunan sözlükten faydalanıyorum. Oraya göre mütevellit kelimesinin mecaz anlamı meydana gelmek, ileri gelmek. Zannımca yanlış bir kullanım yok. Ama yerine önerdiğiniz kelime daha uygun olabilir. Değerli yorumunuz için teşekkür ederim. :)</p>
+
+<p><strong><a href="#41" title="2007-12-10 16:43:43">seyid</a>:</strong> Hocam ellinize sağlık. Bilg. ögrencisiyim ve buna benzer içinde daha fazla detay olan bir ödevim vardı ve idareten (ki dersi geçmem gerekiyo :)) basit bir editörden sizinki gibi görsel olarak hazırladım. Sizden ricam &ldquo;java yı ögrenmek istedigim&rdquo; için pointer mantıgını javada tam olarak çalışan kod satırlarını (bu yaptıgınız örnek olursa sevinirim) bana iletebilirmisiniz. Arzu ederseniz benim yaptıgım örnegide yollayabilirim. Bir şekilde iletişim kurarsanız umarım. Çalışmalarınızda başarılar dilerim</p>
+
+<p><strong><a href="#54" title="2008-01-03 18:40:38">admin</a>:</strong> Öncelikle geri bildiriminiz için teşekkür ederim. Sizlere yardımcı olabildiysem ne mutlu bana. Ancak şu anda vatani görevimi yaptığım için siteyle pek fazla ilgilenemiyorum. Fırsat buldukça yeni örneklerle blogu zenginleştireceğim. Java ile ilgili herhangi bir sorunuz olursa orhanbalci@gmail.com adresine mail atabilirsiniz. Yardımcı olmaya çalışırım. Ayrıca blogum için önerilerinize de açığım. İyi günler.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/ikili-arama-algoritmasi-binary-search/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/iki-yeni-kitap/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

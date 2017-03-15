@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/swing-programlama-jtable-1/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Swing Programlama: JTable Temel Kullanım
+link: <a href="http://orhanbalci.net/tr/?p=14">http://orhanbalci.net/tr/?p=14</a>
+author: Orhan Balci
+description:
+post_id: 14
+created: 2007/07/24 21:36:25
+created_gmt: 2007/07/24 18:36:25
+comment_status: open
+post_name: swing-programlama-jtable-1
+status: publish
+post_type: post</p>
+
+<h1 id="swing-programlama-jtable-temel-kullanım">Swing Programlama: JTable Temel Kullanım</h1>
+
+<p>Bu yazımızda en basit haliyle Java UI programlamada sıkça kullandığımız JTable elemanının kullanımını ele alacağız. Herkesçe bilindiği üzere kullanıcı grafik arayüzü kütüphanelerinde veri ile ön yüzü birbirinden ayırmak için genel olarak MVC(model view controller) tasarım deseni kullanılır. Biz de işe tablomuzun model kısmını yani veri kısmını hazırlamakla başlayacağız.  <strong>1)</strong> Tablomuzun modelini oluşturmak için iki temel unsura ihtiyacımız var birincisi verinin kendisi yani tablonun hücrelerini dolduracak olan kısım diğeri ise sütün başlıkları. <strong>2)</strong> Verimizi şu şekilde tanımlayalım: [java] Object data[][] = { {&ldquo;BJK&rdquo;, &ldquo;Beşiktaş&rdquo;, 53}, {&ldquo;GS&rdquo;, &ldquo;Galatasaray&rdquo;, 50}, {&ldquo;FB&rdquo;, &ldquo;Fenerbahçe&rdquo;, 47}, {&ldquo;KS&rdquo;, &ldquo;Kayserispor&rdquo;, 44} }; [/java] <strong>3)</strong> Sütun başlıklarımızı da tanımlayalım: [java] String columnNames[] = {&ldquo;Kısaltma&rdquo;, &ldquo;Takım&rdquo;, &ldquo;Puan&rdquo;}; [/java] <strong>4)</strong> Şimdi tablo modelimizi tanımlayalım. Burada <strong>DefaultTableModel</strong> sınıfını kullanacağız. Fakat dikkat etmemiz gereken bir unsur var. <strong>DefaultTableModel</strong> sınıfı herbir sütun tipi olarak kullanıcıya tanımlı olarak Object nesnesi döner. Java dökümantasyonuna göre <strong>DefaultTableModel</strong> sınıfı <strong>TableRowSorter</strong> sınıfı ile birlikte kullanılırsa çok miktarda <strong>toString()</strong> metodunun çağrılmasına yol açar ve böylelikle performansta düşüş gözlenir. Bunu önlemek amacaıyla ön tanımlı olan <strong>getColumnClass()</strong> metodu override edilerek sütunların gerçek veri tipleri döndürülmelidir. [java] TableModel model = new DefaultTableModel(data, columnNames) { public Class getColumnClass(int column) { Class returnValue; if ((column &gt;= 0) &amp;&amp; (column &lt; getColumnCount())) { returnValue = getValueAt(0, column).getClass(); } else { returnValue = Object.class; } return returnValue; } }; [/java] <strong>5)</strong> Artık tablomuzu oluşturabiliriz: [java] JTable table = new JTable(model); [/java] <strong>Kaynaklar</strong> <a href="http://java.sun.com/docs/books/tutorial/uiswing/components/table.html#eg">Java resmi sitesi JTable kullanım klavuzu.</a> <a href="http://java.sun.com/javase/6/docs/api/">JTable javadoc.</a></p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#51568" title="2016-01-14 14:01:43">Murat</a>:</strong> Merhaba, Ben Java &lsquo;ya yeni başladım sayılır. Basit bir evrak kayıt programı yaptım. Kaydetme tamam. Tabloya sağ tık sil-düzenle ve tekrar kaydet üzerinde çalışıyorum. Yalnız bu verileri tabloda gösterme işini yapamadım. Baya bir yerli yabancı forum gezdim. Oracle dokümanlarına da baktım ama çözemedim. Türkçe kaynak en büyük sıkıntı zaten ! Ama ilk defa performanstan bahseden bir sizi gördüm. İnce ve önemli bir ayrıntı. Bunun teşekkür ederim. Yalnız bu örneğinizi bir de MYSQL bağlantılı anlatabilir misiniz ? Ya da bu Tablo modelini performans ve güvenlik odaklı nasıl kullanabilirim ? Bir de modelinizde satır ile ilgili birşey göremedim. Açıklar mısınız ? Teşekkür ederim.</p>
+
+<p><strong><a href="#51612" title="2016-01-20 13:44:59">admin</a>:</strong> Daha gelismis bir model sinifi olusturmak icin AbstractTableModel sinifini extend edebilirsiniz. Acikcasi Swing artik pek kullanilmiyor. Java ile desktop uygulamasi gelistirecekseniz JavaFX ogrenmenizi tavsiye ederim.</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/swing-programlama-jtable-hucre-editorleri/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/swing-programlama-jfilechooser/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+     | Orhan Balci
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://orhanbalci.github.io/post/java-kurulum/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="http://orhanbalci.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Orhan Balci" />
+  <link href="http://orhanbalci.github.io/index.xml" rel="feed" type="application/rss+xml" title="Orhan Balci" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
+        
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1></h1>
+      <div class="meta">
+        Jan 1, 0001 &nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>title: Java Dersleri 1 - JDK Kurulumu ve İlk Program
+link: <a href="http://orhanbalci.net/tr/?p=6">http://orhanbalci.net/tr/?p=6</a>
+author: Orhan Balci
+description:
+post_id: 6
+created: 2007/03/29 23:00:47
+created_gmt: 2007/03/29 21:00:47
+comment_status: open
+post_name: java-kurulum
+status: publish
+post_type: post</p>
+
+<h1 id="java-dersleri-1-jdk-kurulumu-ve-ilk-program">Java Dersleri 1 - JDK Kurulumu ve İlk Program</h1>
+
+<p>[caption id=&ldquo;attachment_782&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;600&rdquo; caption=&ldquo;Java Dersleri&rdquo;]<img src="/wp-content/uploads/java_jdk_kurulum.png" alt="Java Dersleri" />[/caption] Bu satırları okumaya başladıysanız ve eğer bu yazıyı kendi hür iradenizle okuyorsanız ya Java&rsquo;nın sadece kahvesiyle ünlü bir ada olmadığının farkındasınız ya da ne yaptıgınız hakkında en ufak bir ipucunuz dahi yok. Eğer kendinizi ikinci şıktaki camiaya ait hissediyorsanız yazımızın bundan sonraki kısmı sizi sıkabileceğinden vaktinizi daha kıymetli şeyler için harcamanızı tavsiye ederim. Uzun lafın kısası yazımız, başlığından da anlaşılabileceği üzere Java yazılım geliştirme aracının kullanımını siz değerli, ilgili, heyecanlı vs. vs. okuyuculara aktarmak.  Amacımızı da paylaştığımıza göre çalışmalarımıza başlayabiliriz. Yazılım dediğimiz zerzavat bilgisayar dediğimiz alete ne yapması gerektiğini anlatma sanatı olduğuna göre her iki tarafın anlayabileceği bir dilin olması da kaçınılmaz. Üzülerek söylüyorum ki bu aletler hala bizi anlayacak seviyede değilller. Dolayısıyla bizim onu anlayıp onun anladığı dilden konuşmamız, sağlıklı bir iletişim için olmazsa olmaz. İyi ama onun anladıgı dil de karman çorman, zaten alfabesi de iki karakterden oluşuyor. Arada öyle bir katman olmalı ki bir taraftan bizim istediklerimizi ifade etmemize ortam sağlarken diğer taraftan bu ifade edilenleri bilgisayara anlatabilmeli. Java ve diğer bütün programlama ortamlarının ortaya çıkmasının temelinde bu motivasyon yatıyor. Öncelikle Java&rsquo;yla çalışmaya başlamak için gerekli olan araçları bilgisayarımıza yüklemekle başlayalım. Bu konuda Sun&rsquo;a teşekkür etmek lazım çünki ihtiyacımız olan bütün yazılım geliştirme araçlarını bir paket helinde düzenli bir şekilde yayınlamakta. <a href="http://java.sun.com">http://java.sun.com</a> adresine gidip JDK 6&rsquo;yı download edebilirsiniz. Burada ufak bir hatırlatma yapmakta yarar var Java programlarını çalıştırmak için bilgisayarımızda Java Runtime Environment(JRE) yüklü olması yeterlidir fakat Java programları geliştirmek için içerisinde Java derleyicisi de bulunan JDK&rsquo;yı edinmek zorundayız. Kurulum sihirbazı gayet anlaşılır oldugu için burada da değinmemize gerek yok. Önünüze gelen her seçenekte &ldquo;next&rdquo; veya &ldquo;accept&rdquo; tuşlarını tıklamanız yeterli. Kurulum tamamlandıktan sonra (Windows kullananlar için söylüyorum) &ldquo;C:\Program Files\Java\jdk1.6.0&rdquo; klasörüne bir göz gezdirebilirsiniz. Bu klasördeki şu an için bizi ilgilendiren en önemli alt klasör &ldquo;bin&rdquo; klasörü. İçerisinde kullanacağımız Java derleyicisini(javac.exe) ve programlarımızı çalıştırmaya yarayan JVM çalıştırılabilir dosyası (java.exe) bu klasördedir. JDK&rsquo;mız kuruldu kurulmasına da biz bu araçları nasıl kullanacağız? Tabi ki de &ldquo;siyah ekrandan&rdquo;. Siz ne demek istediğimi anladınız. Komut satırından bahsediyorum. Komut satırımızı açıyoruz ve &ldquo;javac -version&rdquo; komutunu giriyoruz. O da nesi komut satırı java derleyicisini tanımadı. &ldquo;Javac da nedir ülen, programı mı o&rdquo; tarzında bir hatayla karşı karşıyayız (Tam hata metni için bknz resim 1). <img src="http://docs.google.com/File?id=dfmskcns_3pzvvsx" alt="" /> Monitöre &ldquo;höst sen nası tanımazsın gül gibi java derleyicisini&rdquo; diyerekten hücum etmek yerine sakin sakin ortam değişkenlerimizi (environment variable) düzenlemeye davet ediyorum sizi. Varsa masaüstümüzdeki bilgisayarım ikonuna sağ tıklayarak sırasıyla özellikler, gelişmiş, ortam değişkenleri düğmelerine basalım. Buradan sistem değişkenleri tablosundan &ldquo;Path&rdquo; değişkenine çift tıklayarak size yukarıda bahsini ettiğim meşhur &ldquo;C:\Program Files\Java\jdk1.6.0\bin&rdquo; yolunu bu değişkene ekleyin. Değişkenler arasına &lsquo;;&rsquo; koymayı unutmayın. Yaptığınız değişiklikleri onaylayın ve tekrar komut satırına &ldquo;javac -version&rdquo; komutunu girin(Not: Eğer komut satırınız açıksa yapılan ortam değişkeni düzenlemesinden haberdar olabilmesi için kapatıp tekrar açın). Tatam&hellip; İşte karşımızda muhteşem sonuç. Sizde benim gibi ekranınızda &ldquo;Javac 1.6.0&rdquo; jazısını gördüyseniz artık gönül rahatlığıyla Java projeleri geliştirebiliriz. <img src="http://docs.google.com/File?id=dfmskcns_4dnn2bx" alt="" /> Sizde benim gibi ilk programınızı yazmak için sabırsızlanıyorsunuz değil mi? Cevabınızı duyamadım. Daha yüksek sesle lütfen &ldquo;Eveeet sabırsızlanıyoruz&rdquo;. Hemen aksiyona geçelim o zaman. Ama durun bi saniye, sanki bir şey unuttuk. İyi de nereye yazacağız kodumuzu? Aman canım ne olcak açın bi notepad yazın. Evet yanlış duymadınız tek ihtiyacımız noteped. Bir şeyler yazmaya başlamadan önce kod yazarken düzenli olmanızı tavsiye ederim. C sürücüsünün altına projeler ve projelerin altına da proje1 dizinini oluşturalım. Yeni bir text dosyası oluşturup adını &ldquo;proje1.java&rdquo;(proje1.java.txt değil) olarak değiştirelim. Burada yanlış anlaşılmalara yol açmamak için dosyanızın uzantısını .java olarak değiştirmeniz gerektiği konusuda tekrardan sizi uyarayım. Dosyamızı herhangi bir metin düzenleyici ile açalım. İlk yapmamız gereken iş bir &ldquo;sınıf&rdquo;(class) tanımlaması yapmak olacak. &ldquo;Sınıf&rdquo; kelimesinden sonra kafanızda soru işaretleri uçuşmaya başladıysa dert etmeyin ve o soru işaretlerini kendi haline bırakın. Zira ilerki dönemlerde bu terimin inciğini cıncığını hatta ve hatta boncuğunu dahi anlatacağız. Dosyamıza &ldquo;public class proje1 {}&rdquo; satırını girelim. Burada size bir tüyo vereyim sınıfınızın ismi ile dosya adı aynı olmak durumunda tabi buna kurala istisna durumlar da var ama şimdilik öyle olduğunu bilmenizde fayda var. Şimdi sınıfımıza bir ana metod ekleyelim. &ldquo;Metod&rdquo; ne diyenler için yukarıdaki öneriyi referans gösteriyorum ve başka bir şey demiyorum. Dosyamızı şu şekilde düzenliyoruz: [java] public class proje1 { public static void main(String[] args) { } } [/java] Tabi burada anlamlandıramadığınız bir çok kavram var eminim. bir tanesinden kısace bahsedelim birazcık da olsa merakınızı giderelim. şu kısacık programda bile iki kelimelik yer kaplayan &ldquo;public&rdquo; de ne ola ki sorusunun cevabını vermeye çalışalım. &ldquo;public&rdquo; Java&rsquo;nın sahip olduğu anahtar kelimelerden birisidir. &ldquo;Access Modifiers&rdquo; diye tabir edilen anahtar kelimeler güruhuna dahil olup kendilerinden sonra gelen kod bloklarının kimler tarafından erişilebileceğini tayin ederler. Bu bakımdan &ldquo;public&rdquo; sözcüğünden sonra gelen kod bloklarına halka ait sebil gözüyle bakabilirsiniz zira bu koda her yerden ve herkes tarafından ulaşılabilir. &ldquo;Her zaman öyle olmaz, şöyle şöyle olursa o koda ulaşamazsın&rdquo; diye kazan kaldıran arkadaşlar varsa aranızda, istisnalar kaideyi bozmaz diyerekten onları dersimizin ahengini bozmkatan men ederim. Kodumuza geri dönelim ve can alıcı satırı ekleyelim. Programımızın ne yapması gerektiğini anlattığımız kısmı ana metodumuzun parantezleri arasına yerleştirmeliyiz. Geleneği bozmamak adına ben komut satırına bir şeyler yazdırmayı deneyeceğim. Buyrun bu da kodumuzun son hali: [java] public class proje1 { public static void main(String[] args) { System.out.println(&ldquo;Gelisim Platformu&rsquo;yla Java&rsquo;ya merhaba&rdquo;); } } [/java]</p>
+
+<h2 id="comments">Comments</h2>
+
+<p><strong><a href="#33" title="2007-07-23 15:34:20">Kadir</a>:</strong> Tebrikler kardeş&hellip;başarılarının devamını dilerim</p>
+
+<p><strong><a href="#1447" title="2009-06-03 02:26:21">egzantirik7</a>:</strong> ya ben böyle bi anlatım görmedim. az önce ilk defa java kurabildim ve ilk kod satırlarını yazdım :)) çok ama çoook teşekkürlerrr</p>
+
+<p><strong><a href="#1656" title="2009-08-26 15:04:11">Nihat</a>:</strong> Eline sağlık usta.Ama şu “C:Program FilesJavajdk1.6.0bin” benim pc kabul etmiyor.Biraz daha açıklayabilir misn?(Resimli olursa daha iyi olur)</p>
+
+<p><strong><a href="#1950" title="2009-12-26 15:42:24">Melih</a>:</strong> Ortam değişikliğine javayı eklerken dikkat edeceğiniz bi hususta indirdiğiniz javanın versiyonuna dikkat etmenizdir. Şuan son versiyonun kurulumunda C:\Program Files\Java\jdk1.6.0_17\bin olarak eklemelisiniz.</p>
+
+<p><strong><a href="#2538" title="2010-03-24 10:59:58">asd</a>:</strong> arkadaşlar bende javac.exe yok!</p>
+
+<p><strong><a href="#2539" title="2010-03-24 11:02:09">asd</a>:</strong> ama cmd ye javac -version yerine javac -version yazınca sürüm bilgileri çıkıyor</p>
+
+<p><strong><a href="#2867" title="2010-06-20 14:24:09">KürşAd</a>:</strong> Saol Hoca Biraz Dha Aç KOnuları C++ Dilini Bitirdim Java Yıda Bitirem Takibindeyiz Reis Biraz Aç Konuları Paylasımlar Artsın Eve Gider Gitmez Denicem :S:D:D</p>
+
+<p><strong><a href="#2684" title="2010-04-26 22:54:29">cartographer</a>:</strong> hoca yeni javaya başladım pratik bilgiler tşkler..</p>
+
+<p><strong><a href="#4509" title="2011-01-02 18:18:28">Yusuf</a>:</strong> Teşekkürler.Bunlar dersler çok işime yarayacak&hellip; :razz:</p>
+
+<p><strong><a href="#3895" title="2010-08-25 13:45:55">ayla</a>:</strong> teşekkürler çok güzel anlatmışsın:D</p>
+
+<p><strong><a href="#9987" title="2013-09-27 11:10:26">ayşe yılmaz</a>:</strong> harika bir anlatım emeğinize sağlık :)</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/javayi-ozgurlestirmek/" rel="prev"></a></span>
+    
+    
+      <span class="next"><a href="http://orhanbalci.github.io/post/java-ile-json-islemleri-jackson/" rel="next"></a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+
