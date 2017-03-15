@@ -1,0 +1,19 @@
+title: Java Dersleri 7 - Çok Biçimlilik (Polymorphism) 
+link: http://orhanbalci.net/tr/?p=154
+author: Orhan Balci
+description: 
+post_id: 154
+created: 2009/06/24 20:12:28
+created_gmt: 2009/06/24 18:12:28
+comment_status: open
+post_name: java-dersleri-7-cok-bicimlilik-polymorphism
+status: publish
+post_type: post
+
+# Java Dersleri 7 - Çok Biçimlilik (Polymorphism) 
+
+[caption id="attachment_822" align="aligncenter" width="600" caption="Java Dersleri 7 Çok Biçimlilik"]![Java Dersleri 7 Çok Biçimlilik](/wp-content/uploads/java_banner_7.png)[/caption] Bu dersimizde Java'nın nesne odaklı programlamanın olmazsa olmazlarından çok biçimliliği nasıl gerçeklediğini öğreneceğiz. Çok biçimlilik aynı tip değişken üzerinden birbirinden farklı davranışlar elde etme tekniğidir. Programlama dillerinin dinamik bağlama (dynamic binding) yada koşum zamanı bağlama (runtime binding) özelliğinden faydalanılarak hayata geçirilir. Tabiki dinamik bağlamadan yararlanabilme için metod ezme (method overriding) tekniğini bilmemiz gerekiyor. Öncelikle bahsettiğimiz terimleri örneklerle açıklayalım. Metod ezme işlemi kalıtım esnasında ana sınıfta halihazırda tanımlı olan methodu yeniden yazarak ana sınıftaki metodu geçersiz kılma işlemidir. Örneğin :  [java] public class KMeansCluster { public String toString() { return "KMeansCluster"; } } [/java] yukarıdaki kod parçasında KMeansCluster sınıfı varsayılan ana sınıfı olan Object (Java'da her sınıf Object sınıfından türer) sınıfının toString metodunu ezmiştir. Bu metod KMeansCluster cinsinden herhangi bir nesnenin print() metodlarından herhangi birine verildiği zaman çalışır yani : [java] KMeansCluster kmc = new KMeansCluster(); System.out.print(kmc); [/java] satırları ekrana KMeansCluster yazacaktır. Burada dikkat etmemiz gereken iki temel nokta var : 
+
+  1. Ezdiğimiz metodların imzaları aynı olmalıdır. Metod imzası ise metod adı, metod parametre sayısı ve metod parametre tiplerinden oluşur.
+  2. static tanımlanan metodlar ezilemezler
+Dİnamik bağlama referans tiplerinin derleme zamanında değil de çalışma zamanında atanması esasında dayanır. Bir örnekle açıklarsak : [java] public class ClusteringBase { public void cluster() { System.out.println("Cluster Base"); } } public class KMeansClustering extends ClusteringBase { public void cluster() { System.out.println("KMeansClustering"); } } public class HierarchicalClustering extends ClusteringBase { public void cluster() { System.out.println("HierarchicalClustering"); } } [/java] Yukarıda bir tane ana sınıf (ClusteringBase) iki tane de bu ana sınıftan türeyen alt sınıf tanımladık(KMeansClustering,HierarchicalClustering). Alt sınıflarda cluster(kümeleme) metodunu ezdik. Şimdi bu sınıfları kullanarak çok biçimlilik esasına göz atalım : [java] ClusteringBase cluster1 = new ClusteringBase(); ClusteringBase cluster2 = new KMeansClustering(); ClusteringBase cluster3 = new HierarchicalClustering(); cluster1.cluster(); cluster2.cluster(); cluster3.cluster(); [/java] Buradaki [java] ClusteringBase cluster2 = new KMeansClustering(); ClusteringBase cluster3 = new HierarchicalClustering(); [/java] ifadeleri kalıtım kuralları çerçevesinde doğrudur. Yani bir üst sınıf referansına alt sınıf referansı atanabilir(Tersi yanlıştır). Dikkat etmemiz gereken kısım üst sınıf referansıyla yapılam cluster() metod çağrımlarıdır. Burada referans tipi her ne kadar üst sınıf olan ClusteringBase tipinde olsa da çağrılan metodlar çalışma zamanında (runtime) belirlenerek ilgili alt sınıfların metodlarının çağırımı sağlanır. Yukarıdaki kod parçası : [java] ClusterBase KMeansClustering HierarchicalClustering [/java] çıktısını verir. Çok biçimliliğin yazılımcıya sağladığı en büyük avantaj farklı türden nesneleri ana sınıflarını baz alarak aynı ortamda yönetebilme ve gerektiğinde özel fonksiyonaliteyi tekrar kazanabilme avantajıdır.

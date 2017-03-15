@@ -1,0 +1,15 @@
+title: Rust Primitif Veri Yapilari Tuple ve Array
+link: http://orhanbalci.net/tr/?p=1441
+author: Orhan Balci
+description: 
+post_id: 1441
+created: 2015/09/11 22:16:13
+created_gmt: 2015/09/11 19:16:13
+comment_status: open
+post_name: rust-primitif-veri-yapilari-tuple-ve-array
+status: publish
+post_type: post
+
+# Rust Primitif Veri Yapilari Tuple ve Array
+
+Tuple yapilari birbirleriyle ilintili verileri bir arada tutmaya yarar. Struct yapilarindan farki alanlarinin isim etiketi olmamasidir. Verilere index yardimiyla erisilir. Imumutable yapilar olup sabit boyutludurlar. Fonksiyonlardan birden fazla deger donmekte, ayni anda birden fazla degiskene deger atamakta, pattern matching islemlerinde kullanicia kolaylik saglarlar. Fonksiyonel programlamaya has veriyapilaridir. Ornegin network baglantilarinda sikca beraber kullandigimiz ip ve port bilgileri icin bir tuple tanimlayalim ve kullanalim :  Temel kullanimi gordukten sonra pattern matching ile ne yapabiliriz buna bakalim. Ufak bir hesaplama fonksiyonu yazalim ve bu fonksiyona parametreleri bir tuple yardimiyla gecelim. Tuple su sekilde olsun `(komut,parametre1,parametre2)` bir sonraki ornegimizde ise bir swap fonksiyonu yazarak tuple icindeki degerlerin yer degistirmesini gorelim. Burada `destructuring` yani tuple veya struct icerisindeki degerlerin disariya cikarilmasi yontemini de kullanalim. c/c++ ta bu kavram olmadigi icin baslangicta garipseyebilirsiniz :  Ornekte 9. satirdaki ifade ile `arg` tuple destructure edilerek elemanlari a,b degiskenlerine atanmistir. Tuplelara bu kadar degindikten sonra bir ornekle de array ve slice kullanimini gorelim. Array boyutlari compile time da bilinmek zorunda. Yani boyutu calisma zamaninda belirlenecek arrayler olusturulamiyor. Slice lar ise arraylarin alt bir araligini temsil eden yapilar. Slicelarin boyutu compile time de bilinmek zorunda degil. Array degisken tipi tanimi `[veri tipi;array boyutu]` seklinde yapiliyor. Ilk deger atanirken `[deger1,deger2,deger3...degern]` sentaksi yada tum elemanlara ayni degeri atamak icin `[atanacak deger; array boyutu]` sentaksi kullanilabilir. Asagidaki ornek rust tutorialindan alinip biraz eklemeler yapilmistir :  15\. ve 16. satirlarda bahsettigimiz array degisken tanimlamalari ve deger atamalari yer aliyor. `analyze_slice` fonksiyonu slice isimli bir slice parametere aliyor. Bu slice mutable tanimlanmadigi icin fonksiyon icinde slice uzerinde herhangi bir guncelleme aypilamaz. 8. satirda tnimladigimiz `update_slice` fonksiyonunda ise mutable bir slice parametresi gectigi icin slice uzerinde guncelleme yapabiliyoruz. 9. satirdaki for ifadesi de slicelari gezinmek icin guzel bir ornek teskil ediyor. [ad#Yazi Ici Buyuk]
