@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on My New Hugo Site</title>
-    <link>http://example.org/page/index.xml</link>
-    <description>Recent content in Pages on My New Hugo Site</description>
+    <title>Pages on Orhan Balci</title>
+    <link>http://orhanbalci.github.io/page/index.xml</link>
+    <description>Recent content in Pages on Orhan Balci</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="http://example.org/page/index.xml" rel="self" type="application/rss+xml" />
+    <language>tr-TR</language>
+    <atom:link href="http://orhanbalci.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://example.org/page/cv/</link>
+      <link>http://orhanbalci.github.io/page/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/cv/</guid>
+      <guid>http://orhanbalci.github.io/page/cv/</guid>
       <description>
 
 &lt;p&gt;title: CV
@@ -40,10 +40,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/gelecek-makaleler/</link>
+      <link>http://orhanbalci.github.io/page/gelecek-makaleler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/gelecek-makaleler/</guid>
+      <guid>http://orhanbalci.github.io/page/gelecek-makaleler/</guid>
       <description>
 
 &lt;p&gt;title: Gelecek Makaleler
@@ -171,10 +171,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/hakkinda/</link>
+      <link>http://orhanbalci.github.io/page/hakkinda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/hakkinda/</guid>
+      <guid>http://orhanbalci.github.io/page/hakkinda/</guid>
       <description>
 
 &lt;p&gt;title: Hakkında
@@ -227,10 +227,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/indir/</link>
+      <link>http://orhanbalci.github.io/page/indir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/indir/</guid>
+      <guid>http://orhanbalci.github.io/page/indir/</guid>
       <description>
 
 &lt;p&gt;title: İndir
@@ -253,10 +253,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/izlediklerim/</link>
+      <link>http://orhanbalci.github.io/page/izlediklerim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/izlediklerim/</guid>
+      <guid>http://orhanbalci.github.io/page/izlediklerim/</guid>
       <description>
 
 &lt;p&gt;title: İzlediklerim
@@ -366,10 +366,10 @@ Yıl
     
     <item>
       <title></title>
-      <link>http://example.org/page/java-dersleri/</link>
+      <link>http://orhanbalci.github.io/page/java-dersleri/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/java-dersleri/</guid>
+      <guid>http://orhanbalci.github.io/page/java-dersleri/</guid>
       <description>
 
 &lt;p&gt;title: Java Dersleri
@@ -386,7 +386,7 @@ post_type: page&lt;/p&gt;
 
 &lt;h1 id=&#34;java-dersleri&#34;&gt;Java Dersleri&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://example.org/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 – Koleksiyon API (Collection API) Listeler&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 – JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama – UDP&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 – İstisnai Durumlar (Exceptions)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 – Multi Thread Programlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection Ve Annotation Kullanımı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 – Final Anahtar Kelimesi&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 – Koleksiyon API (Collection API) Listeler&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 – JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama – UDP&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 – İstisnai Durumlar (Exceptions)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 – Multi Thread Programlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection Ve Annotation Kullanımı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 – Final Anahtar Kelimesi&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
 
@@ -404,10 +404,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/kitaplik/</link>
+      <link>http://orhanbalci.github.io/page/kitaplik/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/kitaplik/</guid>
+      <guid>http://orhanbalci.github.io/page/kitaplik/</guid>
       <description>
 
 &lt;p&gt;title: Kitaplık
@@ -424,7 +424,7 @@ post_type: page&lt;/p&gt;
 
 &lt;h1 id=&#34;kitaplık&#34;&gt;Kitaplık&lt;/h1&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_916&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;600&amp;rdquo; caption=&amp;ldquo;Kitaplığım&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/kitaplik.png&#34; alt=&#34;Kitaplığım&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_916&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;600&amp;rdquo; caption=&amp;ldquo;Kitaplığım&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/kitaplik.png&#34; alt=&#34;Kitaplığım&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Kitap
 Yazar&lt;/p&gt;
@@ -607,10 +607,10 @@ Yazar&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/odevler/</link>
+      <link>http://orhanbalci.github.io/page/odevler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/odevler/</guid>
+      <guid>http://orhanbalci.github.io/page/odevler/</guid>
       <description>
 
 &lt;p&gt;title: Ödevler
@@ -646,10 +646,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/projeler/</link>
+      <link>http://orhanbalci.github.io/page/projeler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/projeler/</guid>
+      <guid>http://orhanbalci.github.io/page/projeler/</guid>
       <description>
 
 &lt;p&gt;title: Projeler
@@ -668,7 +668,7 @@ post_type: page&lt;/p&gt;
 
 &lt;h3 id=&#34;lastik-basınç&#34;&gt;Lastik Basınç&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Lastik Basinc&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/banner_site.png&#34; alt=&#34;Lastik Basinc&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Lastik Basinc&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/banner_site.png&#34; alt=&#34;Lastik Basinc&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Android Lastik Basıncı Sorgulama Uygulaması&lt;/p&gt;
@@ -689,11 +689,11 @@ Java, JPA, J2EE, PostgreSQL, Android SDK&lt;/p&gt;
 &lt;a href=&#34;https://play.google.com/store/apps/details?id=net.orhanbalci.lastikbasinc&#34;&gt;https://play.google.com/store/apps/details?id=net.orhanbalci.lastikbasinc&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;QR Kodu :
-&lt;img src=&#34;http://example.org/wp-content/uploads/tire_pressure_qr.png&#34; alt=&#34;Lastik Basinc&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/tire_pressure_qr.png&#34; alt=&#34;Lastik Basinc&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;jokey&#34;&gt;JOKEY&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;JOKEY&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/okey_banner.png&#34; alt=&#34;JOKEY&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;JOKEY&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/okey_banner.png&#34; alt=&#34;JOKEY&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Online OKEY oyunu&lt;/p&gt;
@@ -714,7 +714,7 @@ Java, MySQL&lt;/p&gt;
 
 &lt;h3 id=&#34;drivetron-sürüş-simülatör-altyapısı&#34;&gt;DRIVEtron (Sürüş Simülatör Altyapısı)&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron DRIVEtron&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/BMW_X5.png&#34; alt=&#34;KaTron DRIVEtron&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_943&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron DRIVEtron&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/BMW_X5.png&#34; alt=&#34;KaTron DRIVEtron&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Tekerlekli araç simülatörleri için simülasyon çekirdeği geliştirilmesi.&lt;/p&gt;
@@ -736,7 +736,7 @@ C++, Qt, NVIDIA PhysX, Open DRIVE&lt;/p&gt;
 
 &lt;h3 id=&#34;potsim-pushback-operator-training-simulator&#34;&gt;POTSİM (Pushback Operator Training Simulator)&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_763&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron POTSIM&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/potsim_banner.png&#34; alt=&#34;KaTron POTSIM&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_763&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron POTSIM&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/potsim_banner.png&#34; alt=&#34;KaTron POTSIM&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Havaalanlarında uçakları taksi yoluna çıkarmak için kullanılan push back araçları için eğitim simulatörü.&lt;/p&gt;
@@ -762,7 +762,7 @@ C++, Qt, NVIDIA PhysX&lt;/p&gt;
 
 &lt;h3 id=&#34;baytar-veteriner-hekim-klinik-yönetim-sistemi&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Veteriner hekimlerin klinikteki müşterileri, hayvanları, hayvanlara uygulanan aşıları ve diğer tedavileri kaydetmeye yönelik yazılım.&lt;/p&gt;
@@ -782,7 +782,7 @@ Java, MySQL, HSQLDB&lt;/p&gt;
 
 &lt;h3 id=&#34;mes-mühimmat-eğitim-simulatörü&#34;&gt;MES (Mühimmat Eğitim Simulatörü)&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_543&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;M.E.S. 1.1&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/mes.png&#34; alt=&#34;M.E.S. 1.1&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_543&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;M.E.S. 1.1&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/mes.png&#34; alt=&#34;M.E.S. 1.1&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Helikopterden yerdeki hareketli veya hareketsiz hedeflere atılan füze(mühimmat) dinamiğinin incelenmesi amacıyla silahçı ve pilot kullanıcılarına yönelik yazılımın geliştirilmesi.&lt;/p&gt;
@@ -806,7 +806,7 @@ C++, Qt, Presagis Vega, OPCODE çarpışma kontrol kütüphanesi&lt;/p&gt;
 
 &lt;h3 id=&#34;arazi-radyo-seyrüsefer-sunucu-yazılımı&#34;&gt;Arazi / Radyo Seyrüsefer Sunucu Yazılımı&lt;/h3&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_548&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron Arazi Sunucusu&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/arazi.png&#34; alt=&#34;KaTron Arazi Sunucusu&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_548&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;KaTron Arazi Sunucusu&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/arazi.png&#34; alt=&#34;KaTron Arazi Sunucusu&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 HELSİM projesi kapsamında ihtiyaç duyulan arazi verisi sorgularını hesaplayan yazılımın geliştirilmesi.&lt;/p&gt;
@@ -837,10 +837,10 @@ C++, Qt, NTP&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/rust-programlama/</link>
+      <link>http://orhanbalci.github.io/page/rust-programlama/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/rust-programlama/</guid>
+      <guid>http://orhanbalci.github.io/page/rust-programlama/</guid>
       <description>
 
 &lt;p&gt;title: Rust Ornekleri
@@ -858,16 +858,16 @@ post_type: page&lt;/p&gt;
 &lt;h1 id=&#34;rust-ornekleri&#34;&gt;Rust Ornekleri&lt;/h1&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1404&#34;&gt;Rust Programlama Giris&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1404&#34;&gt;Rust Programlama Giris&lt;/a&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1441&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1427&#34;&gt;Rust Temel Veri Yapıları Struct ve Enum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1452&#34;&gt;Rust Akış Kontrol İfadeleri&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1459&#34;&gt;Rust Trait&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1472&#34;&gt;Rust Closure&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1492&#34;&gt;Rust Dökümantasyon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://example.org/?p=1512&#34;&gt;Rust Program Düzeni : Modüller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1441&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1427&#34;&gt;Rust Temel Veri Yapıları Struct ve Enum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1452&#34;&gt;Rust Akış Kontrol İfadeleri&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1459&#34;&gt;Rust Trait&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1472&#34;&gt;Rust Closure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1492&#34;&gt;Rust Dökümantasyon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=1512&#34;&gt;Rust Program Düzeni : Modüller&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -875,10 +875,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/yapay-zeka/</link>
+      <link>http://orhanbalci.github.io/page/yapay-zeka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/yapay-zeka/</guid>
+      <guid>http://orhanbalci.github.io/page/yapay-zeka/</guid>
       <description>
 
 &lt;p&gt;title: Yapay Zeka
@@ -908,10 +908,10 @@ post_type: page&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/page/yazilim-tuzaklari/</link>
+      <link>http://orhanbalci.github.io/page/yazilim-tuzaklari/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/page/yazilim-tuzaklari/</guid>
+      <guid>http://orhanbalci.github.io/page/yazilim-tuzaklari/</guid>
       <description>
 
 &lt;p&gt;title: Yazılım Pratikleri

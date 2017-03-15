@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Drafts on My New Hugo Site</title>
-    <link>http://example.org/drafts/index.xml</link>
-    <description>Recent content in Drafts on My New Hugo Site</description>
+    <title>Drafts on Orhan Balci</title>
+    <link>http://orhanbalci.github.io/drafts/index.xml</link>
+    <description>Recent content in Drafts on Orhan Balci</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <atom:link href="http://example.org/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <language>tr-TR</language>
+    <atom:link href="http://orhanbalci.github.io/drafts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/1357/</link>
+      <link>http://orhanbalci.github.io/drafts/1357/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/1357/</guid>
+      <guid>http://orhanbalci.github.io/drafts/1357/</guid>
       <description>
 
 &lt;p&gt;title: Guava Veri Yapıları : MultiSet, MultiMap, BiMap
@@ -34,10 +34,10 @@ post_type: post&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/1560/</link>
+      <link>http://orhanbalci.github.io/drafts/1560/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/1560/</guid>
+      <guid>http://orhanbalci.github.io/drafts/1560/</guid>
       <description>
 
 &lt;p&gt;title: Practical Rust Iterator Examples
@@ -60,10 +60,10 @@ post_type: post&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/216/</link>
+      <link>http://orhanbalci.github.io/drafts/216/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/216/</guid>
+      <guid>http://orhanbalci.github.io/drafts/216/</guid>
       <description>
 
 &lt;p&gt;title: Arazi / Radyo Seyrüsefer Sunucu Yazılımı
@@ -102,10 +102,10 @@ C++, Qt, NTP&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/222/</link>
+      <link>http://orhanbalci.github.io/drafts/222/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/222/</guid>
+      <guid>http://orhanbalci.github.io/drafts/222/</guid>
       <description>
 
 &lt;p&gt;title: MES (Mühimmat Eğitim Simulatörü)
@@ -143,10 +143,10 @@ C++, Qt, Presagis Vega, OPCODE çarpışma kontrol kütüphanesi&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/249/</link>
+      <link>http://orhanbalci.github.io/drafts/249/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/249/</guid>
+      <guid>http://orhanbalci.github.io/drafts/249/</guid>
       <description>
 
 &lt;p&gt;title: Baytar (Veteriner Hekim Klinik Yönetim Sistemi)
@@ -163,7 +163,7 @@ post_type: post&lt;/p&gt;
 
 &lt;h1 id=&#34;baytar-veteriner-hekim-klinik-yönetim-sistemi&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/h1&gt;
 
-&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://example.org/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
+&lt;p&gt;[caption id=&amp;ldquo;attachment_261&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;470&amp;rdquo; caption=&amp;ldquo;Baytar 0.1&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/baytar.png&#34; alt=&#34;Baytar 0.1&#34; /&gt;[/caption]&lt;/p&gt;
 
 &lt;p&gt;Proje Tanımı:
 Veteriner hekimlerin klinikteki müşterileri, hayvanları, hayvanlara uygulanan aşıları ve diğer tedavileri kaydetmeye yönelik yazılım.&lt;/p&gt;
@@ -185,10 +185,10 @@ Java, MySQL, HSQLDB&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/327/</link>
+      <link>http://orhanbalci.github.io/drafts/327/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/327/</guid>
+      <guid>http://orhanbalci.github.io/drafts/327/</guid>
       <description>
 
 &lt;p&gt;title: NetBeans Yerelleştirme
@@ -224,10 +224,10 @@ Community Translation Interface&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</link>
+      <link>http://orhanbalci.github.io/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</guid>
+      <guid>http://orhanbalci.github.io/drafts/netbeans-yerellestirmesi-icin-gonulluler-araniyor/</guid>
       <description>
 
 &lt;p&gt;title: NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor
@@ -250,10 +250,10 @@ post_type: post&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</link>
+      <link>http://orhanbalci.github.io/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</guid>
+      <guid>http://orhanbalci.github.io/drafts/radyo-seyrusefer-cihazlari-veritabani-guncelleme-yazilimi/</guid>
       <description>
 
 &lt;p&gt;title: Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı
