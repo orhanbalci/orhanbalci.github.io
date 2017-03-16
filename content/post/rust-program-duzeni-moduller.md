@@ -1,14 +1,7 @@
-title: Rust Program Düzeni : Modüller
-link: http://orhanbalci.net/tr/?p=1512
-author: Orhan Balci
-description: 
-post_id: 1512
-created: 2016/01/27 09:28:14
-created_gmt: 2016/01/27 06:28:14
-comment_status: open
-post_name: rust-program-duzeni-moduller
-status: publish
-post_type: post
++++
+title= "Rust Program Düzeni : Modüller"
+date = "2016-01-27 15:29:31+08:00"
++++
 
 # Rust Program Düzeni : Modüller
 
