@@ -4,10 +4,7 @@ link: http://orhanbalci.net/tr/?p=1501
 author: Orhan Balci
 description: 
 post_id: 1501
-date: "2015/12/18 11:26:33"
-created_gmt: 2015/12/18 08:26:33
-comment_status: open
-post_name: rust-cheatsheet
+date: "2015-12-18 15:29:31+08:00"
 status: publish
 post_type: post
 ---

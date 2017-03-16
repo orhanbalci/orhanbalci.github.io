@@ -1,3 +1,11 @@
 languageCode = "tr-TR"
 title = "Orhan Balci"
 baseURL = "http://orhanbalci.github.io/"
+
+[Params]
+subtitle = "Kisisel Yazilim Gunlugu"
+twitter = "http://twitter.com/orhanbalci"
+github = "https://github.com/orhanbalci"
+facebook = "http://facebook.com/orhanbalci"
+showRSS = true
+DateForm  = "2010/01/13"
