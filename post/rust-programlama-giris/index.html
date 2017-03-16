@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-     | Orhan Balci
+    Rust Programlama Giris | Orhan Balci
   </title>
 
 
@@ -43,13 +43,13 @@
     <div class="row gutters">
       <div id="site-title" class="col span_6">
         <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
-        
+        <h2>Kisisel Yazilim Gunlugu</h2>
       </div>
       <div id="social" class="col span_6">
         <ul>
-          
-          
-          
+          <li><a href="http://twitter.com/orhanbalci" target="_blank">Twitter</a></li>
+          <li><a href="http://facebook.com/orhanbalci" target="_blank">Facebook</a></li>
+          <li><a href="https://github.com/orhanbalci" target="_blank">GitHub</a></li>
           
         </ul>
       </div>
@@ -60,26 +60,16 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1></h1>
+      <h1>Rust Programlama Giris</h1>
       <div class="meta">
         Jan 1, 0001 &nbsp;
+        
+          #<a href="/tags/rust">rust</a>&nbsp;
         
       </div>
     </div>
     <article>
       
-
-<p>title: Rust Programlama Giris
-link: <a href="http://orhanbalci.net/tr/?p=1404">http://orhanbalci.net/tr/?p=1404</a>
-author: admin
-description:
-post_id: 1404
-created: 2015/07/09 00:10:35
-created_gmt: 2015/07/08 21:10:35
-comment_status: open
-post_name: rust-programlama-giris
-status: publish
-post_type: post</p>
 
 <h1 id="rust-programlama-giris">Rust Programlama Giris</h1>
 
@@ -89,9 +79,12 @@ post_type: post</p>
 <li>Rust : Oncelikle dile ait compiler ve temel kutuphaneleri yuklemeniz gerekiyor. <a href="http://www.rust-lang.org/">Buradan </a>indirebilirsiniz.</li>
 <li>Atom Editor : JavaScript tabanli gelistirilebilir text editor. <a href="https://atom.io/">Suradan </a>indirilebilir . Eklentiler sayesinde neredeyse tum dillerde gelistirme destegi saglamak mumkun. Rust gelistirmek icin <strong>language-rust</strong>,<strong>racer</strong>,<strong>rust-api-docs-helper</strong> paketlerini kurdum. Ayrica komut satirina editor icinden erismek icin <strong>terminal-status</strong> paketini kurdum. Yazdiginiz programi derlemek icin buna ihticainiz olacak</li>
 <li>Racer : Rust icin yazilmis en olgun kod tamamlayicisi. Rust ile yazilmis. Binary distribution bulamadim. <a href="https://github.com/phildawes/racer">Github&rsquo;dan </a>indirip kendiniz derleyebilirsiniz.</li>
-<li>Cargo : Rust paket yoneticisi. Temel bir Rust proje catisi olusturmak ve bunu yonetmek icin gelistirilmiz bir yazilim. Racer aracini bununla derleyebilirsiniz. <a href="https://crates.io/">Buradan </a>indirebilirsiniz.
-Kaynak kod dosya uzantisi olarak <strong>rs</strong> kullaniyoruz. Derleme komutumuz ise <strong>rustc kaynak_dosya</strong> seklinde. Adettendir kucuk bir programla acilisi yapalim :  Ornegimiz kucuk olmasina karsin dilin temel sentaks ozelliklerini gosteriyor. Satir satir aciklayalim. ilk satirda bir fonksiyon tanimi goruyoruz : [java]fn factorial(x : u32) -&gt; u32{[/java] sentaks <code>fn fonksiyon_ismi(parametre_adi : parametre_tipi) -&gt; donus_parametre_tipi</code> seklinde. factorial fonksiyonunun govdesini olusturan bloga pattern matcher deniliyor. Fonksiyonel programlamaya ait bir paradigma olan pattern matching karmasik if else ifadelerinin yerine kullaniliyor. [java]match x { 0 =&gt; 0, 1 =&gt; 1, _ =&gt; x * factorial(x-1) }[/java] Bu kod parcasi fonksiyona verilen parametreyi eslestirip buna karsilik fonksiyon ciktisini veriyor. Dikkatinizi cekmesi gereken bir diger husus ise return ifadesinin olmayisi. Rust dilinde yazdiginiz hersey aslinda bir ifade (statement) yani bir deger donuyor. Bunu bir deyime (expression) donusturmek icin sonuna ; koymaniz yeterli. Deyimler ise herhangi bir deger donmezler. Dolayisiyla bir fonksiyonun donus degeri sonunda ; olmayan son ifadenin donus degeri oluyor. Ornekde de goreceginiz uzerine match ifadesinin sonunda ; yok dolayisiyla fonksiyonun donus degeri match ifadesinin donus degeridir. Rust programlarinin giris fonksiyonu imzasi su sekilde kodumuz buradan calismaya basliyor. Gayet sade: [java] fn main (){ [/java] Rust yazmaya basladigimda gordugum en guzel ozellik tip sistemiydi. Benim bildigim dillerin cogunda tip isimleri ile hafizada kapladiklari alan boyutlari arasinda herhangi bir kopru yoktu. Rust bu isimlendirmeye son vererek degisken tiplerine hafizada kapladigi boyutlarin ismini vermis gayet anlasilir oldugunu dusunuyorum. Ayrica variable decleration sentaksi C ailesinden farkli tip adi degisken adindan sonra kullaniliyor. Nispeten daha genc dillerde geneldu bu yaklasim secilmis. Go&rsquo;da da buna benzer bir yaklasim var. Nedeni <a href="http://blog.golang.org/gos-declaration-syntax">surada </a>aciklanmis. Bana gayet mantikli geldi kullanmasi da daha kolay. Rust da sentaks su sekilde [java] let test_number : u32 = 5; [/java] Burada u32 unsigned integer 32 bit tipidir. Gayet kendini aciklayan bir tip ismi sanirim. Primitive tiplere <a href="https://doc.rust-lang.org/book/primitive-types.html">buradan </a>ulasabilirsiniz. Son olarak basit bir output ifadesi var. Burada yine dikkati ceken println ifadesinin sonudaki ! isareti. Bu tarz ifadeler Rust da makro olarak tanimlanmis. Makrolara da ilerki yazilarimda ayrintili olarak deginecegim. Bu arada ingilizce ile arasi iyi olanlar icin Rust resmi tutorialina <a href="http://rustbyexample.com/">buradan </a>ulasabilirsiniz. [ad#Yazi Ici Buyuk]</li>
+<li>Cargo : Rust paket yoneticisi. Temel bir Rust proje catisi olusturmak ve bunu yonetmek icin gelistirilmiz bir yazilim. Racer aracini bununla derleyebilirsiniz. <a href="https://crates.io/">Buradan </a>indirebilirsiniz.</li>
 </ol>
+
+<p>Kaynak kod dosya uzantisi olarak <strong>rs</strong> kullaniyoruz. Derleme komutumuz ise <strong>rustc kaynak_dosya</strong> seklinde. Adettendir kucuk bir programla acilisi yapalim :
+<script src="//gist.github.com/orhanbalci/ed609f69788a7695cdcc.js"></script>
+Ornegimiz kucuk olmasina karsin dilin temel sentaks ozelliklerini gosteriyor. Satir satir aciklayalim. ilk satirda bir fonksiyon tanimi goruyoruz : <code>rust fn factorial(x : u32) -&gt; u32</code> sentaks <code>fn fonksiyon_ismi(parametre_adi : parametre_tipi) -&gt; donus_parametre_tipi</code> seklinde. factorial fonksiyonunun govdesini olusturan bloga pattern matcher deniliyor. Fonksiyonel programlamaya ait bir paradigma olan pattern matching karmasik if else ifadelerinin yerine kullaniliyor. <code>match x { 0 =&gt; 0, 1 =&gt; 1, _ =&gt; x * factorial(x-1) }</code>  Bu kod parcasi fonksiyona verilen parametreyi eslestirip buna karsilik fonksiyon ciktisini veriyor. Dikkatinizi cekmesi gereken bir diger husus ise return ifadesinin olmayisi. Rust dilinde yazdiginiz hersey aslinda bir ifade (statement) yani bir deger donuyor. Bunu bir deyime (expression) donusturmek icin sonuna ; koymaniz yeterli. Deyimler ise herhangi bir deger donmezler. Dolayisiyla bir fonksiyonun donus degeri sonunda ; olmayan son ifadenin donus degeri oluyor. Ornekde de goreceginiz uzerine match ifadesinin sonunda ; yok dolayisiyla fonksiyonun donus degeri match ifadesinin donus degeridir. Rust programlarinin giris fonksiyonu imzasi su sekilde kodumuz buradan calismaya basliyor. Gayet sade: <code>fn main (){</code> Rust yazmaya basladigimda gordugum en guzel ozellik tip sistemiydi. Benim bildigim dillerin cogunda tip isimleri ile hafizada kapladiklari alan boyutlari arasinda herhangi bir kopru yoktu. Rust bu isimlendirmeye son vererek degisken tiplerine hafizada kapladigi boyutlarin ismini vermis gayet anlasilir oldugunu dusunuyorum. Ayrica variable decleration sentaksi C ailesinden farkli tip adi degisken adindan sonra kullaniliyor. Nispeten daha genc dillerde geneldu bu yaklasim secilmis. Go&rsquo;da da buna benzer bir yaklasim var. Nedeni <a href="http://blog.golang.org/gos-declaration-syntax">surada </a>aciklanmis. Bana gayet mantikli geldi kullanmasi da daha kolay. Rust da sentaks su sekilde <code>let test_number : u32 = 5;</code> Burada u32 unsigned integer 32 bit tipidir. Gayet kendini aciklayan bir tip ismi sanirim. Primitive tiplere <a href="https://doc.rust-lang.org/book/primitive-types.html">buradan </a>ulasabilirsiniz. Son olarak basit bir output ifadesi var. Burada yine dikkati ceken println ifadesinin sonudaki ! isareti. Bu tarz ifadeler Rust da makro olarak tanimlanmis. Makrolara da ilerki yazilarimda ayrintili olarak deginecegim. Bu arada ingilizce ile arasi iyi olanlar icin Rust resmi tutorialina <a href="http://rustbyexample.com/">buradan </a>ulasabilirsiniz. [ad#Yazi Ici Buyuk]</p>
 
       
       
@@ -104,10 +97,10 @@ Kaynak kod dosya uzantisi olarak <strong>rs</strong> kullaniyoruz. Derleme komut
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/rust-temel-veri-yapilari/" rel="prev"></a></span>
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/tags/" rel="prev">Tags</a></span>
     
     
-      <span class="next"><a href="http://orhanbalci.github.io/post/rust-program-duzeni-moduller/" rel="next"></a> &rarr;</span>
+      <span class="next"><a href="http://orhanbalci.github.io/categories/rust/" rel="next">Rust</a> &rarr;</span>
     
   </nav>
 

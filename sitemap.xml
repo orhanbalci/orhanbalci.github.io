@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-cheatsheet/</loc>
+    <lastmod>2015-12-18T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-dokumantasyon/</loc>
+    <lastmod>2015-12-09T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</loc>
+    <lastmod>2015-09-11T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://orhanbalci.github.io/drafts/1357/</loc>
   </url>
   
@@ -430,22 +450,6 @@
   </url>
   
   <url>
-    <loc>http://orhanbalci.github.io/post/rust-dokumantasyon/</loc>
-  </url>
-  
-  <url>
-    <loc>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</loc>
-  </url>
-  
-  <url>
-    <loc>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</loc>
-  </url>
-  
-  <url>
-    <loc>http://orhanbalci.github.io/post/rust-programlama-giris/</loc>
-  </url>
-  
-  <url>
     <loc>http://orhanbalci.github.io/post/rust-temel-veri-yapilari/</loc>
   </url>
   
@@ -558,12 +562,18 @@
   </url>
   
   <url>
+    <loc>http://orhanbalci.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://orhanbalci.github.io/drafts/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://orhanbalci.github.io/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -574,11 +584,27 @@
   
   <url>
     <loc>http://orhanbalci.github.io/post/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://orhanbalci.github.io/post/rust-cheatsheet/</loc>
+    <loc>http://orhanbalci.github.io/tags/rust/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/categories/rust/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-programlama-giris/</loc>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/tags/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -6,7 +6,112 @@
     <description>Recent content in Posts on Orhan Balci</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
+    <lastBuildDate>Wed, 27 Jan 2016 15:29:31 +0800</lastBuildDate>
     <atom:link href="http://orhanbalci.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust Program Düzeni : Modüller</title>
+      <link>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</link>
+      <pubDate>Wed, 27 Jan 2016 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-program-düzeni-modüller&#34;&gt;Rust Program Düzeni : Modüller&lt;/h1&gt;
+
+&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :  Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.  Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :  Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :  Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :  &lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.  Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor. Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Cheatsheet</title>
+      <link>http://orhanbalci.github.io/post/rust-cheatsheet/</link>
+      <pubDate>Fri, 18 Dec 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-cheatsheet/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-cheatsheet&#34;&gt;Rust Cheatsheet&lt;/h1&gt;
+
+&lt;p&gt;Rust ile ilgili hatirlamak amacli notlardir :&lt;/p&gt;
+
+&lt;h1 id=&#34;cargo-komutlari&#34;&gt;Cargo Komutlari&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yeni proje olusturmak icin &lt;code&gt;cargo new proje_adi --bin&lt;/code&gt; komutunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;carate aramak icin &lt;code&gt;cargo search crate_adi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;test build run icin &lt;code&gt;cargo test&lt;/code&gt; &lt;code&gt;cargo build&lt;/code&gt;&lt;code&gt;cargo run&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cargo alt komutlarini listelemek icin &lt;code&gt;cargo --list&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;string&#34;&gt;String&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;str; -&amp;gt; String donusumu String::from(&amp;str;) seklinde yapiliyor&lt;/li&gt;
+&lt;li&gt;substring almak icin String yapisinin [begin_index..end_index] operatoru kullanilabilir&lt;/li&gt;
+&lt;li&gt;Herhangi bir tipi String e cevirmek icin o tipin to_string() fonksiyonunu kullanabilirsiniz &lt;code&gt;num.to_string()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Herhangi bir Stringi diger tiplere cevirmek icin&lt;code&gt;parse::().unwrap()&lt;/code&gt; fonksiyonunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Stringi u8 vectore cevirmek icin &lt;code&gt;into_bytes&lt;/code&gt; fonksiyonunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;byte arraydan Stringe donusum &lt;code&gt;String::from_utf8_lossy&lt;/code&gt; fonksiyonu ile gerceklesiyor. Stringinizde unicode karakterler varsa istenmeyen sonuclar alabilirsiniz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;collections&#34;&gt;Collections&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HashMap kullanimi icin use std::collections::HashMap&lt;/li&gt;
+&lt;li&gt;HashMap eklemek icin insert(key,value) apisi kullaniliyor&lt;/li&gt;
+&lt;li&gt;HashMap de varmi kontrolu contains_key(key) apisi ile oluyor&lt;/li&gt;
+&lt;li&gt;HashMap de value get(key) ile alinabiliyor Option donuyor unwrap yapmak gerekiyor&lt;/li&gt;
+&lt;li&gt;Vec son elemani &lt;code&gt;last()&lt;/code&gt; ile aliyoruz. eger son eleman uzerinde degisiklik yapmak istersek &lt;code&gt;last_mut()&lt;/code&gt; kullanmaliyiz&lt;/li&gt;
+&lt;li&gt;Vec iterasyonlarinda &lt;code&gt;i in vec.iter()&lt;/code&gt; yerine okunaklilik acisindan &lt;code&gt;i in &amp;amp;vec;&lt;/code&gt; kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Elimizde Vec varsa bunu tek bir stringde birlestirmek icin concat() ve join() fonksiyonlarini kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Vec nesnesinden 2 serli 3 erli gruplar elde etmek icin &lt;code&gt;chunks&lt;/code&gt; fonksiyonunu kullaniyoruz. String icin bu yok maalesef.&lt;/li&gt;
+&lt;li&gt;slice parametreleri ffi interfaceden gecmek icin as_ptr kullaniyoruz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;iterator&#34;&gt;Iterator&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Azalan bir iterator elde etmek icin &lt;code&gt;(a..b).rev()&lt;/code&gt; kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Iterasyonda ilk n elemani atlamak icin &lt;code&gt;iter().skip(n)&lt;/code&gt;kullaniyoruz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Floating point sayilar icin esitlik makrosu bulunmuyor. approx cratesi kulanilabilir&lt;/li&gt;
+&lt;li&gt;#[macro use] extern crate approx; partial_eq!()&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Dökümantasyon</title>
+      <link>http://orhanbalci.github.io/post/rust-dokumantasyon/</link>
+      <pubDate>Wed, 09 Dec 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-dokumantasyon/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-dökümantasyon&#34;&gt;Rust Dökümantasyon&lt;/h1&gt;
+
+&lt;p&gt;Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde &lt;strong&gt;rustdoc&lt;/strong&gt; denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci &lt;code&gt;rustdoc kaynak_kod_dosyasi.rs&lt;/code&gt; seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile &lt;code&gt;cargo doc&lt;/code&gt; seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&amp;rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt; denen standardi destekliyor. Yorum bloklari &lt;code&gt;///&lt;/code&gt; uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) &lt;code&gt;kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.&lt;/code&gt; isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```&lt;code&gt;java&lt;/code&gt; seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. &lt;code&gt;#&lt;/code&gt; karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari &lt;code&gt;#&lt;/code&gt; isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri &lt;code&gt;cargo test&lt;/code&gt; komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak &lt;code&gt;rustdoc --test kaynak_dosya.rs&lt;/code&gt; komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak &lt;code&gt;///&lt;/code&gt; isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin &lt;code&gt;//!&lt;/code&gt; isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Primitif Veri Yapilari Tuple ve Array</title>
+      <link>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</link>
+      <pubDate>Fri, 11 Sep 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-primitif-veri-yapilari-tuple-ve-array&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/h1&gt;
+
+&lt;p&gt;Tuple yapilari birbirleriyle ilintili verileri bir arada tutmaya yarar. Struct yapilarindan farki alanlarinin isim etiketi olmamasidir. Verilere index yardimiyla erisilir. Imumutable yapilar olup sabit boyutludurlar. Fonksiyonlardan birden fazla deger donmekte, ayni anda birden fazla degiskene deger atamakta, pattern matching islemlerinde kullanicia kolaylik saglarlar. Fonksiyonel programlamaya has veriyapilaridir. Ornegin network baglantilarinda sikca beraber kullandigimiz ip ve port bilgileri icin bir tuple tanimlayalim ve kullanalim :  Temel kullanimi gordukten sonra pattern matching ile ne yapabiliriz buna bakalim. Ufak bir hesaplama fonksiyonu yazalim ve bu fonksiyona parametreleri bir tuple yardimiyla gecelim. Tuple su sekilde olsun &lt;code&gt;(komut,parametre1,parametre2)&lt;/code&gt; bir sonraki ornegimizde ise bir swap fonksiyonu yazarak tuple icindeki degerlerin yer degistirmesini gorelim. Burada &lt;code&gt;destructuring&lt;/code&gt; yani tuple veya struct icerisindeki degerlerin disariya cikarilmasi yontemini de kullanalim. c/c++ ta bu kavram olmadigi icin baslangicta garipseyebilirsiniz :  Ornekte 9. satirdaki ifade ile &lt;code&gt;arg&lt;/code&gt; tuple destructure edilerek elemanlari a,b degiskenlerine atanmistir. Tuplelara bu kadar degindikten sonra bir ornekle de array ve slice kullanimini gorelim. Array boyutlari compile time da bilinmek zorunda. Yani boyutu calisma zamaninda belirlenecek arrayler olusturulamiyor. Slice lar ise arraylarin alt bir araligini temsil eden yapilar. Slicelarin boyutu compile time de bilinmek zorunda degil. Array degisken tipi tanimi &lt;code&gt;[veri tipi;array boyutu]&lt;/code&gt; seklinde yapiliyor. Ilk deger atanirken &lt;code&gt;[deger1,deger2,deger3...degern]&lt;/code&gt; sentaksi yada tum elemanlara ayni degeri atamak icin &lt;code&gt;[atanacak deger; array boyutu]&lt;/code&gt; sentaksi kullanilabilir. Asagidaki ornek rust tutorialindan alinip biraz eklemeler yapilmistir :  15. ve 16. satirlarda bahsettigimiz array degisken tanimlamalari ve deger atamalari yer aliyor. &lt;code&gt;analyze_slice&lt;/code&gt; fonksiyonu slice isimli bir slice parametere aliyor. Bu slice mutable tanimlanmadigi icin fonksiyon icinde slice uzerinde herhangi bir guncelleme aypilamaz. 8. satirda tnimladigimiz &lt;code&gt;update_slice&lt;/code&gt; fonksiyonunda ise mutable bir slice parametresi gectigi icin slice uzerinde guncelleme yapabiliyoruz. 9. satirdaki for ifadesi de slicelari gezinmek icin guzel bir ornek teskil ediyor. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -435,114 +540,6 @@ post_type: post&lt;/p&gt;
 &lt;h1 id=&#34;dependency-injection-guice&#34;&gt;Dependency Injection : Guice&lt;/h1&gt;
 
 &lt;p&gt;Dependency Injection test edilebilir, esnek, ve kontrol edilebilir kod geliştirmek için kullanılan bir tasarım kalıbıdır. Geliştirdiğiniz sınıfların bağımlılıklarının,kullanması gereken servislerin bir arayüz vasıtasıyla dışarıdan verilmesine olanak tanır. Bu makalede google tarafından geliştirilen Guice Dependency Injection kütüphanesi ile bir örnek göstereceğim. Örneğimiz yapay sinir ağlarında kullanılan nöronlar ve bunların bağımlı olduğu aktivasyon fonksiyonlarının implementasyonu şeklinde olacak. Öncelikle bağımlı olunan aktivasyon fonksiyonu için bir arayüz tanımlayalım : [java] public interface ActivationFunction { public abstract double apply(double inp); public abstract double reverse(double output); } [/java] Bu arayüzü gerçekleyen iki tane aktivasyon fonksiyon sınıfı yazalım : [java] public class ReluFunction implements ActivationFunction { @Override public double apply(double inp) { return Math.log(1 + Math.exp(inp)); } @Override public double reverse(double input) { return 1d / (1 + Math.exp(-input)); } } [/java] [java] public class IdentityFunction implements ActivationFunction { @Override public double apply(double inp) { return inp; } @Override public double reverse(double output) { return output; } } [/java] Şimdi de bu aktivasyon fonksiyonlarını kullanacak olan yapay sinir ağının nöron sınıfını geliştirelim. Bu sınıfı temel injection yöntemi olan constructor (yapıcı method) üzerinden inject edelim. &lt;strong&gt;ActivationFunction&lt;/strong&gt; bağımlılğını constructor parametresi olarak geçmeliyiz ve bu constructoru &lt;strong&gt;@inject&lt;/strong&gt; annotasyonu ile işaretleyelim. Dikkat etmemiz gereken noktalar constructor parametresi ve @inject annotasyonu. [java] import com.google.inject.Inject; public class Neuron { private ActivationFunction af; @Inject public Neuron(ActivationFunction pAf){ af = pAf; } public double getResult(double inp){ return af.apply(inp); } }[/java] Sonraki adımımız Guice&amp;rsquo;e Neuron nesneleri oluştururken kullanması gereken ActivationFunction implementasyon tipini bildirmek. İleride dependency değişimi yapmak gerekirse tek yapmamız gereken bu sınıfı değiştirmek olacaktır. &lt;strong&gt;Module&lt;/strong&gt; arayüzünü gerçekleyen bir sınıf yazıyoruz. Burada Guice&amp;rsquo;e ActivationFunction bağımlılığı için IdentityFunction implementasyonunu kullanmasını söylüyoruz. [java] import com.google.inject.Binder; import com.google.inject.Module; public class NeuralNetworkModule implements Module { @Override public void configure(Binder binder) { binder.bind(ActivationFunction.class).to(IdentityFunction.class); } } [/java] Yeni bir Neuron nesnesi oluşturmak istediğimizde &lt;strong&gt;Injector&lt;/strong&gt; sınıfının &lt;strong&gt;getInstance&lt;/strong&gt; methodunu kullanıyoruz. Dependency Injection kullanırken new ile herhangi bir nesne oluşturmuyoruz. [java] import com.google.inject.Guice; import com.google.inject.Injector; public class Main { public static void main(String[] args) { Injector inj = Guice.createInjector(new NeuralNetworkModule()); Neuron n = inj.getInstance(Neuron.class); System.out.println(n.getResult(5)); } } [/java] [ad#Yazi Ici Buyuk]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/depth-first-search-derinlik-oncelikli-arama/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/depth-first-search-derinlik-oncelikli-arama/</guid>
-      <description>
-
-&lt;p&gt;title: Depth First Search (Derinlik Oncelikli Arama)
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1384&#34;&gt;http://orhanbalci.net/tr/?p=1384&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 1384
-created: 2015/04/19 19:44:47
-created_gmt: 2015/04/19 16:44:47
-comment_status: open
-post_name: depth-first-search-derinlik-oncelikli-arama
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;depth-first-search-derinlik-oncelikli-arama&#34;&gt;Depth First Search (Derinlik Oncelikli Arama)&lt;/h1&gt;
-
-&lt;p&gt;Derinlik oncelikli aram algoritmasi kullanarak graf uzerinde bagli bilesen sayisi bulma. Javascript implementasyonu : [javascript] var adjecencyList = []; var nodes = []; fs = require(&amp;lsquo;fs&amp;rsquo;) fs.readFile(&amp;lsquo;./depth_first_search.txt&amp;rsquo;, &amp;lsquo;utf8&amp;rsquo;, function (err, graph_data) { if (err) { return console.log(err); } var edges = graph_data.split(&amp;rdquo;\r\n&amp;rdquo;); label_connected_components(edges); }); function find_starting_node() { for (var i = 1; i &amp;lt; nodes.length; i++) { if(nodes[i] != undefined &amp;amp;&amp;amp; nodes[i].connected_group === Number.MAX_VALUE) return nodes[i]; } return undefined; } function label_connected_components(edges){ build_adjecency_list(edges); var label_counter = 1; var starting_node = undefined; while((starting_node = find_starting_node()) != undefined) { depth_first_search(label_counter, starting_node); label_counter++; } console.log(label_counter-1); } function build_adjecency_list(edges) { edges.every(function (edge, index) { if (index === 0) { //node count edge count adjecencyList = new Array(edge.split(&amp;rdquo; &amp;ldquo;).map(function (item) { return parseInt(item); })[0]); nodes = new Array(edge.split(&amp;rdquo; &amp;ldquo;).map(function (item) { return parseInt(item)+1; })[0]); for (var i = 0; i &amp;lt; nodes.length; i++) { nodes[i] = {vertex: i, connected_group: Number.MAX_VALUE}; } return true; } var vertices = edge.split(&amp;rdquo; &amp;ldquo;).map(function (item) { return parseInt(item); }); if (adjecencyList[vertices[0]] === undefined) adjecencyList[vertices[0]] = []; if (adjecencyList[vertices[1]] === undefined) adjecencyList[vertices[1]] = []; adjecencyList[vertices[0]].push(nodes[vertices[1]]); adjecencyList[vertices[1]].push(nodes[vertices[0]]); return true; }) } var depth_first_search = function (connected_group_label, starting_node) { var processQueue = []; processQueue.push(starting_node); while (processQueue.length &amp;gt; 0) { //depth first search icin processQueue stack biciminde calismali var node = processQueue.shift(); if (node.connected_group === Number.MAX_VALUE) { node.connected_group = connected_group_label; if (adjecencyList[node.vertex] === undefined) { continue; } for (var i = 0; i &amp;lt; adjecencyList[node.vertex].length; i++) { var adjecentNode = adjecencyList[node.vertex][i]; if (adjecentNode.connected_group === Number.MAX_VALUE) { processQueue.unshift(adjecentNode); //unshift arrayin basina ekleme yapar } } } } } [/javascript] [ad#Yazi Ici Buyuk]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/duvarlara-sinen-yillar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/duvarlara-sinen-yillar/</guid>
-      <description>
-
-&lt;p&gt;title: Duvarlara Sinen Yıllar
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=31&#34;&gt;http://orhanbalci.net/tr/?p=31&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 31
-created: 2009/04/01 21:50:17
-created_gmt: 2009/04/01 19:50:17
-comment_status: open
-post_name: duvarlara-sinen-yillar
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;duvarlara-sinen-yıllar&#34;&gt;Duvarlara Sinen Yıllar&lt;/h1&gt;
-
-&lt;p&gt;Kim bilir kaç mezuniyet gördü şu duvarlar, binanın yanan ışıkları kim bilir kimlere şahitlik etti. Yine ayrılık vakti geldi bazıları için ama o hep yerli yerinde. Duvarlarına sinmiş sevinç nidalarının haddi hesabı yok. O güzel ve ulvi duyguları defalarca yaşadı, ömrü yettiğince de yaşayacak. Oysa öğrenciler öyle değil, onlar o anı sadece bir defa yaşayabiliyorlar. Öyle ya insan bir defa mezun olur aynı okuldan. Ama arkalarında tüm sırlarına vakıf bir dost bırakırlar, kimisi bunun farkında kimisinin umurunda bile değil.  Her ne kadar mahpushane koğuşlarını andırsa da yatılı okul yatakhane odaları, sağlam arkadaşlıkların temellerinin atıldığı nadir yerlerden birisidir. Küçük yaşta paylaşılan büyük hissiyatların mekanlarıdır onlar. Tren katarları gibi arka arkaya dizilen 101,102,103 numaralı odalarda yapılır gece sohbetleri. Buralarda yaşanır ilk aşk acısı, buralarda düşer sıla hasreti buruk yüreklere, buralarda hissedersiniz boğazınıza düğümlenen ve gitmek bilmeyen üzüntü ilmeklerini. Kendine has bir kültürü de içinde barındırır yatılı okul yatakhaneleri. Her şeyden önce bir düzen, nizam, intizam hakimdir her köşeye. Bu düzenin anahtarları yat ve kalk saatleridir. Yat saatinden sonra yapılan sohbetlere doyum olmazken kalk saatinden önceki dakikalar da en stresli vakitlerdir. Eğer şanslıysanız kalk saatinden bir saat önce uyanır, uyanır uyanmaz da daha kalkmanıza bir saat olduğunun farkına varır ve o an dünyanın en mutlu insanı oluverirsiniz. Uykulu gözlerle etüt salonunun yolunu tutarken ayaklar adeta tersine gider. Sabah etütlerinde akşamın gürültüsü, şamatası yerini derin bir sessizliğe bırakır. Kahvaltı saati yaklaşırken salonlar hareketlenmeye başlar. Yatılı öğrencinin en büyük eğlencesi ister öğle yemeği olsun ister kahvaltı, sıra kapma yarışıdır. Etüt sınıfından start alan yarış yemekhane kapısında biter. Uçarak üçer beşer atlanan merdivenler kimi zaman üzücü olaylara da sahne olur. Tabi muhabbet ehli olan yatılı öğrenci yemekhane sırasındaki zaman boşluğunu da gayet iyi değerlendirir. Kazan çayı eşliğinde yapılan kahvaltı her zaman istekleri karşılamada yeterli olmaz. Alır eline çatal kaşığı başlar protestoya bilse de sonuç alamayacağını. Yatılı öğrenciler arasında bir grup vardır ki onlar arasındaki bağ diğerlerine nazaran daha sıkıdır : Hafta sonu eve gidemeyenler grubu. Bu grup için hafta sonu çok çeşitli aktivite ve oyunlarla dolu zevkli bir zaman dilimidir. Her ne kadar eve gidememenin burukluğu olsa da zamanla aşılır bu duygu. Hafta sonu oyunları arasında en güzeli Japon kaledir. Her yatakhane kapısı birer birer kapılır, çoraptan yada kağıttan top yapılır, golü kapısında gören yerini sırada bekleyene bırakır. Yatakhane koridorunda ikiye iki maç yapmakta ayrı zevktir. Eğer küçük plastik bir top bulunabilirse koridorda tek vuruş da oynanabilir. Hele sayı biraz fazlaysa okulun kapalı spor salonundaki hentbol sahasını futbol amaçlı kullanmak da hınzır öğrencilerin favorileri arasındadır. Bu öğrenciler futboldan başka oyun oynamıyor mu arkadaşım diyenleriniz olabilir. Oynar elbet. Uzun eşek oynar, satranç oynar,havuza yüzmeye gider&amp;hellip; Hele bir de mevsimlerden ilkbahar ise yapılan gezilerin, pikniklerin haddi hesabı olmaz. Hafta sonu macerası pazar akşamüstü eve gidenlerin dönmesiyle sona erer. Ranzalar, yatakhane odaları, etüt salonları, kapalı spor salonu ve arkadaşlar&amp;hellip; Duvarlara sinen kahkahalar, nidalar, hıçkırıklar&amp;hellip; Maziden bir gün çalmak istersen eğer duvarlarına bak yatakhanelerin. Değişse de boyası,sıvası bil ki hatıralar orada saklı.&lt;/p&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1391&#34; title=&#34;2009-05-07 08:13:02&#34;&gt;Soner AVŞAR&lt;/a&gt;:&lt;/strong&gt; Mrb orhan baba.. 7 yıllık hayatımın parçası yatılı okul yıllarım. Okudukça gözümde canlandı ve derin bir özlem uyandı içimde. Tatlı bir nostaljik yolculuk yaptım sayende.:) Keyif alarak okudum çok güzeldi ellerine sağlık.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/eclipse-screencast-1-extract-method-refactoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/eclipse-screencast-1-extract-method-refactoring/</guid>
-      <description>
-
-&lt;p&gt;title: Eclipse Video Ders (Screencast) #1 Extract Method Refactoring
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=26&#34;&gt;http://orhanbalci.net/tr/?p=26&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 26
-created: 2008/07/23 19:23:54
-created_gmt: 2008/07/23 17:23:54
-comment_status: open
-post_name: eclipse-screencast-1-extract-method-refactoring
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;eclipse-video-ders-screencast-1-extract-method-refactoring&#34;&gt;Eclipse Video Ders (Screencast) #1 Extract Method Refactoring&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;Video dersi izlemek için resme tıklayın.&lt;/strong&gt; &lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/screencast/eclipse_screencast_extract_method_giris.png&#34; alt=&#34;Eclipse Extract Method Refactoring&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/eclipse-screencast-2-extract-super-class-refactoring/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/eclipse-screencast-2-extract-super-class-refactoring/</guid>
-      <description>
-
-&lt;p&gt;title: Eclipse Video Ders (Screencast) #2 Extract Super Class Refactoring
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=27&#34;&gt;http://orhanbalci.net/tr/?p=27&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 27
-created: 2008/07/23 19:29:43
-created_gmt: 2008/07/23 17:29:43
-comment_status: open
-post_name: eclipse-screencast-2-extract-super-class-refactoring
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;eclipse-video-ders-screencast-2-extract-super-class-refactoring&#34;&gt;Eclipse Video Ders (Screencast) #2 Extract Super Class Refactoring&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;Video dersi izlemek için resme tıklayın.&lt;/strong&gt; &lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/screencast/eclipse_screencast_extract_super_class_giris.png&#34; alt=&#34;Eclipse Extract Super Class Refactoring&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

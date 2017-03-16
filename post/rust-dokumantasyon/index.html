@@ -6,7 +6,7 @@
   
   <meta charset="UTF-8">
   <title>
-     | Orhan Balci
+    Rust Dökümantasyon | Orhan Balci
   </title>
 
 
@@ -43,13 +43,13 @@
     <div class="row gutters">
       <div id="site-title" class="col span_6">
         <h1><a href="http://orhanbalci.github.io/">Orhan Balci</a></h1>
-        
+        <h2>Kisisel Yazilim Gunlugu</h2>
       </div>
       <div id="social" class="col span_6">
         <ul>
-          
-          
-          
+          <li><a href="http://twitter.com/orhanbalci" target="_blank">Twitter</a></li>
+          <li><a href="http://facebook.com/orhanbalci" target="_blank">Facebook</a></li>
+          <li><a href="https://github.com/orhanbalci" target="_blank">GitHub</a></li>
           
         </ul>
       </div>
@@ -60,30 +60,18 @@
   
   <main id="single" role="main">
     <div class="article-header">
-      <h1></h1>
+      <h1>Rust Dökümantasyon</h1>
       <div class="meta">
-        Jan 1, 0001 &nbsp;
+        Dec 9, 2015 &nbsp;
         
       </div>
     </div>
     <article>
       
 
-<p>title: Rust Dökümantasyon
-link: <a href="http://orhanbalci.net/tr/?p=1492">http://orhanbalci.net/tr/?p=1492</a>
-author: Orhan Balci
-description:
-post_id: 1492
-created: 2015/12/09 19:35:48
-created_gmt: 2015/12/09 16:35:48
-comment_status: open
-post_name: rust-dokumantasyon
-status: publish
-post_type: post</p>
-
 <h1 id="rust-dökümantasyon">Rust Dökümantasyon</h1>
 
-<p>Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde <strong>rustdoc</strong> denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci <code>rustdoc kaynak_kod_dosyasi.rs</code> seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile <code>cargo doc</code> seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> denen standardi destekliyor. Yorum bloklari <code>///</code> uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) <code>kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.</code> isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```<code>java</code> seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. <code>#</code> karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari <code>#</code> isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri <code>cargo test</code> komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak <code>rustdoc --test kaynak_dosya.rs</code> komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak <code>///</code> isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin <code>//!</code> isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor. [ad#Yazi Ici Buyuk]</p>
+<p>Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde <strong>rustdoc</strong> denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci <code>rustdoc kaynak_kod_dosyasi.rs</code> seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile <code>cargo doc</code> seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a> denen standardi destekliyor. Yorum bloklari <code>///</code> uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) <code>kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.</code> isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```<code>java</code> seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. <code>#</code> karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari <code>#</code> isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri <code>cargo test</code> komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak <code>rustdoc --test kaynak_dosya.rs</code> komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak <code>///</code> isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin <code>//!</code> isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor.</p>
 
       
       
@@ -96,10 +84,10 @@ post_type: post</p>
   
   <nav class="pagination-single">
     
-      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/" rel="prev"></a></span>
+      <span class="previous">&larr; <a href="http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/" rel="prev">Rust Primitif Veri Yapilari Tuple ve Array</a></span>
     
     
-      <span class="next"><a href="http://orhanbalci.github.io/post/rust-closure/" rel="next"></a> &rarr;</span>
+      <span class="next"><a href="http://orhanbalci.github.io/post/rust-cheatsheet/" rel="next">Rust Cheatsheet</a> &rarr;</span>
     
   </nav>
 

@@ -6,7 +6,112 @@
     <description>Recent content on Orhan Balci</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
+    <lastBuildDate>Wed, 27 Jan 2016 15:29:31 +0800</lastBuildDate>
     <atom:link href="http://orhanbalci.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust Program Düzeni : Modüller</title>
+      <link>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</link>
+      <pubDate>Wed, 27 Jan 2016 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-program-düzeni-modüller&#34;&gt;Rust Program Düzeni : Modüller&lt;/h1&gt;
+
+&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :  Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.  Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :  Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :  Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :  &lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.  Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor. Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Cheatsheet</title>
+      <link>http://orhanbalci.github.io/post/rust-cheatsheet/</link>
+      <pubDate>Fri, 18 Dec 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-cheatsheet/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-cheatsheet&#34;&gt;Rust Cheatsheet&lt;/h1&gt;
+
+&lt;p&gt;Rust ile ilgili hatirlamak amacli notlardir :&lt;/p&gt;
+
+&lt;h1 id=&#34;cargo-komutlari&#34;&gt;Cargo Komutlari&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yeni proje olusturmak icin &lt;code&gt;cargo new proje_adi --bin&lt;/code&gt; komutunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;carate aramak icin &lt;code&gt;cargo search crate_adi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;test build run icin &lt;code&gt;cargo test&lt;/code&gt; &lt;code&gt;cargo build&lt;/code&gt;&lt;code&gt;cargo run&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cargo alt komutlarini listelemek icin &lt;code&gt;cargo --list&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;string&#34;&gt;String&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;str; -&amp;gt; String donusumu String::from(&amp;str;) seklinde yapiliyor&lt;/li&gt;
+&lt;li&gt;substring almak icin String yapisinin [begin_index..end_index] operatoru kullanilabilir&lt;/li&gt;
+&lt;li&gt;Herhangi bir tipi String e cevirmek icin o tipin to_string() fonksiyonunu kullanabilirsiniz &lt;code&gt;num.to_string()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Herhangi bir Stringi diger tiplere cevirmek icin&lt;code&gt;parse::().unwrap()&lt;/code&gt; fonksiyonunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Stringi u8 vectore cevirmek icin &lt;code&gt;into_bytes&lt;/code&gt; fonksiyonunu kullaniyoruz&lt;/li&gt;
+&lt;li&gt;byte arraydan Stringe donusum &lt;code&gt;String::from_utf8_lossy&lt;/code&gt; fonksiyonu ile gerceklesiyor. Stringinizde unicode karakterler varsa istenmeyen sonuclar alabilirsiniz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;collections&#34;&gt;Collections&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HashMap kullanimi icin use std::collections::HashMap&lt;/li&gt;
+&lt;li&gt;HashMap eklemek icin insert(key,value) apisi kullaniliyor&lt;/li&gt;
+&lt;li&gt;HashMap de varmi kontrolu contains_key(key) apisi ile oluyor&lt;/li&gt;
+&lt;li&gt;HashMap de value get(key) ile alinabiliyor Option donuyor unwrap yapmak gerekiyor&lt;/li&gt;
+&lt;li&gt;Vec son elemani &lt;code&gt;last()&lt;/code&gt; ile aliyoruz. eger son eleman uzerinde degisiklik yapmak istersek &lt;code&gt;last_mut()&lt;/code&gt; kullanmaliyiz&lt;/li&gt;
+&lt;li&gt;Vec iterasyonlarinda &lt;code&gt;i in vec.iter()&lt;/code&gt; yerine okunaklilik acisindan &lt;code&gt;i in &amp;amp;vec;&lt;/code&gt; kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Elimizde Vec varsa bunu tek bir stringde birlestirmek icin concat() ve join() fonksiyonlarini kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Vec nesnesinden 2 serli 3 erli gruplar elde etmek icin &lt;code&gt;chunks&lt;/code&gt; fonksiyonunu kullaniyoruz. String icin bu yok maalesef.&lt;/li&gt;
+&lt;li&gt;slice parametreleri ffi interfaceden gecmek icin as_ptr kullaniyoruz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;iterator&#34;&gt;Iterator&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Azalan bir iterator elde etmek icin &lt;code&gt;(a..b).rev()&lt;/code&gt; kullaniyoruz&lt;/li&gt;
+&lt;li&gt;Iterasyonda ilk n elemani atlamak icin &lt;code&gt;iter().skip(n)&lt;/code&gt;kullaniyoruz&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Floating point sayilar icin esitlik makrosu bulunmuyor. approx cratesi kulanilabilir&lt;/li&gt;
+&lt;li&gt;#[macro use] extern crate approx; partial_eq!()&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Dökümantasyon</title>
+      <link>http://orhanbalci.github.io/post/rust-dokumantasyon/</link>
+      <pubDate>Wed, 09 Dec 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-dokumantasyon/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-dökümantasyon&#34;&gt;Rust Dökümantasyon&lt;/h1&gt;
+
+&lt;p&gt;Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde &lt;strong&gt;rustdoc&lt;/strong&gt; denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci &lt;code&gt;rustdoc kaynak_kod_dosyasi.rs&lt;/code&gt; seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile &lt;code&gt;cargo doc&lt;/code&gt; seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&amp;rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt; denen standardi destekliyor. Yorum bloklari &lt;code&gt;///&lt;/code&gt; uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) &lt;code&gt;kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.&lt;/code&gt; isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```&lt;code&gt;java&lt;/code&gt; seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. &lt;code&gt;#&lt;/code&gt; karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari &lt;code&gt;#&lt;/code&gt; isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri &lt;code&gt;cargo test&lt;/code&gt; komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak &lt;code&gt;rustdoc --test kaynak_dosya.rs&lt;/code&gt; komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak &lt;code&gt;///&lt;/code&gt; isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin &lt;code&gt;//!&lt;/code&gt; isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Primitif Veri Yapilari Tuple ve Array</title>
+      <link>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</link>
+      <pubDate>Fri, 11 Sep 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</guid>
+      <description>
+
+&lt;h1 id=&#34;rust-primitif-veri-yapilari-tuple-ve-array&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/h1&gt;
+
+&lt;p&gt;Tuple yapilari birbirleriyle ilintili verileri bir arada tutmaya yarar. Struct yapilarindan farki alanlarinin isim etiketi olmamasidir. Verilere index yardimiyla erisilir. Imumutable yapilar olup sabit boyutludurlar. Fonksiyonlardan birden fazla deger donmekte, ayni anda birden fazla degiskene deger atamakta, pattern matching islemlerinde kullanicia kolaylik saglarlar. Fonksiyonel programlamaya has veriyapilaridir. Ornegin network baglantilarinda sikca beraber kullandigimiz ip ve port bilgileri icin bir tuple tanimlayalim ve kullanalim :  Temel kullanimi gordukten sonra pattern matching ile ne yapabiliriz buna bakalim. Ufak bir hesaplama fonksiyonu yazalim ve bu fonksiyona parametreleri bir tuple yardimiyla gecelim. Tuple su sekilde olsun &lt;code&gt;(komut,parametre1,parametre2)&lt;/code&gt; bir sonraki ornegimizde ise bir swap fonksiyonu yazarak tuple icindeki degerlerin yer degistirmesini gorelim. Burada &lt;code&gt;destructuring&lt;/code&gt; yani tuple veya struct icerisindeki degerlerin disariya cikarilmasi yontemini de kullanalim. c/c++ ta bu kavram olmadigi icin baslangicta garipseyebilirsiniz :  Ornekte 9. satirdaki ifade ile &lt;code&gt;arg&lt;/code&gt; tuple destructure edilerek elemanlari a,b degiskenlerine atanmistir. Tuplelara bu kadar degindikten sonra bir ornekle de array ve slice kullanimini gorelim. Array boyutlari compile time da bilinmek zorunda. Yani boyutu calisma zamaninda belirlenecek arrayler olusturulamiyor. Slice lar ise arraylarin alt bir araligini temsil eden yapilar. Slicelarin boyutu compile time de bilinmek zorunda degil. Array degisken tipi tanimi &lt;code&gt;[veri tipi;array boyutu]&lt;/code&gt; seklinde yapiliyor. Ilk deger atanirken &lt;code&gt;[deger1,deger2,deger3...degern]&lt;/code&gt; sentaksi yada tum elemanlara ayni degeri atamak icin &lt;code&gt;[atanacak deger; array boyutu]&lt;/code&gt; sentaksi kullanilabilir. Asagidaki ornek rust tutorialindan alinip biraz eklemeler yapilmistir :  15. ve 16. satirlarda bahsettigimiz array degisken tanimlamalari ve deger atamalari yer aliyor. &lt;code&gt;analyze_slice&lt;/code&gt; fonksiyonu slice isimli bir slice parametere aliyor. Bu slice mutable tanimlanmadigi icin fonksiyon icinde slice uzerinde herhangi bir guncelleme aypilamaz. 8. satirda tnimladigimiz &lt;code&gt;update_slice&lt;/code&gt; fonksiyonunda ise mutable bir slice parametresi gectigi icin slice uzerinde guncelleme yapabiliyoruz. 9. satirdaki for ifadesi de slicelari gezinmek icin guzel bir ornek teskil ediyor. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>
@@ -472,239 +577,6 @@ post_type: page&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4124&#34; title=&#34;2010-09-16 11:36:11&#34;&gt;aykut64&lt;/a&gt;:&lt;/strong&gt; Merhabalar1 Yoğunluğunuzu bilemiyorum ve geleck makalelerden istek yapmak biraz bencilce geliyor bana ama şuana kadar bulduğum en iyi Türkçe JAVA kaynağı sizsiniz.35 nci sıraya koyduğunuz 90&amp;rsquo;lı yılların oyunları ve onun öncesindeki çarpışma algılama yöntemleri ve algoritmaları konusunu yayınlayabilirseniz bu site favorilerim arasında en tepeye yerleşecektir. Şaka bir yana çok özverili güzel bir bilgi paylaşım sitesi.Çok başarılı olmasını dilerim size de hayatınızda başarılar dilerim.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4125&#34; title=&#34;2010-09-16 12:10:06&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Aykut bey yorumunuz için teşekkürler. Şunu belirtmek isterim ki isteğinizin bencillikle yakından uzaktan alakası yok. Daha öncede kullanıcılarımdan siteye bu yönde katkıda bulunmalarını istemiştim. Ben günlük hayatta aklıma gelen konuları buraya listeliyorum. Buradan makale seçerken herhangi bir sıra gözetmiyorum. En sonda olanı ilk önce yayınlayabilirim. Bunların dışında sizin de istediğiniz bir konu olursa listeye ekleyebilirim.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/hakkinda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/hakkinda/</guid>
-      <description>
-
-&lt;p&gt;title: Hakkında
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=2&#34;&gt;http://orhanbalci.net/tr/?page_id=2&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 2
-created: 2007/03/17 19:16:06
-created_gmt: 2007/03/17 16:16:06
-comment_status: open
-post_name: hakkinda
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;hakkında&#34;&gt;Hakkında&lt;/h1&gt;
-
-&lt;p&gt;Bu web sitesi Orhan Balcı&amp;rsquo;nın boş vakitlerinde kaleme aldığı yazılardan mütevellittir. Bahsettiğimiz Orhan has be has, öz mü öz Afyon Bayat&amp;rsquo;li olup taklitlerinden ayrilmalidir :). Efendim bu web site daha doğru tabir ile blog işi nereden çıktı sualine gelecek olursak, aynı zamanda bilgisayar mühendisi olan müellifin hayat serüveni boyunca edindiği deneyimleri siz sevgili okurlarla paylaşma isteği ve arzusu bu sitenin temellerinin atılmasında en büyük itici guç olmuştur. Genel olarak yazilarini Bayat, teknik ve taktik eğitimler ve anılar üçgeninde kurgulayacak olan yazarımızın duşunce kazanında kaynattıkları da ağzımızda bir parmak bal nevinden tad bırakacaktır. Gel gelelim blogumuzun başlığının hikayesine. Burada kısa bir şekilde değinelim aslını blogumuzn ilk yazısına saklayalım. Bayat&amp;rsquo;lı hemşehrilerim hemen gülümseyeceklerdir zira &amp;ldquo;Sekkaşı&amp;rdquo;, güzide ilçemizin güneyinde kalan ve yaş olarak diğer mahallelerden genç olan Cumhuriyet mahallemizin yerli halk arasındaki ismidir. İşte bu şirin mahalleyi beldemizin diğer yerleşkelerine bağlayan yokuşun adı da &amp;ldquo;Sekkaşı bayırı&amp;rdquo;. Peki neden bu isim? Bu blog fikri yazarın hafızasında oldu olalı isim arayışı da beraberinde geldi. Tabiki de bu isim yazarı yansıtan bir kelime olmalıydı. İlkokul yılları boyunca Cumhuriyet mahallesinde, namı diğer &amp;ldquo;sekkası&amp;rdquo;, ikamet eden yazarımız hafta sonu sabahları aile fertleri(hepsinin ellerinden öperim) tarafından fırından ekmek almaya zorlandığından bu yokuşu bisikletle önce büyük bir zevkle inerek çarşıya ulaşır ardından ekmeklerle beraber soluk soluğa geri dönerdi&amp;hellip; Yazarımızda bu ve bunun gibi bir çok hatıra bırakan coğrafi şekil elbette ki onun blogunun ismini almayı hakediyor. Sözü daha fazla uzatmadan sizi yazarımızın engin, efsunlu dünyasında yol almaya davet ediyorum. Orhan BALCI&lt;/p&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1164&#34; title=&#34;2008-10-11 16:13:03&#34;&gt;arif balcı&lt;/a&gt;:&lt;/strong&gt; Abiciğim siten çok güzel olmuş ama siteni fotoğraf, video, müzik gibi değişik şeylerlerle de süslendireblirsin.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1347&#34; title=&#34;2009-02-16 20:04:58&#34;&gt;alp kaan&lt;/a&gt;:&lt;/strong&gt; merhabalar hocam netbeans ile ilgili video larınızı çok beğeniyorum ve netbeans çalışıyorum acaba netbeans genel bir tanımlamalı video yapabilirmisiniz bir de kod nasıl yazılır buton ların görevleri gibi gibi tşkler&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1339&#34; title=&#34;2009-02-08 23:05:43&#34;&gt;yasin özsaglam&lt;/a&gt;:&lt;/strong&gt; hocam merhaba netbeans ile ilgili videolarınızı çok beğendim. Javayı ve netbeans&amp;rsquo;i yeni öğrenmeye başladım. size bir sorum olacaktı. jprogressbar componentini thread kullanarak artırmak istiyorum. bir döngü içerinden gelen değere göre progressbarın değerini nasıl artırabilirim.? yardım ederseniz sevinirim.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1357&#34; title=&#34;2009-02-27 09:52:04&#34;&gt;Recep Atalr&lt;/a&gt;:&lt;/strong&gt; merhaba öncelikle amacınız ne olrusa olsun emeğinizi kutluyorum şugünlerde ciddi kaynak sikintisi çektiğim javayla ilgil atılım olarak sitenizi ziyaret etmek hep aklımın köşesinde olmuştur. javayı hep dosla öğretmeye başlarlar pekişsin diye ben bir grafikeim gördüğümü unutmam bu eğitim metodunun çok yalnış olduğun başta söylemet isterim. sizin görsel olarak hazırlamış olduğunuz dersleri özellikle netbeans dersini takip ediyorum, isterdimki netbean bu işe yarar ve şöyle dosla açılır. nedenide şu java netbeansı açtığınzda farklı diğer programa dilelerinde farklı bda yeni meraklıları kafakarışıklığına neden olacaktır. ama insanların araştırmasinada neden olacaktır . neticede siteniz türkiyedeki sitelerde en iyilerdendir. aylardı araştırmadayım çünkü&amp;hellip;..&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1712&#34; title=&#34;2009-09-28 06:58:20&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Süleyman bey değerli yorumlarınız için teşekkür ederim.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1702&#34; title=&#34;2009-09-23 16:36:22&#34;&gt;Süleyman&lt;/a&gt;:&lt;/strong&gt; Site de yazılar da güzel. Başka bir Afyon&amp;rsquo;lu blog yazarı bilgisayar mühendisimsi olarak :) sıkılmadan devam etmeni dilerim&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1909&#34; title=&#34;2009-12-04 11:02:55&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Yazılar bu aralar olimpiyad soru çözümleri ağırlıklı olacak ama yine de ayda 1 yada 2 tane java dersi eklemeyi düşünüyorum.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1907&#34; title=&#34;2009-12-04 01:00:42&#34;&gt;Tayfun Yaşar&lt;/a&gt;:&lt;/strong&gt; tanıtım kısmına bayıldım. Java konusunda takipte olacağım bloglardan olacak. yazılarınızın devamını bekliyorum&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2549&#34; title=&#34;2010-03-26 20:33:42&#34;&gt;mesut&lt;/a&gt;:&lt;/strong&gt; orhan emek verip, guzel bir site olusturmussun, tebrikler.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2543&#34; title=&#34;2010-03-25 15:25:51&#34;&gt;Fatih UYSAL&lt;/a&gt;:&lt;/strong&gt; Dostum güzel olmuş gerçekten siten. Biraz daha vakit ayırabilsen cok daha güzel olacak eminiki :D&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2686&#34; title=&#34;2010-04-29 21:45:14&#34;&gt;çağrı çakır&lt;/a&gt;:&lt;/strong&gt; teşekkürler, yaşasın gerekli bilgi paylaşmak! :eek:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#2705&#34; title=&#34;2010-05-15 03:41:29&#34;&gt;semih&lt;/a&gt;:&lt;/strong&gt; Orhan siteni resimlerle süslendir.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4402&#34; title=&#34;2010-12-06 16:53:28&#34;&gt;Savaş DAVAZ&lt;/a&gt;:&lt;/strong&gt; Bir bilgisayar mühendisi olarak çalışmalarını ve türk eğitim sistemine desteklerinizi takdir ile karşılıyor ayakta alkışlıyorum&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7317&#34; title=&#34;2012-12-18 23:54:34&#34;&gt;Hasan Ünlü Kılınç&lt;/a&gt;:&lt;/strong&gt; Java&amp;rsquo;da birşey ararken siteye denk geldim galiba artık takipcisi olacağım :)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/indir/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/indir/</guid>
-      <description>
-
-&lt;p&gt;title: İndir
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=49&#34;&gt;http://orhanbalci.net/tr/?page_id=49&lt;/a&gt;
-author: admin
-description:
-post_id: 49
-created: 2009/01/17 21:59:38
-created_gmt: 2009/01/17 18:59:38
-comment_status: open
-post_name: indir
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;indir&#34;&gt;İndir&lt;/h1&gt;
-
-&lt;p&gt;[page_download]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/izlediklerim/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/izlediklerim/</guid>
-      <description>
-
-&lt;p&gt;title: İzlediklerim
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1148&#34;&gt;http://orhanbalci.net/tr/?page_id=1148&lt;/a&gt;
-author: admin
-description:
-post_id: 1148
-created: 2012/11/20 14:10:02
-created_gmt: 2012/11/20 11:10:02
-comment_status: open
-post_name: izlediklerim
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;izlediklerim&#34;&gt;İzlediklerim&lt;/h1&gt;
-
-&lt;p&gt;Film
-Yönetmen
-Yıl
-İzleme Tarihi&lt;/p&gt;
-
-&lt;p&gt;1
-&lt;a href=&#34;http://www.imdb.com/title/tt0339291/&#34;&gt;Lemony Snicket&amp;rsquo;s A Series of Unfortunate Events Poster &lt;/a&gt;
-[Brad Silberling]
-2004
-19.11.2012&lt;/p&gt;
-
-&lt;p&gt;2
-&lt;a href=&#34;http://www.imdb.com/title/tt1392170/&#34;&gt;The Hunger Games &lt;/a&gt;
-[Gary Ross]
-2012
-07.01.2013&lt;/p&gt;
-
-&lt;p&gt;3
-&lt;a href=&#34;http://www.imdb.com/title/tt1975249/&#34;&gt;6 Bullets&lt;/a&gt;
-[Ernie Barbarash]
-2012
-09.01.2013&lt;/p&gt;
-
-&lt;p&gt;4
-&lt;a href=&#34;http://www.imdb.com/title/tt1148204&#34;&gt;Orphan&lt;/a&gt;
-[Jaume Collet-Serra]
-2009
-19.06.2015&lt;/p&gt;
-
-&lt;p&gt;5
-&lt;a href=&#34;http://www.imdb.com/title/tt3235888&#34;&gt;It Follows&lt;/a&gt;
-[David Robert Mitchell]
-2014
-20.06.2015&lt;/p&gt;
-
-&lt;p&gt;6
-&lt;a href=&#34;http://www.imdb.com/title/tt2267998&#34;&gt;Gone Girl&lt;/a&gt;
-[David Fincher]
-2014
-04.07.2015&lt;/p&gt;
-
-&lt;p&gt;7
-&lt;a href=&#34;http://www.imdb.com/title/tt2388715&#34;&gt;Oculus&lt;/a&gt;
-[Mike Flanagan]
-2013
-05.07.2015&lt;/p&gt;
-
-&lt;p&gt;8
-&lt;a href=&#34;http://www.imdb.com/title/tt1392214&#34;&gt;Prisoners&lt;/a&gt;
-[Denis Villeneuve]
-2013
-12.07.2015&lt;/p&gt;
-
-&lt;p&gt;9
-&lt;a href=&#34;http://www.imdb.com/title/tt0464141&#34;&gt;The Orphanage&lt;/a&gt;
-[J.A. Bayona]
-2007
-12.07.2015&lt;/p&gt;
-
-&lt;p&gt;10
-&lt;a href=&#34;http://www.imdb.com/title/tt1823672&#34;&gt;Chappie&lt;/a&gt;
-[Neill Blomkamp]
-2015
-26.07.2015&lt;/p&gt;
-
-&lt;p&gt;11
-&lt;a href=&#34;http://www.imdb.com/title/tt2321549/&#34;&gt;The Babadook&lt;/a&gt;
-[Jenifer Kent]
-2014
-20.08.2015&lt;/p&gt;
-
-&lt;p&gt;12
-&lt;a href=&#34;http://www.imdb.com/title/tt1921149/&#34;&gt;Trash&lt;/a&gt;
-[Stephen Daldry, Christian Duurvoort]
-2014
-06.09.2015&lt;/p&gt;
-
-&lt;p&gt;13
-&lt;a href=&#34;http://www.imdb.com/title/tt1706620&#34;&gt;Snowpiercer&lt;/a&gt;
-[Joon-ho Bong]
-2013
-07.09.2015&lt;/p&gt;
-
-&lt;p&gt;14
-&lt;a href=&#34;http://www.imdb.com/title/tt2053463&#34;&gt;Side Effects&lt;/a&gt;
-[ Steven Soderbergh]
-2013
-13.09.2015&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/java-dersleri/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/java-dersleri/</guid>
-      <description>
-
-&lt;p&gt;title: Java Dersleri
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=180&#34;&gt;http://orhanbalci.net/tr/?page_id=180&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 180
-created: 2009/07/14 10:24:15
-created_gmt: 2009/07/14 07:24:15
-comment_status: open
-post_name: java-dersleri
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;java-dersleri&#34;&gt;Java Dersleri&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://orhanbalci.github.io/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri &lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 – Koleksiyon API (Collection API) Listeler&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 – JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama – UDP&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 – İstisnai Durumlar (Exceptions)&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 – Multi Thread Programlama&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection Ve Annotation Kullanımı&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 – Final Anahtar Kelimesi&lt;/a&gt; &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4782&#34; title=&#34;2011-03-20 17:42:53&#34;&gt;iicocuk&lt;/a&gt;:&lt;/strong&gt; Java Dersleri 10 nerde :)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7784&#34; title=&#34;2013-02-21 12:43:21&#34;&gt;mesut&lt;/a&gt;:&lt;/strong&gt; Kafamda şekillenen yapıda cloud sıstemler uzerınde kullanıcıların yaptıklarına paralel şirketlerin kullanabilecegi bilgiler sunmak.Hadoopu derın ınceledım standalone da da kıurdum eclipse ile.Lakin somut baglantılarım olmadıgı ıcın elımde big data yok:)KEndım ogrenciyim&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#8899&#34; title=&#34;2013-05-23 13:11:02&#34;&gt;tayfun&amp;rdquo;&lt;/a&gt;:&lt;/strong&gt; sayın hocam netbeans java me ile ilgili örnekleriniz varmı acaba bana ulaşırsanız çok sevinirim&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7416&#34; title=&#34;2012-12-26 21:42:54&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Mesut bey merhabalar. hadoop tarzı devasa boyutta veri işleyen frameworkler çok yeni gelişmeye başladı. Onun için henüz bilgi sahibi değilim. Aklınızda bir proje varsa paylaşırsanıaz üzerinde artıları eksileri konusunda tartışabiliriz.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#7372&#34; title=&#34;2012-12-23 21:57:21&#34;&gt;Mesut&lt;/a&gt;:&lt;/strong&gt; SAyın hocam elınıze emegınıze klavyenıze saglık.Hadoop hakkında bır yazı klavyenıze alırsanız sevınırım.Benım aklımda olan hıbernate ıle hadoopu big data konspetı ıcınde birlikte kullanabılmek.Umarım engın bılgı ve tecrubelerınız arasındadır.Saygılar iyi çalısmalar&lt;/p&gt;
 </description>
     </item>
     
