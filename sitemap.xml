@@ -17,6 +17,21 @@
   </url>
   
   <url>
+    <loc>http://orhanbalci.github.io/post/rust-closure/</loc>
+    <lastmod>2015-10-16T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-trait/</loc>
+    <lastmod>2015-10-13T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</loc>
+    <lastmod>2015-09-14T15:29:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://orhanbalci.github.io/post/rust-primitif-veri-yapilari-tuple-ve-array/</loc>
     <lastmod>2015-09-11T15:29:31+08:00</lastmod>
   </url>
@@ -442,19 +457,7 @@
   </url>
   
   <url>
-    <loc>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</loc>
-  </url>
-  
-  <url>
-    <loc>http://orhanbalci.github.io/post/rust-closure/</loc>
-  </url>
-  
-  <url>
     <loc>http://orhanbalci.github.io/post/rust-temel-veri-yapilari/</loc>
-  </url>
-  
-  <url>
-    <loc>http://orhanbalci.github.io/post/rust-trait/</loc>
   </url>
   
   <url>
@@ -572,6 +575,12 @@
   </url>
   
   <url>
+    <loc>http://orhanbalci.github.io/tags/modul/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://orhanbalci.github.io/</loc>
     <lastmod>2016-01-27T15:29:31+08:00</lastmod>
     <priority>0</priority>
@@ -590,11 +599,13 @@
   
   <url>
     <loc>http://orhanbalci.github.io/tags/rust/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://orhanbalci.github.io/categories/rust/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -609,6 +620,12 @@
   
   <url>
     <loc>http://orhanbalci.github.io/post/yanik-fotograflar/</loc>
+  </url>
+  
+  <url>
+    <loc>http://orhanbalci.github.io/categories/yazilim/</loc>
+    <lastmod>2016-01-27T15:29:31+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

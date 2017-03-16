@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yazilim on Orhan Balci</title>
+    <link>http://orhanbalci.github.io/categories/yazilim/index.xml</link>
+    <description>Recent content in Yazilim on Orhan Balci</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>tr-TR</language>
+    <atom:link href="http://orhanbalci.github.io/categories/yazilim/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rust Program Düzeni : Modüller</title>
+      <link>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</link>
+      <pubDate>Wed, 27 Jan 2016 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</guid>
+      <description>&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :
+&lt;script src=&#34;//gist.github.com/orhanbalci/31e6ea4482fd949d1b87.js&#34;&gt;&lt;/script&gt;
+Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/0346d867ea24ccb818ae.js&#34;&gt;&lt;/script&gt;
+Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :
+&lt;script src=&#34;//gist.github.com/orhanbalci/26d320a4bf02a8e9c2ee.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/b5cf159fbcb893d5606a.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/d44117104421c67f41ae.js&#34;&gt;&lt;/script&gt;
+Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+&lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.
+&lt;script src=&#34;//gist.github.com/orhanbalci/67da4ff939c672a6e5a6.js&#34;&gt;&lt;/script&gt;
+Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/d43ade45af3e1c50fd7d.js&#34;&gt;&lt;/script&gt;
+Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

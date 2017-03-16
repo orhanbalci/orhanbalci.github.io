@@ -15,11 +15,23 @@
       <pubDate>Wed, 27 Jan 2016 15:29:31 +0800</pubDate>
       
       <guid>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</guid>
-      <description>
-
-&lt;h1 id=&#34;rust-program-düzeni-modüller&#34;&gt;Rust Program Düzeni : Modüller&lt;/h1&gt;
-
-&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :  Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.  Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :  Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :  Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :  &lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.  Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor. Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+      <description>&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :
+&lt;script src=&#34;//gist.github.com/orhanbalci/31e6ea4482fd949d1b87.js&#34;&gt;&lt;/script&gt;
+Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/0346d867ea24ccb818ae.js&#34;&gt;&lt;/script&gt;
+Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :
+&lt;script src=&#34;//gist.github.com/orhanbalci/26d320a4bf02a8e9c2ee.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/b5cf159fbcb893d5606a.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/d44117104421c67f41ae.js&#34;&gt;&lt;/script&gt;
+Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+&lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.
+&lt;script src=&#34;//gist.github.com/orhanbalci/67da4ff939c672a6e5a6.js&#34;&gt;&lt;/script&gt;
+Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/d43ade45af3e1c50fd7d.js&#34;&gt;&lt;/script&gt;
+Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir.&lt;/p&gt;
 </description>
     </item>
     
@@ -96,6 +108,36 @@
 &lt;h1 id=&#34;rust-dökümantasyon&#34;&gt;Rust Dökümantasyon&lt;/h1&gt;
 
 &lt;p&gt;Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde &lt;strong&gt;rustdoc&lt;/strong&gt; denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci &lt;code&gt;rustdoc kaynak_kod_dosyasi.rs&lt;/code&gt; seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile &lt;code&gt;cargo doc&lt;/code&gt; seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&amp;rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt; denen standardi destekliyor. Yorum bloklari &lt;code&gt;///&lt;/code&gt; uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) &lt;code&gt;kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.&lt;/code&gt; isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```&lt;code&gt;java&lt;/code&gt; seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. &lt;code&gt;#&lt;/code&gt; karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari &lt;code&gt;#&lt;/code&gt; isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri &lt;code&gt;cargo test&lt;/code&gt; komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak &lt;code&gt;rustdoc --test kaynak_dosya.rs&lt;/code&gt; komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak &lt;code&gt;///&lt;/code&gt; isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin &lt;code&gt;//!&lt;/code&gt; isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Closure</title>
+      <link>http://orhanbalci.github.io/post/rust-closure/</link>
+      <pubDate>Fri, 16 Oct 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-closure/</guid>
+      <description>&lt;p&gt;Fonksiyonel programlamanin bas aktorleri birinci sinif fonksiyonlar Rust dilinde de es gecilmemis. Isimli fonksiyonlarin nasil tanimlandigini daha onceki yazilarda gormustuk. Bu makalede isimsiz fonksiyonlardan yani closure lardan bahsedecegim. Closure yapilari fonksiyonel programlamanin bel kemigidir. Fonksiyonlarin diger fonksiyonlara parametre olarak gecilip, donus degeri olarak fonksiyonlari kullanabilmemizi saglarlar. Closurlerin en goze batan ozelligi tanimlandigi ortamdaki degiskenlere erisebilmeleridir ki isimleri de buradan gelir. Rust da closure sentaksi fonksiyonla birebir ayni olup &lt;code&gt;()&lt;/code&gt; yerine &lt;code&gt;||&lt;/code&gt; kullanilir. Ornek bir closure tanimini gorelim :  Yukarida verdigimiz closure ornegi parametresinden baska herhangi bir degiskene erismiyor, bir nevi statik fonksiyon. Yeni bir ornekte closurelarin tanimlandiklari ortamdaki degiskenleri nasil kapsama alanina aldigini (capture) gorelim.  3. satirda tanimladigimiz &lt;code&gt;bigger_than_threshold&lt;/code&gt; closure 2. satirda tanimladigimiz &lt;code&gt;threshold&lt;/code&gt; degiskenine erisebiliyor. 5. satirda ise tanimladigimiz closureu &lt;code&gt;filter&lt;/code&gt; methoduna parametre olarak geciyoruz. Yani bir fonksiyonu digerine parametre olarak gonderiyoruz. Peki her fonksiyonu her fonksiyona parametre olarak gecebilir miyiz? Tabi ki de hayir. Buradaki &lt;code&gt;filter&lt;/code&gt; fonksiyonunun imzasina baktigimizda parametre olarak aldigi fonksiyonun imzasinin da belitildigini goruyoruz. Bu imzada anlamadiginiz yerler olabilir. Generic ler ve genericlerin traitler ile sinirlandirilmasi sozkonusu.  2. satirda predicate parametresinin tipinin hangi tariti implement etmesi gerektigi gosteriliyor. Bu ornekten yola cikarak kendi metodlarimiza closure parametre almayi ve closurelari metodlarimizdan geri donmeyi ogrenelim. Bu sayede fonksiyon ureten fonksiyonlar yazabilir.Genel olarak gelistirdigimiz algoritmalarin ozel kisimlarini disaridan fonksiyon parametresi olarak alabiliriz. Bir ornekle fonksiyonlara parametre olarak fonksiyon gecmeyi ogrenelim. Yazacagimiz fonksiyon iki fonk. parametre alip bunlari 3. parametreye zincirleme olarak uygulayalim.  8. satirda tanimladigimiz &lt;code&gt;closure_pipe&lt;/code&gt; fonksiyonumuz parametre olarak iki tane fonk. aliyor. 9. ve 10. satirlarda bu fonk. parametrelerinin tipini belirtiyoruz. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Trait</title>
+      <link>http://orhanbalci.github.io/post/rust-trait/</link>
+      <pubDate>Tue, 13 Oct 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-trait/</guid>
+      <description>&lt;p&gt;Rust dili bildiğimiz manada kalitimi desteklemiyor. Yani herhangi bir sinifi diğerinden türetip var olan methodlardan faydalanamiyorsunuz. Bu duruma degisik cozumler uretebiliyoruz. Ornegin kalitim yerine composition deseni kullanilabilir. Kalitim desteklenmese de Trait denen yapilar sayesinde interfaceler destekleniyor. Trait lerin diger ismi de type classes. C++ stl kutuphanesinde, Scala gibi dillerde de trait kullanimini gorebiliriz. Trait lerin interfacelerden farki default bir gerceklemelerinin olabilmesi ki bu ozellik son versiyonunda Java&amp;rsquo;ya da eklendi, ve varolan siniflar icin de gerceklenebilir olmasi, Ornegin siz yeni bir trait tanimladiginizda bunu sizin tanimlamadiginiz veri tipleri icin de gercekleyebilirsiniz. Trait anahtar kelimesi kullanilarak tanimlaniyorlar. Implementasyonlari ise impl ve for anahtar kelimeleri ile oluyor. Ornegimizi karsilastirilabilir yapilari temsil etmek uzere bir Comparable trait tanimi ve bunun farkli iki struct icin gerceklemesini gosterek gelistirelim :  1. satirda comparable trait taniminin gorebilirsiniz. Bu trait tek bir method imzasi tanimindan ibaret. Self tipinin kullanimi onemli. 11. ve 27. satirlarda ise comparable taritinin StockField ve ScoreSheet isimli iki struct icin gerceklemesini goruyoruz. Tanimladigimiz structlardan ikiser tane olusturup bunlari karsilastirarak kullnimi da gormus olalim :&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Akış Kontrol İfadeleri</title>
+      <link>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</link>
+      <pubDate>Mon, 14 Sep 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</guid>
+      <description>&lt;p&gt;Rust dilinde klasik kod akis kontrol ifadeleri bulunmakla beraber çok temel sentaks ve semantik farklar da var. Ilk olarak if/else yapisini inceleyerek farkları gormeye calisalim.  Yukarıda klasik bir if else yapisi ornegi verdim. Sentaks olarak dikkat etmemiz gereken ilk husus 4. satırda conditional ifade yazilirken &lt;code&gt;()&lt;/code&gt; parantezlerin opsiyonel olmasi. Varsayilan olarak kullnilmiyor bu parantezler. kullanildiginda derleyici uyari veriyor. Ikinci sentaks kurali ise if-else bloklarini bildiren &lt;code&gt;{}&lt;/code&gt; parantezlerinin zorunlu olmasi. Icinde tek ifade de yer alsa bunlar zorunlu. Ikinci ornekle asil can alici farki gorelim. If-else bloklari birer expression&amp;rsquo;dir. Yani atama ifadelerinde sag deger olarak kullanilabilirler.  Yukarıdaki örnekte 5. satırda if-else blokunun ciktisini &lt;code&gt;age_class&lt;/code&gt; degiskenine atayabiliyoruz. Burada dikkat edilmesi gereken en önemli şey tum kontrol bloklarinin ayni tip veriyi donmesi gerektigidir. While dongusu c/c++ ile ayni. Do-while dongusu yok. Continue ve break ifadeleri aynen korunmus. Diger dillerden farkli olarak sonsuz dongu blogu icin &lt;code&gt;loop&lt;/code&gt; bloklari mevcut. Bu bloklardan &lt;code&gt;break&lt;/code&gt; ifadesi ile cikabilirsiniz.  For dongusu ise c/c++ dan farkli olarak Iterator&amp;rsquo;lar uzerinden calisiyor. Genel sentaks &lt;code&gt;for degisken in expression{}&lt;/code&gt; seklinde. Burada &lt;code&gt;expression&lt;/code&gt; bir iterator uretmek zorunda. En basit haliyle for dongulerini Range iteratorleri ile kullaniyoruz.  2. satirdaki &lt;code&gt;1..15&lt;/code&gt; ifadesi 1 dahil 15 haric olmak uzere bir Range iterator tanimi yapar. Birer birer degil de farkli bir artisla bir Range tanimlamak istersek :  Herhangi bir collection gezilmek istendiginde eger Iterator traitine sahipse for dongusu kullanilabilir. Ornnegin bir vektorun for loop ile guncellenmesi ornegine bakalim :  [ad#Yazi Ici Buyuk]&lt;/p&gt;
 </description>
     </item>
     
@@ -393,190 +435,6 @@ C++, Qt, PostgreSQL, PostGis, OGR, ARINC 424&lt;/p&gt;
 &lt;li&gt;Yukarıda sayılan verilerin ICAO kodu vs. anahtarlara göre sorgulanması&lt;/li&gt;
 &lt;li&gt;Verilerin belirli aralıklarla yedeğinin alınması&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/</guid>
-      <description>
-
-&lt;p&gt;title: Sekkaşı&amp;rsquo;nın Bayırı
-description: Bayatlı&amp;rsquo;nın Düşünce Değirmeninden Sızanlar
-author_display_name:
-author_login:
-author_email:
-base_site_url: &lt;a href=&#34;http://orhanbalci.net/tr&#34;&gt;http://orhanbalci.net/tr&lt;/a&gt;
-base_blog_url: &lt;a href=&#34;http://orhanbalci.net/tr&#34;&gt;http://orhanbalci.net/tr&lt;/a&gt;
-export_date: 2017/03/08 09:07:49&lt;/p&gt;
-
-&lt;h1 id=&#34;sekkaşı-nın-bayırı&#34;&gt;Sekkaşı&amp;rsquo;nın Bayırı&lt;/h1&gt;
-
-&lt;p&gt;Bayatlı&amp;rsquo;nın Düşünce Değirmeninden Sızanlar * 2009-07-28 13:49:56: &lt;a href=&#34;http://orhanbalci.github.io/?p=222&#34;&gt;MES (Mühimmat Eğitim Simulatörü)&lt;/a&gt; * 2009-09-16 09:54:32: &lt;a href=&#34;http://orhanbalci.net/tr/?p=327&#34;&gt;NetBeans Yerelleştirme&lt;/a&gt; * 2015-03-05 22:20:51: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1357&#34;&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/a&gt; * 2016-05-09 21:40:57: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1560&#34;&gt;Practical Rust Iterator Examples&lt;/a&gt; * 2007-03-17 19:16:06: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=2&#34;&gt;Hakkında&lt;/a&gt; * 2007-03-18 00:32:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=3&#34;&gt;Sekkaşı ve Bayırı&lt;/a&gt; * 2007-03-20 23:19:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=4&#34;&gt;Java&amp;rsquo;yı Özgürleştirmek&lt;/a&gt; * 2007-03-25 19:01:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=5&#34;&gt;Gölle ve Dibek Taşı Anısına&lt;/a&gt; * 2007-03-29 23:00:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=6&#34;&gt;Java Dersleri 1 - JDK Kurulumu ve İlk Program&lt;/a&gt; * 2007-05-08 22:46:55: &lt;a href=&#34;http://orhanbalci.net/tr/?p=7&#34;&gt;Haşkeş Gafeliler&lt;/a&gt; * 2007-06-10 11:26:50: &lt;a href=&#34;http://orhanbalci.net/tr/?p=10&#34;&gt;Güneş İstanbul&amp;rsquo;da Tutuldu - Eclipsİst 2007 -&lt;/a&gt; * 2007-06-20 23:57:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=11&#34;&gt;Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti&lt;/a&gt; * 2007-06-21 22:20:03: &lt;a href=&#34;http://orhanbalci.net/tr/?p=12&#34;&gt;Eclipse Update Manager Proxy Ayarı&lt;/a&gt; * 2007-07-24 21:36:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=14&#34;&gt;Swing Programlama: JTable Temel Kullanım&lt;/a&gt; * 2007-07-26 21:59:30: &lt;a href=&#34;http://orhanbalci.net/tr/?p=15&#34;&gt;NetBeans Javadoc Entegrasyonu&lt;/a&gt; * 2007-08-02 19:41:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=16&#34;&gt;Swing Programlama : JTable Hücre Editörleri&lt;/a&gt; * 2007-08-31 23:47:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=17&#34;&gt;İkili Ağaç Veri Yapısı (Binary Search Tree)&lt;/a&gt; * 2007-11-17 15:32:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=18&#34;&gt;Işık Atlası&lt;/a&gt; * 2008-02-06 19:33:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=19&#34;&gt;Kendimle Hasbihal&lt;/a&gt; * 2008-03-01 13:59:57: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=20&#34;&gt;Kitaplık&lt;/a&gt; * 2008-03-08 20:15:11: &lt;a href=&#34;http://orhanbalci.net/tr/?p=21&#34;&gt;Seçim Sıralama(Selection Sort) Algoritma Appleti&lt;/a&gt; * 2008-03-15 17:27:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=22&#34;&gt;Eklemeli Sıralama (Insertion Sort) Algoritma Appleti&lt;/a&gt; * 2008-03-15 17:48:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=23&#34;&gt;JTable İp Uçları&lt;/a&gt; * 2008-04-15 19:38:40: &lt;a href=&#34;http://orhanbalci.net/tr/?p=24&#34;&gt;Biletofobi&lt;/a&gt; * 2008-04-25 18:51:38: &lt;a href=&#34;http://orhanbalci.net/tr/?p=25&#34;&gt;Yanık Fotoğraflar&lt;/a&gt; * 2008-07-23 19:23:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=26&#34;&gt;Eclipse Video Ders (Screencast) #1 Extract Method Refactoring&lt;/a&gt; * 2008-07-23 19:29:43: &lt;a href=&#34;http://orhanbalci.net/tr/?p=27&#34;&gt;Eclipse Video Ders (Screencast) #2 Extract Super Class Refactoring&lt;/a&gt; * 2008-08-24 16:02:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=28&#34;&gt;Eclipse Video Ders (Screencast) #3 Introduce Parameter Refactoring&lt;/a&gt; * 2008-09-13 12:33:04: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=29&#34;&gt;Gelecek Makaleler&lt;/a&gt; * 2008-09-13 12:47:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=30&#34;&gt;Java Dersleri 2 - Sınıf Kavramı ve Yapısı (Class Structure)&lt;/a&gt; * 2008-09-17 07:34:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=32&#34;&gt;Netbeans Video Ders (Screencast) #1 JUnit Birim Test &lt;/a&gt; * 2008-10-21 10:44:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=35&#34;&gt;Kd Ağacı (Kd Tree) Veri Yapısı Görselleştirmesi&lt;/a&gt; * 2008-11-14 20:23:10: &lt;a href=&#34;http://orhanbalci.net/tr/?p=41&#34;&gt;NetBeans Video Ders (Screencast) #2 GUI Tasarımcısı Özellik Bağlama Kipi &lt;/a&gt; * 2009-01-17 21:59:38: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=49&#34;&gt;İndir&lt;/a&gt; * 2009-02-15 20:11:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=54&#34;&gt;NetBeans Video Ders (Screencast) #3 Kod Şablonları&lt;/a&gt; * 2009-04-01 21:50:17: &lt;a href=&#34;http://orhanbalci.net/tr/?p=31&#34;&gt;Duvarlara Sinen Yıllar&lt;/a&gt; * 2009-04-08 22:06:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=77&#34;&gt;Java Dersleri 3 - Kontrol Yapıları&lt;/a&gt; * 2009-04-12 18:52:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=92&#34;&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers) &lt;/a&gt; * 2009-04-26 13:56:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=103&#34;&gt;Java Dersleri 5 - Kalıtım (Inheritance)&lt;/a&gt; * 2009-05-05 20:19:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=116&#34;&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/a&gt; * 2009-05-06 11:10:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=120&#34;&gt;NetBeans Yerelleştirmesi İçin Gönüllüler Aranıyor&lt;/a&gt; * 2009-06-19 00:11:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=128&#34;&gt;K-Orta Kümeleme Algoritması&lt;/a&gt; * 2009-06-23 10:56:37: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=139&#34;&gt;Yazılım Pratikleri&lt;/a&gt; * 2009-06-24 20:12:28: &lt;a href=&#34;http://orhanbalci.net/tr/?p=154&#34;&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism) &lt;/a&gt; * 2009-07-13 21:49:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=176&#34;&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/a&gt; * 2009-07-14 10:24:15: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=180&#34;&gt;Java Dersleri&lt;/a&gt; * 2009-07-22 21:04:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=206&#34;&gt;Radyo Seyrüsefer Cihazları Veritabanı Güncelleme Yazılımı&lt;/a&gt; * 2009-07-22 21:08:57: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=209&#34;&gt;Projeler&lt;/a&gt; * 2009-07-22 22:00:21: &lt;a href=&#34;http://orhanbalci.net/tr/?p=216&#34;&gt;Arazi / Radyo Seyrüsefer Sunucu Yazılımı&lt;/a&gt; * 2009-08-04 13:33:43: &lt;a href=&#34;http://orhanbalci.net/tr/?p=226&#34;&gt;Java Dersleri 9 - Dosya Okuma/Yazma İşlemleri&lt;/a&gt; * 2009-08-11 20:20:08: &lt;a href=&#34;http://orhanbalci.net/tr/?p=252&#34;&gt;Berber Dükkânından Diyaloglar&lt;/a&gt; * 2009-08-13 20:44:14: &lt;a href=&#34;http://orhanbalci.net/tr/?p=249&#34;&gt;Baytar (Veteriner Hekim Klinik Yönetim Sistemi)&lt;/a&gt; * 2009-08-23 15:43:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=291&#34;&gt;NetBeans Video Ders (Screencast) #4 İkilik (Binary) Dosya Okuma &lt;/a&gt; * 2009-09-04 13:27:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=310&#34;&gt;Her Çocuğun Rüyası Charlie&amp;rsquo;nin Çikolata Fabrikası&lt;/a&gt; * 2009-09-17 23:30:51: &lt;a href=&#34;http://orhanbalci.net/tr/?p=334&#34;&gt;Sobel Kenar Algılama Algoritması&lt;/a&gt; * 2009-10-01 20:12:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=357&#34;&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri &lt;/a&gt; * 2009-10-05 22:41:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=367&#34;&gt;Java Dersleri 12 - String İşlemleri&lt;/a&gt; * 2009-10-10 21:07:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=372&#34;&gt;Otobüste Fahiş Fiyatlı Akbile Hayır&lt;/a&gt; * 2009-10-27 22:54:19: &lt;a href=&#34;http://orhanbalci.net/tr/?p=393&#34;&gt;Tehlike Anında Camı Kırınız!&lt;/a&gt; * 2009-10-30 21:42:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=8&#34;&gt;İki Tepe, İki Dağ Ortasında Bizim Bağ&lt;/a&gt; * 2009-11-18 21:58:50: &lt;a href=&#34;http://orhanbalci.net/tr/?p=416&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 50&lt;/a&gt; * 2009-11-18 22:45:12: &lt;a href=&#34;http://orhanbalci.net/tr/?p=420&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 49&lt;/a&gt; * 2009-11-20 00:11:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=428&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 48&lt;/a&gt; * 2009-11-20 01:15:03: &lt;a href=&#34;http://orhanbalci.net/tr/?p=435&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 47&lt;/a&gt; * 2009-11-20 14:22:49: &lt;a href=&#34;http://orhanbalci.net/tr/?p=438&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 46&lt;/a&gt; * 2009-11-24 22:05:04: &lt;a href=&#34;http://orhanbalci.net/tr/?p=440&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 45&lt;/a&gt; * 2009-12-02 21:49:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=449&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 44&lt;/a&gt; * 2009-12-02 22:20:58: &lt;a href=&#34;http://orhanbalci.net/tr/?p=453&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 43&lt;/a&gt; * 2009-12-03 21:41:16: &lt;a href=&#34;http://orhanbalci.net/tr/?p=462&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 42&lt;/a&gt; * 2009-12-06 14:29:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=468&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 41&lt;/a&gt; * 2009-12-06 19:15:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=470&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 40&lt;/a&gt; * 2009-12-08 00:18:19: &lt;a href=&#34;http://orhanbalci.net/tr/?p=481&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 39&lt;/a&gt; * 2009-12-11 20:54:44: &lt;a href=&#34;http://orhanbalci.net/tr/?p=496&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 - Soru 38&lt;/a&gt; * 2009-12-13 18:57:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=503&#34;&gt;Birleştirmeli Sıralama (Merge Sort) Algoritma Appleti&lt;/a&gt; * 2009-12-26 20:15:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=516&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 – Soru 37&lt;/a&gt; * 2010-01-06 14:16:09: &lt;a href=&#34;http://orhanbalci.net/tr/?p=531&#34;&gt;Proje Bülbül&lt;/a&gt; * 2010-01-13 20:02:32: &lt;a href=&#34;http://orhanbalci.net/tr/?p=553&#34;&gt;2009&amp;rsquo;un Getirdikleri 2010&amp;rsquo;dan Beklentiler&lt;/a&gt; * 2010-01-18 01:16:36: &lt;a href=&#34;http://orhanbalci.net/tr/?p=560&#34;&gt;HSQLDB İpuçları&lt;/a&gt; * 2010-01-24 23:18:53: &lt;a href=&#34;http://orhanbalci.net/tr/?p=575&#34;&gt;Asansör&lt;/a&gt; * 2010-01-27 00:14:02: &lt;a href=&#34;http://orhanbalci.net/tr/?p=584&#34;&gt;Fruchterman-Reingold Graf Yerleşim Algoritması&lt;/a&gt; * 2010-02-02 14:25:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=593&#34;&gt;Python Deneyimleri 1&lt;/a&gt; * 2010-02-04 15:07:26: &lt;a href=&#34;http://orhanbalci.net/tr/?p=620&#34;&gt;Python Deneyimleri 2&lt;/a&gt; * 2010-02-17 12:05:45: &lt;a href=&#34;http://orhanbalci.net/tr/?p=639&#34;&gt;Python Deneyimleri 3&lt;/a&gt; * 2010-02-17 21:39:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=645&#34;&gt;Java Dersleri 13 - Koleksiyon API (Collection API) Listeler&lt;/a&gt; * 2010-02-19 14:49:36: &lt;a href=&#34;http://orhanbalci.net/tr/?p=663&#34;&gt;Java Dersleri 14 - Koleksiyon API (Collection API) Kuyruklar (Queue)&lt;/a&gt; * 2010-03-09 21:35:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=685&#34;&gt;Ulusal Bilgisayar Olimpiyadı 2009 – Soru 36&lt;/a&gt; * 2010-03-17 18:31:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=696&#34;&gt;Java Dersleri 15 – Koleksiyon API (Collection API) Map&lt;/a&gt; * 2010-03-18 22:50:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=712&#34;&gt;Java Dersleri 16 – Enum Yapısı&lt;/a&gt; * 2010-04-03 22:22:59: &lt;a href=&#34;http://orhanbalci.net/tr/?p=727&#34;&gt;Swing Programlama : JFileChooser&lt;/a&gt; * 2010-05-27 21:17:52: &lt;a href=&#34;http://orhanbalci.net/tr/?p=750&#34;&gt;Java Dersleri 17 - JDBC API (Veritabanı Bağlantısı)&lt;/a&gt; * 2010-07-28 13:05:39: &lt;a href=&#34;http://orhanbalci.net/tr/?p=769&#34;&gt;Java Dersleri 18 – Network Programlama - UDP&lt;/a&gt; * 2010-08-13 10:16:11: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=786&#34;&gt;CV&lt;/a&gt; * 2010-08-20 23:32:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=805&#34;&gt;Eclipse Video Ders (Screencast) #4 - Hibernate Kullanımı&lt;/a&gt; * 2010-10-08 13:27:31: &lt;a href=&#34;http://orhanbalci.net/tr/?p=849&#34;&gt;Swing Programlama : JTree&lt;/a&gt; * 2010-10-29 12:36:24: &lt;a href=&#34;http://orhanbalci.net/tr/?p=874&#34;&gt;Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri&lt;/a&gt; * 2010-12-03 20:20:06: &lt;a href=&#34;http://orhanbalci.net/tr/?p=923&#34;&gt;Iki Yeni Kitap&lt;/a&gt; * 2010-12-14 14:43:27: &lt;a href=&#34;http://orhanbalci.net/tr/?p=933&#34;&gt;Java Dersleri 19 - İstisnai Durumlar (Exceptions) &lt;/a&gt; * 2011-01-09 14:24:07: &lt;a href=&#34;http://orhanbalci.net/tr/?p=957&#34;&gt;Ocak Ayı Kitapları&lt;/a&gt; * 2011-05-28 19:27:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=986&#34;&gt;Niyet, Sebat, Sabır, Tevekkül Çerçevesinden Başarı&lt;/a&gt; * 2011-06-07 17:27:00: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1010&#34;&gt;Ödevler&lt;/a&gt; * 2011-06-08 22:47:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1014&#34;&gt;Java Dersleri 20 – JAXB API – Java Nesnelerini XML Dökümanları ile Bağlama&lt;/a&gt; * 2011-07-07 00:43:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1052&#34;&gt;Java Dersleri 10 - Nesne Serileştirme (Serialization)&lt;/a&gt; * 2011-07-20 23:33:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1066&#34;&gt;İstanbul Antalya Yolu Üzerinde Keyifli Bir Mola : Afium&lt;/a&gt; * 2011-07-21 20:58:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1070&#34;&gt;Ağva-Göksu Motor Turu&lt;/a&gt; * 2011-08-04 23:26:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1083&#34;&gt;Kabuk Sıralama (Shell Sort) Algoritma Appleti&lt;/a&gt; * 2011-08-06 11:23:49: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1092&#34;&gt;Swing Programlama : 2D Çizim İp Uçları&lt;/a&gt; * 2011-08-11 23:31:52: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1099&#34;&gt;Java Dersleri 21 - Multi Thread Programlama&lt;/a&gt; * 2011-08-30 11:28:04: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1110&#34;&gt;İstanbul&amp;rsquo;da Arefe Sabahı : Hoşgeldin Oğlum&lt;/a&gt; * 2012-01-19 14:20:53: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1125&#34;&gt;Java Dersleri 22 – Reflection ve Annotation Kullanımı&lt;/a&gt; * 2012-11-20 14:10:02: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1148&#34;&gt;İzlediklerim&lt;/a&gt; * 2012-12-18 14:40:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1137&#34;&gt;Java 7 İle Gelen Yeni Özellikler&lt;/a&gt; * 2013-03-12 14:23:22: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1187&#34;&gt;Java Dersleri 23 - Final Anahtar Kelimesi&lt;/a&gt; * 2013-03-17 00:22:59: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1205&#34;&gt;Google Java Kütüphanesi : Guava String İşlemleri&lt;/a&gt; * 2013-03-18 14:45:18: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1222&#34;&gt;Google Java Kütüphanesi : Guava Functions Predicates&lt;/a&gt; * 2013-03-19 14:38:37: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1230&#34;&gt;Google Java Kütüphanesi : Guava Preconditions&lt;/a&gt; * 2013-03-22 15:12:11: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1235&#34;&gt;Google Java Kütüphanesi : Guava Cache&lt;/a&gt; * 2013-03-28 12:07:25: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1239&#34;&gt;2013 Okuma Listesi&lt;/a&gt; * 2014-10-14 10:23:55: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1273&#34;&gt;Java 8 İle Gelen Yeni Özellikler&lt;/a&gt; * 2014-11-19 13:31:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1304&#34;&gt;Java Dersleri 24 – Generics&lt;/a&gt; * 2014-11-21 21:22:46: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1326&#34;&gt;Dependency Injection : Guice&lt;/a&gt; * 2015-01-14 14:53:54: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1339&#34;&gt;Java İle Json İşlemleri : Jackson&lt;/a&gt; * 2015-04-11 04:36:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1371&#34;&gt;Hizli Siralama Algoritmasi (Quicksort)&lt;/a&gt; * 2015-04-12 04:16:06: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1373&#34;&gt;Yapay Zeka&lt;/a&gt; * 2015-04-13 23:33:15: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1376&#34;&gt;Ikili Arama Algoritmasi (Binary Search)&lt;/a&gt; * 2015-04-19 05:43:26: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1380&#34;&gt;Breadth First Search (Yuzey Ocelikli Arama)&lt;/a&gt; * 2015-04-19 19:44:47: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1384&#34;&gt;Depth First Search (Derinlik Oncelikli Arama)&lt;/a&gt; * 2015-07-08 22:13:16: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=1401&#34;&gt;Rust Ornekleri&lt;/a&gt; * 2015-07-09 00:10:35: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1404&#34;&gt;Rust Programlama Giris&lt;/a&gt; * 2015-07-14 20:54:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1421&#34;&gt;Java Compiler Api&lt;/a&gt; * 2015-09-04 00:45:23: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1427&#34;&gt;Rust Temel Veri Yapıları Struct ve Enum&lt;/a&gt; * 2015-09-11 22:16:13: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1441&#34;&gt;Rust Primitif Veri Yapilari Tuple ve Array&lt;/a&gt; * 2015-09-14 23:04:37: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1452&#34;&gt;Rust Akış Kontrol İfadeleri&lt;/a&gt; * 2015-10-07 10:14:17: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1461&#34;&gt;Lastik Basınç Uygulamamız Yayında&lt;/a&gt; * 2015-10-13 22:29:00: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1459&#34;&gt;Rust Trait&lt;/a&gt; * 2015-10-16 08:28:05: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1472&#34;&gt;Rust Closure&lt;/a&gt; * 2015-11-29 10:17:34: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1489&#34;&gt;Mario Gomez Button Uygulamamiz Yayinda&lt;/a&gt; * 2015-12-09 19:35:48: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1492&#34;&gt;Rust Dökümantasyon&lt;/a&gt; * 2015-12-18 11:26:33: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1501&#34;&gt;Rust Cheatsheet&lt;/a&gt; * 2016-01-27 09:28:14: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1512&#34;&gt;Rust Program Düzeni : Modüller&lt;/a&gt; * 2016-03-30 02:58:31: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1527&#34;&gt;Vergi Uzmanim Android Uygulamamiz Yayinda&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/cv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/cv/</guid>
-      <description>
-
-&lt;p&gt;title: CV
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=786&#34;&gt;http://orhanbalci.net/tr/?page_id=786&lt;/a&gt;
-author: admin
-description:
-post_id: 786
-created: 2010/08/13 10:16:11
-created_gmt: 2010/08/13 07:16:11
-comment_status: open
-post_name: cv
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;cv&#34;&gt;CV&lt;/h1&gt;
-
-&lt;p&gt;[gview file=&amp;ldquo;&lt;a href=&#34;http://orhanbalci.net/tr/wp-content/uploads/orhanbalcicv.pdf&amp;quot;&#34;&gt;http://orhanbalci.net/tr/wp-content/uploads/orhanbalcicv.pdf&amp;quot;&lt;/a&gt;]&lt;/p&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4203&#34; title=&#34;2010-10-24 23:25:37&#34;&gt;handan&lt;/a&gt;:&lt;/strong&gt; örnek uygulama koysa idin keşke bu kadarına bile teşekkür&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/page/gelecek-makaleler/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/page/gelecek-makaleler/</guid>
-      <description>
-
-&lt;p&gt;title: Gelecek Makaleler
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?page_id=29&#34;&gt;http://orhanbalci.net/tr/?page_id=29&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 29
-created: 2008/09/13 12:33:04
-created_gmt: 2008/09/13 09:33:04
-comment_status: open
-post_name: gelecek-makaleler
-status: publish
-post_type: page&lt;/p&gt;
-
-&lt;h1 id=&#34;gelecek-makaleler&#34;&gt;Gelecek Makaleler&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;strike&gt;Kd Ağacı (Kd Tree) Veri Yapısı Görselleştirmesi&lt;/strike&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;strike&gt;Duvarlara Sinen Yıllar&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;İki Tepe İki Dağ Ortasında Bizim Bağ&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #1(Screencast) JUnit Testleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #2(Screencast) GUI Tasarımcısı Özellik Bağlama Kipi&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Netbeans Video Ders #3(Screencast) Kod Şablonları&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;K-Orta Kümeleme Algoritması&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Quad Tree Veri Yapısı&lt;/li&gt;
-&lt;li&gt;Tahta Kaşık Bulgur Pilavı Ayran&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt; Java Dersleri 3 - Kontrol Yapıları&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Netbeans Video Ders #4(Screencast) Debugging&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 4 - Erişim Denetleyicileri (Access Modifiers)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;2D Nokta Test Kümesi Oluşturma Programı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 5 - Kalıtım, Soyut Sınıflar&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 6 - Arayüzler ve Gerçeklenmesi (Interface and Implementation)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 7 - Çok Biçimlilik (Polymorphism)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 8 - İç, Gömülü ve İsimsiz Sınıflar (Inner, Nested and Anonymous Classes) &lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Evans-Sutherland Kırpma Algoritması&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Sobel Kenar Tanıma Algoritması&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 9 - Dosya Okuma - Yazma İşlemleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 10 - Nesne Akımları ve Serileştirme(Object Streams and Serialization)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Her Çocuğun Rüyası Charlie&amp;rsquo;nin Çikolata Fabrikası&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 11 - XML Okuma - Yazma İşlemleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 12 - Temel String İşlemleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 13 - Koleksiyon API &lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 14 - Enum Yapısı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 15 - JDBC API&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 16 - Çoklu Thread Programlama&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 17 - Network Programlama&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Tehlike Anında Camı Kırın&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Birleştirmeli Sıralama (Merge Sort)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Ulusal Bilgisayar Olimpiyat Soruları ve Çözümleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Kuvvet Yönelimli Graf Yerleşim Algoritması (Fruchterman-Reingold)&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Çarpışma Algılama Yöntemleri ve Algoritmaları 1: Matematik Temelleri&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;90&amp;rsquo;ların Bilgisayar Oyunları&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Swing Programlama : JFileChooser Kullanımı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Swing Programlama : Sihirbaz (Wizard) Yapımı&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Swing Programlama : JTree Kullanımı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Masaüstü Programlarında Hibernate Kullanımı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Hibernate Sorgu Dili&lt;/li&gt;
-&lt;li&gt;Java Plugin Framework&lt;/li&gt;
-&lt;li&gt;Swing Programlama : Çizim İşlemleri&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 18 - İstisnai Durumlar&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 19 - Reflection&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 20 - Generics &lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;B-Tree Veri Yapısı&lt;/li&gt;
-&lt;li&gt;B+Tree Veri Yapısı&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Niyet,Sebat,Sabır,Tevekkül Penceresinden Başarı&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 21 - JAXB API - Java Nesnelerini XML Dökümanları ile Bağlama&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Java Dersleri 22 - Web Servisleri&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Quick Sort Sıralama Algoritması&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Shell Sort Sıralama Algoritması&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Dijkstra En Kısa Yol Algoritması&lt;/li&gt;
-&lt;li&gt;Swing Programlama : JTabbedPane Kullanımı&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java 7 İle Gelen Yeni Özellikler&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Strategy Pattern Nasıl İşime Yaradı&lt;/li&gt;
-&lt;li&gt;Java Dersleri 23 - NİO Api&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java Dersleri 24 - Final Anahtar Kelimesi&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java İle Json İşlemleri : Jackson&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Google Java Kütüphanesi : Guava&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Java Bean Validasyonu : Hibernate Validator&lt;/li&gt;
-&lt;li&gt;Java Dersleri 25 - JPA Java Persistence Api&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Java 8 İle Gelen Yeni Özellikler&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Dependency Injection : Guice&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Şablon Kullanımı İle Kod Üretme Teknikleri : StringTemplate&lt;/li&gt;
-&lt;li&gt;Guava Veri Yapıları : MultiSet, MultiMap, BiMap&lt;/li&gt;
-&lt;li&gt;Java Dersleri 26 : Java Compiler API&lt;/li&gt;
-&lt;li&gt;Google Protocol Buffers&lt;/li&gt;
-&lt;li&gt;Java İle REST Servisleri&lt;/li&gt;
-&lt;li&gt;Message Queue Örnekleri&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Breadth First Arama Algoritmasi&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Depth First Arama Algoritmasi&lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;A* Arama Algoritmasi&lt;/li&gt;
-&lt;li&gt;Evrimsel Algoritmalar&lt;/li&gt;
-&lt;li&gt;Java Ile Klasor Izleme&lt;/li&gt;
-&lt;li&gt;Rust Ownership&lt;/li&gt;
-&lt;li&gt;Rust Borrowing&lt;/li&gt;
-&lt;li&gt;Rust Lifetime&lt;/li&gt;
-&lt;li&gt;Rust Program Düzeni : Modüller&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt;Rust Closure &lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Rust Iteratorler&lt;/li&gt;
-&lt;li&gt;Rust Generics&lt;/li&gt;
-&lt;li&gt;Rust Pointer Turleri&lt;/li&gt;
-&lt;li&gt;Rust Test&lt;/li&gt;
-&lt;li&gt;&lt;strike&gt; Rust Dokumentasyon &lt;/strike&gt;&lt;/li&gt;
-&lt;li&gt;Rust Hata Yonetimi&lt;/li&gt;
-&lt;li&gt;Suffix Array ile Longest common Substring Cozumu&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1748&#34; title=&#34;2009-10-11 06:16:18&#34;&gt;Osman&lt;/a&gt;:&lt;/strong&gt; Tahta Kaşık Bulgur Pilavı Ayran ne zaman cikacak?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1749&#34; title=&#34;2009-10-11 10:56:06&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Osman hocam onu bilinmez geleceğe kadar erteledim.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#3377&#34; title=&#34;2010-07-30 10:57:57&#34;&gt;kernel32&lt;/a&gt;:&lt;/strong&gt; Java hakkında NetBeans ile video dersler hazırlayabilirmisiniz. Daha faydalı olur bence. iyi çalışmalar :)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#3380&#34; title=&#34;2010-07-30 11:48:15&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Sitede birkaç tane mevcut zaten etiket bulutundan Vide Ders etiketini seçerek ulaşabilirsin&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4124&#34; title=&#34;2010-09-16 11:36:11&#34;&gt;aykut64&lt;/a&gt;:&lt;/strong&gt; Merhabalar1 Yoğunluğunuzu bilemiyorum ve geleck makalelerden istek yapmak biraz bencilce geliyor bana ama şuana kadar bulduğum en iyi Türkçe JAVA kaynağı sizsiniz.35 nci sıraya koyduğunuz 90&amp;rsquo;lı yılların oyunları ve onun öncesindeki çarpışma algılama yöntemleri ve algoritmaları konusunu yayınlayabilirseniz bu site favorilerim arasında en tepeye yerleşecektir. Şaka bir yana çok özverili güzel bir bilgi paylaşım sitesi.Çok başarılı olmasını dilerim size de hayatınızda başarılar dilerim.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4125&#34; title=&#34;2010-09-16 12:10:06&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Aykut bey yorumunuz için teşekkürler. Şunu belirtmek isterim ki isteğinizin bencillikle yakından uzaktan alakası yok. Daha öncede kullanıcılarımdan siteye bu yönde katkıda bulunmalarını istemiştim. Ben günlük hayatta aklıma gelen konuları buraya listeliyorum. Buradan makale seçerken herhangi bir sıra gözetmiyorum. En sonda olanı ilk önce yayınlayabilirim. Bunların dışında sizin de istediğiniz bir konu olursa listeye ekleyebilirim.&lt;/p&gt;
 </description>
     </item>
     

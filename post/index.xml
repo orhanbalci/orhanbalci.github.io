@@ -15,11 +15,23 @@
       <pubDate>Wed, 27 Jan 2016 15:29:31 +0800</pubDate>
       
       <guid>http://orhanbalci.github.io/post/rust-program-duzeni-moduller/</guid>
-      <description>
-
-&lt;h1 id=&#34;rust-program-düzeni-modüller&#34;&gt;Rust Program Düzeni : Modüller&lt;/h1&gt;
-
-&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :  Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.  Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :  Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :  Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :  &lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.  Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor. Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+      <description>&lt;p&gt;Gelistiridigimiz projeler buyudukce bu karmasikligi yonetmek icin dillerin bize sagladigi soyutlama ve paketleme mekanizmalarini kullaniyoruz. Javada package, C++ da namespace kavramlari birbiriyle ilintili olan kod kumelerini gruplamaya yarayan yapilar. Rust dilinde ayni gorev icin moduller kullaniliyor. Modül tanimlamak icin &lt;code&gt;mod&lt;/code&gt; anahtar kelimesi kullaniliyor. Yeri gelmisken deginmeden edemeyecegim Rust anahtar kelime konusunda diger dillere gore basitlik acisindan onde. Sık kullanılan anahtar kelımeler oldukca kısa tutulmus. Ornegin fonksiyon icin &lt;code&gt;fn&lt;/code&gt;, modul icin &lt;code&gt;mod&lt;/code&gt;, public icin &lt;code&gt;pub&lt;/code&gt;. Ilk olarak modul tanimlamayi ogrenelim. Ornegin bir oyun yazdigimizi dusunelim. Matematik hesaplamalarda kullanacagimiz yapilari &lt;code&gt;math&lt;/code&gt; modulune, ai algoritmalarimizi da &lt;code&gt;ai&lt;/code&gt; modulune koyalim. Tabi bu modullere ait alt moduller de tanimlayalim :
+&lt;script src=&#34;//gist.github.com/orhanbalci/31e6ea4482fd949d1b87.js&#34;&gt;&lt;/script&gt;
+Bu modulleri game_sample projemizde main.rs dosyasinda tanimliyoruz. Projemizin klasor yapisi kabaca su sekilde oluyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/0346d867ea24ccb818ae.js&#34;&gt;&lt;/script&gt;
+Aklimiza gelen ilk soru tum modulleri ayni dosya icerisine mi yazacagiz oluyor. Bu sorunu cozmek icin modul ismi ile ayni isimde bir .rs dosyasi olusturuyoruz ve modul icerigini bu dosyaya tasiyoruz. Bu ilk cozum. Math ve a.i modullerini kendi dosyalarina tasiyalim. Modul isimlendirirken snake_case isimlendirme yontemini kullaniyoruz. Tamamen kucuk harfleri kullanip kelimeler arasina _ koyuyoruz. main.rs dosyamizi duzenliyoruz. modul iceriklerini tasidigimiz icin burada sadece &lt;code&gt;mod math; mod ai;&lt;/code&gt; satirlari kaliyor. Duzenlemeden sonra main.rs math.rs ai.rs dosyalarimiz :
+&lt;script src=&#34;//gist.github.com/orhanbalci/26d320a4bf02a8e9c2ee.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/b5cf159fbcb893d5606a.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;//gist.github.com/orhanbalci/d44117104421c67f41ae.js&#34;&gt;&lt;/script&gt;
+Dikkat etmemiz gereken husus hem main.rs icinde hem modul_adi.rs dosyasi icinde ayni modul tanimini tekrarlamamak. Bu adimi yaptiktan sonra klasorumuzun son hali su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+Aslinda bir nebze de olsa karmasikliktan kurtulduk. Peki math ve ai modullerinin alt modullerini nasil dosyalamaliyiz. Onlari da ayni sekilde kendi dosyalarina alabilirmiyiz ? ai.rs dosyasinin icerigini su sekilde guncelleyelim ve bos bir agent.rs dosyasini olusturalim.  Son durumda dosyalarimiz su sekilde oluyor :
+&lt;script src=&#34;//gist.github.com/orhanbalci/1df24b7e443d67f26e53.js&#34;&gt;&lt;/script&gt;
+&lt;code&gt;cargo build&lt;/code&gt; komutu ile projemizi derlemeye calisinca su sekilde bir hata aliyoruz.
+&lt;script src=&#34;//gist.github.com/orhanbalci/67da4ff939c672a6e5a6.js&#34;&gt;&lt;/script&gt;
+Hata mesaji aslinda ne yapmamiz gerektigini bize gosteriyor. Dallanmis modullerin bulundugu durumda hepsini ayni klasor icinde kendi dosyalarina alamiyoruz. Bu durumda Rust un ikinci modul tanimlama konfigurasyonunu kullanmamiz gerekiyor. Modul ismiyle ayni bir alt klasor olusturup icine &lt;code&gt;mod.rs&lt;/code&gt; isminde kaynak dosyasi olusturuyoruz. ai klasoru olusturup icine mod.rs dosyasini olusturalim ve icerigini ai.rs dosyasindan kopyalayalim. Son durumda klasorumuzun yapisi su sekilde olusuyor.
+&lt;script src=&#34;//gist.github.com/orhanbalci/d43ade45af3e1c50fd7d.js&#34;&gt;&lt;/script&gt;
+Modul yapisini klasor yapisiyla eslestirmis oluyoruz.  Rust ile gelistirilmis projeleri incelerken her alt klasorun altinda mod.rs dosyalari goreceksiniz. Bunlarin tamami modul tanim dosyalaridir.&lt;/p&gt;
 </description>
     </item>
     
@@ -96,6 +108,36 @@
 &lt;h1 id=&#34;rust-dökümantasyon&#34;&gt;Rust Dökümantasyon&lt;/h1&gt;
 
 &lt;p&gt;Rust kod dokumantasyonuna onem veren bir dil ve bunu default olarak desteklemekte. Yani Rust alet cantasini bilgisayarimiza yukledigimizde &lt;strong&gt;rustdoc&lt;/strong&gt; denilen kod yorumlarindan dokumantasyon olusturan yardimci yazilim da bilgisayarimiza yukleniyor. Bu araci &lt;code&gt;rustdoc kaynak_kod_dosyasi.rs&lt;/code&gt; seklinde kullanabiliriz yada Rust un proje yonetim araci Cargo ile &lt;code&gt;cargo doc&lt;/code&gt; seklinde de kullanabiliriz. Yazilim gelistirirken mutlaka guncel tutulan tek sey yazilim kaynak kodu oldugu icin dokumantasyonu kod yorumlarindan olusturmak tercih edilen bir uygulama. Bunu Java&amp;rsquo;da Javadoc, c++ da doxygen ile uyguluyoruz. Rust bu konuda &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;markdown&lt;/a&gt; denen standardi destekliyor. Yorum bloklari &lt;code&gt;///&lt;/code&gt; uclu slash ile normal yorum bloklarindan ayriliyor. Klasik bir dokumantasyon blogu sunun gibi oluyor :  Dokumantasyon icinde kod blogu gostermek istiyorsak (ozellikle fonksiyonumuzun ormek kullanimi gibi ornek kodlar ise yariyor) &lt;code&gt;kullaniyoruz. Ornegin :  Burada dikkat etmemiz gereken hususlardan bir tanesi `///` isaretlerinden sonra bosluk birakmamiz gerektigi sanirim Markup ile ilgili bir durum.&lt;/code&gt; isaretleri ile varsayilan olarak rust kodu sentaksi renklendiriliyor. Bunun disinda bir dilden kod blogu gosterecekseniz bunu belirtmeniz gerekiyor. Ornegin java kodu eklemek istiyorsaniz ```&lt;code&gt;java&lt;/code&gt; seklinde kullanmaniz gerekiyor. Yukaridaki ornekte aslinda bir diger ozelligi de kullanmis olduk. &lt;code&gt;#&lt;/code&gt; karakteri ile dokumantasyonda ana baslik, bolum olusturabiliyoruz.  Simdiye kadar anlattiklarimiz genellikle diger dokumantasyon araclariyla ortak olan kisimlardi. Rustdocu digerlerinden ayiran en buyuk ozellik testlerinizi dokumantasyon icine yazabiliyorsunuz. Yazdigimiz testler hem dokumantasyonu olusturuyor hem de unit test olarak cagrilabiliyor. Peki bunu nasil yapiyoruz. rustdoc bu konuda elimizi epey rahatlatiyor ornegin kodumuz bir main blogu icinde degilse kendi olusturuyor,bazi sik kullanilan compiler makrolarini koda ekliyor. Test kodunun compile olabilmesini fakat bu kodun tamaminin dokumantasyonda gorunmesini istemiyorsak istenmeyen satirlari &lt;code&gt;#&lt;/code&gt; isaretiyle kapatmamiz yeterli. Ornegin asagida bir fonksiyon ve dokumantasyonu icinde bir test casei yer almakta :  Dokumantasyon icindeki testleri &lt;code&gt;cargo test&lt;/code&gt; komutuyla kolaylikla cagirabiliyoruz. Bu komut tum modulu test edecektir. Sadece tek bir dosya icerisindeki testleri calistirmak istiyorsak &lt;code&gt;rustdoc --test kaynak_dosya.rs&lt;/code&gt; komutunu kullanmamiz yeterli. Dokumantasyon testlerinin en buyuk handikapi sadece kutuphane (library) tipindeki projelerde ise yaramasi. Calistirilabilir dosya urettiginiz projelerde ise yaramiyor. Son olarak &lt;code&gt;///&lt;/code&gt; isaretlemesi kendinden sonra gelen ifadeyi dokumente etmek icin kullniliyor. Bir blogu dokumante etmek icin &lt;code&gt;//!&lt;/code&gt; isaretlemesi kullaniliyor. Bunlara da genellikle module dokumantasyonu deniliyor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Closure</title>
+      <link>http://orhanbalci.github.io/post/rust-closure/</link>
+      <pubDate>Fri, 16 Oct 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-closure/</guid>
+      <description>&lt;p&gt;Fonksiyonel programlamanin bas aktorleri birinci sinif fonksiyonlar Rust dilinde de es gecilmemis. Isimli fonksiyonlarin nasil tanimlandigini daha onceki yazilarda gormustuk. Bu makalede isimsiz fonksiyonlardan yani closure lardan bahsedecegim. Closure yapilari fonksiyonel programlamanin bel kemigidir. Fonksiyonlarin diger fonksiyonlara parametre olarak gecilip, donus degeri olarak fonksiyonlari kullanabilmemizi saglarlar. Closurlerin en goze batan ozelligi tanimlandigi ortamdaki degiskenlere erisebilmeleridir ki isimleri de buradan gelir. Rust da closure sentaksi fonksiyonla birebir ayni olup &lt;code&gt;()&lt;/code&gt; yerine &lt;code&gt;||&lt;/code&gt; kullanilir. Ornek bir closure tanimini gorelim :  Yukarida verdigimiz closure ornegi parametresinden baska herhangi bir degiskene erismiyor, bir nevi statik fonksiyon. Yeni bir ornekte closurelarin tanimlandiklari ortamdaki degiskenleri nasil kapsama alanina aldigini (capture) gorelim.  3. satirda tanimladigimiz &lt;code&gt;bigger_than_threshold&lt;/code&gt; closure 2. satirda tanimladigimiz &lt;code&gt;threshold&lt;/code&gt; degiskenine erisebiliyor. 5. satirda ise tanimladigimiz closureu &lt;code&gt;filter&lt;/code&gt; methoduna parametre olarak geciyoruz. Yani bir fonksiyonu digerine parametre olarak gonderiyoruz. Peki her fonksiyonu her fonksiyona parametre olarak gecebilir miyiz? Tabi ki de hayir. Buradaki &lt;code&gt;filter&lt;/code&gt; fonksiyonunun imzasina baktigimizda parametre olarak aldigi fonksiyonun imzasinin da belitildigini goruyoruz. Bu imzada anlamadiginiz yerler olabilir. Generic ler ve genericlerin traitler ile sinirlandirilmasi sozkonusu.  2. satirda predicate parametresinin tipinin hangi tariti implement etmesi gerektigi gosteriliyor. Bu ornekten yola cikarak kendi metodlarimiza closure parametre almayi ve closurelari metodlarimizdan geri donmeyi ogrenelim. Bu sayede fonksiyon ureten fonksiyonlar yazabilir.Genel olarak gelistirdigimiz algoritmalarin ozel kisimlarini disaridan fonksiyon parametresi olarak alabiliriz. Bir ornekle fonksiyonlara parametre olarak fonksiyon gecmeyi ogrenelim. Yazacagimiz fonksiyon iki fonk. parametre alip bunlari 3. parametreye zincirleme olarak uygulayalim.  8. satirda tanimladigimiz &lt;code&gt;closure_pipe&lt;/code&gt; fonksiyonumuz parametre olarak iki tane fonk. aliyor. 9. ve 10. satirlarda bu fonk. parametrelerinin tipini belirtiyoruz. [ad#Yazi Ici Buyuk]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Trait</title>
+      <link>http://orhanbalci.github.io/post/rust-trait/</link>
+      <pubDate>Tue, 13 Oct 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-trait/</guid>
+      <description>&lt;p&gt;Rust dili bildiğimiz manada kalitimi desteklemiyor. Yani herhangi bir sinifi diğerinden türetip var olan methodlardan faydalanamiyorsunuz. Bu duruma degisik cozumler uretebiliyoruz. Ornegin kalitim yerine composition deseni kullanilabilir. Kalitim desteklenmese de Trait denen yapilar sayesinde interfaceler destekleniyor. Trait lerin diger ismi de type classes. C++ stl kutuphanesinde, Scala gibi dillerde de trait kullanimini gorebiliriz. Trait lerin interfacelerden farki default bir gerceklemelerinin olabilmesi ki bu ozellik son versiyonunda Java&amp;rsquo;ya da eklendi, ve varolan siniflar icin de gerceklenebilir olmasi, Ornegin siz yeni bir trait tanimladiginizda bunu sizin tanimlamadiginiz veri tipleri icin de gercekleyebilirsiniz. Trait anahtar kelimesi kullanilarak tanimlaniyorlar. Implementasyonlari ise impl ve for anahtar kelimeleri ile oluyor. Ornegimizi karsilastirilabilir yapilari temsil etmek uzere bir Comparable trait tanimi ve bunun farkli iki struct icin gerceklemesini gosterek gelistirelim :  1. satirda comparable trait taniminin gorebilirsiniz. Bu trait tek bir method imzasi tanimindan ibaret. Self tipinin kullanimi onemli. 11. ve 27. satirlarda ise comparable taritinin StockField ve ScoreSheet isimli iki struct icin gerceklemesini goruyoruz. Tanimladigimiz structlardan ikiser tane olusturup bunlari karsilastirarak kullnimi da gormus olalim :&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rust Akış Kontrol İfadeleri</title>
+      <link>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</link>
+      <pubDate>Mon, 14 Sep 2015 15:29:31 +0800</pubDate>
+      
+      <guid>http://orhanbalci.github.io/post/rust-akis-kontrol-ifadeleri/</guid>
+      <description>&lt;p&gt;Rust dilinde klasik kod akis kontrol ifadeleri bulunmakla beraber çok temel sentaks ve semantik farklar da var. Ilk olarak if/else yapisini inceleyerek farkları gormeye calisalim.  Yukarıda klasik bir if else yapisi ornegi verdim. Sentaks olarak dikkat etmemiz gereken ilk husus 4. satırda conditional ifade yazilirken &lt;code&gt;()&lt;/code&gt; parantezlerin opsiyonel olmasi. Varsayilan olarak kullnilmiyor bu parantezler. kullanildiginda derleyici uyari veriyor. Ikinci sentaks kurali ise if-else bloklarini bildiren &lt;code&gt;{}&lt;/code&gt; parantezlerinin zorunlu olmasi. Icinde tek ifade de yer alsa bunlar zorunlu. Ikinci ornekle asil can alici farki gorelim. If-else bloklari birer expression&amp;rsquo;dir. Yani atama ifadelerinde sag deger olarak kullanilabilirler.  Yukarıdaki örnekte 5. satırda if-else blokunun ciktisini &lt;code&gt;age_class&lt;/code&gt; degiskenine atayabiliyoruz. Burada dikkat edilmesi gereken en önemli şey tum kontrol bloklarinin ayni tip veriyi donmesi gerektigidir. While dongusu c/c++ ile ayni. Do-while dongusu yok. Continue ve break ifadeleri aynen korunmus. Diger dillerden farkli olarak sonsuz dongu blogu icin &lt;code&gt;loop&lt;/code&gt; bloklari mevcut. Bu bloklardan &lt;code&gt;break&lt;/code&gt; ifadesi ile cikabilirsiniz.  For dongusu ise c/c++ dan farkli olarak Iterator&amp;rsquo;lar uzerinden calisiyor. Genel sentaks &lt;code&gt;for degisken in expression{}&lt;/code&gt; seklinde. Burada &lt;code&gt;expression&lt;/code&gt; bir iterator uretmek zorunda. En basit haliyle for dongulerini Range iteratorleri ile kullaniyoruz.  2. satirdaki &lt;code&gt;1..15&lt;/code&gt; ifadesi 1 dahil 15 haric olmak uzere bir Range iterator tanimi yapar. Birer birer degil de farkli bir artisla bir Range tanimlamak istersek :  Herhangi bir collection gezilmek istendiginde eger Iterator traitine sahipse for dongusu kullanilabilir. Ornnegin bir vektorun for loop ile guncellenmesi ornegine bakalim :  [ad#Yazi Ici Buyuk]&lt;/p&gt;
 </description>
     </item>
     
@@ -426,120 +468,6 @@ post_type: post&lt;/p&gt;
 &lt;h1 id=&#34;breadth-first-search-yuzey-ocelikli-arama&#34;&gt;Breadth First Search (Yuzey Ocelikli Arama)&lt;/h1&gt;
 
 &lt;p&gt;Javascript implementasyonu : [javascript] var adjecencyList = []; var nodes = []; fs = require(&amp;lsquo;fs&amp;rsquo;) fs.readFile(&amp;lsquo;C:/Users/admin/WebstormProjects/untitled/breadth_first_search.txt&amp;rsquo;, &amp;lsquo;utf8&amp;rsquo;, function (err, graph_data) { if (err) { return console.log(err); } var edges = graph_data.split(&amp;rdquo;\r\n&amp;rdquo;); breadth_first_search(edges); }); function buildAdjecencyList(edges) { edges.every(function (edge, index) { if (index === 0) { //node count edge count adjecencyList = new Array(edge.split(&amp;rdquo; &amp;ldquo;).map(function (item) { return parseInt(item); })[0]) return true; } vertices = edge.split(&amp;rdquo; &amp;ldquo;).map(function (item) { return parseInt(item); }); if (nodes[vertices[0]] === undefined) nodes[vertices[0]] = {vertex: vertices[0], shortestDistance: Number.MAX_VALUE}; if (nodes[vertices[1]] === undefined) nodes[vertices[1]] = {vertex: vertices[1], shortestDistance: Number.MAX_VALUE}; if (adjecencyList[vertices[0]] === undefined) adjecencyList[vertices[0]] = []; adjecencyList[vertices[0]].push(nodes[vertices[1]]); return true; }) } var breadth_first_search = function (edges) { var result = &amp;ldquo;&amp;rdquo;; buildAdjecencyList(edges); var processQueue = []; nodes[1].shortestDistance = 0; processQueue.push(nodes[1]); while (processQueue.length &amp;gt; 0) { var node = processQueue.shift(); if (node.shortestDistance &amp;lt; Number.MAX_VALUE) { if (adjecencyList[node.vertex] === undefined) { continue; } for (var i = 0; i &amp;lt; adjecencyList[node.vertex].length; i++) { adjecentNode = adjecencyList[node.vertex][i]; if (adjecentNode.shortestDistance === Number.MAX_VALUE) { processQueue.push(adjecentNode); adjecentNode.shortestDistance = node.shortestDistance + 1; } } } } nodes.every(function (node) { if (node.shortestDistance === Number.MAX_VALUE) { result = result.concat(-1).concat(&amp;rdquo; &amp;ldquo;); } else { result = result.concat(node.shortestDistance).concat(&amp;rdquo; &amp;ldquo;); } return true; }) console.log(result); } [/javascript] [ad#Yazi Ici Buyuk]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/bubble-sort-kabarcik-siralama-algoritma-appleti/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/bubble-sort-kabarcik-siralama-algoritma-appleti/</guid>
-      <description>
-
-&lt;p&gt;title: Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=11&#34;&gt;http://orhanbalci.net/tr/?p=11&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 11
-created: 2007/06/20 23:57:48
-created_gmt: 2007/06/20 21:57:48
-comment_status: open
-post_name: bubble-sort-kabarcik-siralama-algoritma-appleti
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;kabarcık-sıralama-bubble-sort-algoritma-appleti&#34;&gt;Kabarcık Sıralama (Bubble Sort ) Algoritma Appleti&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;Algoritma Adı:&lt;/strong&gt; Kabarcık Sıralama Algoritması (Bubble Sort) &lt;strong&gt;Algoritma Türü:&lt;/strong&gt; Sıralama Algoritması &lt;strong&gt;Açıklama:&lt;/strong&gt; Sıralanacak eleman kümesinden ilk eleman alınır. Eğer kendinden sonrakinden büyükse yerleri değiştirilir. Sonraki elemana geçilir ve aynı işlem tekrarlanır. Dizinin sonuna varıldığında en büyük eleman sonda yer alır. Dizinin başına dönerek bu işlem sondan birinci elemana kadar tekrarlanır. Her adımda bir eleman daha azaltılarak devam eden iterasyon bütün elemanların yerini bulmasıyla sonlanır. Algoritmanın javada implement edilmiş hali : [java] for (int i = 1; i &amp;lt; sortArray.length; i++) { for (int j = 0; j &amp;lt; sortArray.length - i; j++) { if(sortArray[j] &amp;gt; sortArray[j+1]) { temp = sortArray[j+1]; sortArray[j+1] = sortArray[j]; sortArray[j] = temp; } } } [/java] Algoritmanin JavaScript implementasyonu : [javascript] /** * Created by Orhan Balci on 10.04.2015. */ var bubleSort = function(arrayToBeSorted){ for(var i = 1; i &amp;lt; arrayToBeSorted.length; i++){ for (var j = 0; j &amp;lt; arrayToBeSorted.length-1; j++) { if(arrayToBeSorted[j+1] &amp;lt; arrayToBeSorted[j]){ var tempSwap = arrayToBeSorted[j]; arrayToBeSorted[j] = arrayToBeSorted[j+1]; arrayToBeSorted[j+1] = tempSwap; } } } } var printNumbers = function(arrayTobePrinted){ var logMessage = &amp;ldquo;&amp;rdquo;; for (var i = 0; i &amp;lt; arrayTobePrinted.length; i++) { logMessage += arrayTobePrinted[i] + &amp;ldquo; &amp;ldquo;; } console.log(logMessage); } var testSorting = function() { var numberArray = []; numberArray.length = 100; for (var i = 0; i &amp;lt; numberArray.length; i++) { numberArray[i] = Math.round(Math.random() * 100); } printNumbers(numberArray); bubleSort(numberArray); printNumbers(numberArray); } testSorting(); [/javascript]&lt;/p&gt;
-
-&lt;p&gt;[ad#Yazi Ici]&lt;/p&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#29&#34; title=&#34;2007-06-29 20:26:13&#34;&gt;Osman N. Yogurtcu&lt;/a&gt;:&lt;/strong&gt; Orhan, bu applet çalışmıyor. Sebep? :)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#30&#34; title=&#34;2007-06-30 13:54:56&#34;&gt;Orhan&lt;/a&gt;:&lt;/strong&gt; Niye çalışmasın güzel kardeşim :). Browserinda Java plugini varsa çalışır. Belki birde JRE&amp;rsquo;ni update etmen gerekebilir&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#242&#34; title=&#34;2008-02-29 13:50:34&#34;&gt;hazan_06&lt;/a&gt;:&lt;/strong&gt; Sıralama uygulaman güzel olmuş. Benim de bir projem var ama nasıl yapacağımı bilmiyorum sıralama algoritmasından.Ben 10 tane resmi büyükten küçüğe doğru sıralayacağım sıralama algoritmasıyla. Bana yardımcı olursanız nasıl yapacağım konusunda teşekkür ederim. Mailinizi bekleyeceğim.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1434&#34; title=&#34;2009-05-24 13:09:13&#34;&gt;mdesigner&lt;/a&gt;:&lt;/strong&gt; paylşım için teş.ler benim final ödevim bu dersten mesela 5,7,28,64,2,3,67 bu sayıları bu yöntemle yazmam lazımmış yardımcı olursan sevinirim&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1446&#34; title=&#34;2009-06-02 10:12:52&#34;&gt;mavzeroglu&lt;/a&gt;:&lt;/strong&gt; benim bir final ödevim var yardimci olabilirseniz sevinirim c++ da bubble sort yöntemiyle sayilarin siralanmasi icin bir program yazmamiz gerekiyo ama ben bilmiyorum bu konuda bana yardimci olabilirseniz sevinirim programda su özellikler isteniyo programın basinda kisiden kac sayi girilecegi istenecek ve teker teker sayilar istenecek ardindan büyükten küçüge mi yoksa kücükten büyügemi siralanacagi sorulacak siralama bittikten sonra ise cikmak istiyorsan h ye devam etmek istiyorsan e ye bas diye soracak ve e ye basinca program tekrar basa alip bizden aynı seyleri tekrar yapmamizi isteecek yani program tek seferlik olmayacak bo konuda yardim edebilirseniz cok sevinirim cünkü bu benim final ödevim yardiminiz icin simdiden tesekkür ederim&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#1443&#34; title=&#34;2009-06-01 12:40:22&#34;&gt;mahmut&lt;/a&gt;:&lt;/strong&gt; arkadaşlar bu sitenin neresinde yazılmış halini bulabilirim ?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#5448&#34; title=&#34;2012-05-08 13:45:19&#34;&gt;admin&lt;/a&gt;:&lt;/strong&gt; Ödevlere yardımcı olmuyorum :). Sadece takıldığın yer varsa orayı cevaplayabilirim&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#5449&#34; title=&#34;2012-05-08 14:53:38&#34;&gt;isimsiz kahraman&lt;/a&gt;:&lt;/strong&gt; Kırnap mısın?Aksöz mü?(Ahmet) :smile:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#5444&#34; title=&#34;2012-05-06 00:36:50&#34;&gt;ahmet&lt;/a&gt;:&lt;/strong&gt; Yüksekliği h ve 1’den 2h+1-1 , e kadar anahtarı olan mükemmel bir şekilde dengelenmiş ikili ağacı üretmek için bir fonksiyon yazınız. hocam ödev var yardımcı olur musunuz?&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri/</guid>
-      <description>
-
-&lt;p&gt;title: Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=874&#34;&gt;http://orhanbalci.net/tr/?p=874&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 874
-created: 2010/10/29 12:36:24
-created_gmt: 2010/10/29 09:36:24
-comment_status: open
-post_name: carpisma-algilama-yontemleri-ve-algoritmalari-1-matematik-temelleri
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;çarpışma-algılama-yöntemleri-ve-algoritmaları-1-matematik-temelleri&#34;&gt;Çarpışma Algılama Yöntemleri ve Algoritmaları #1: Matematik Temelleri&lt;/h1&gt;
-
-&lt;p&gt;[caption id=&amp;ldquo;attachment_878&amp;rdquo; align=&amp;ldquo;aligncenter&amp;rdquo; width=&amp;ldquo;600&amp;rdquo; caption=&amp;ldquo;Çarpışma Algılama Algoritmaları&amp;rdquo;]&lt;img src=&#34;http://orhanbalci.github.io/wp-content/uploads/collision_detection_banner.png&#34; alt=&#34;&#34; /&gt;[/caption] Yeni bir makale dizisiyle tecrübelerimi sizinle paylaşmak istiyorum. Yine uzun soluklu bir yazı dizisi olacağını tahmin ediyorum. Çarpışma algılama yöntemleri fiziksel olayların taklit edildiği veya birebir simüle edildiği yazılımlarda nesneler arasındaki etkileşimi gerçekçi kılmak için kullanılırlar. Oyunlar ve simülasyonlar temel kullanım alanları olmakla beraber haptik uygulamaları, sanal gerçeklik uygulamaları da akademik alanda çarpışma kontrol algoritmalarının ilgi alanındadır. İçerisinde çok fazla geometrik problem barındıran bu alanda geliştirilen algoritmalar tatminkar sonuçlar üretebilmektedir. Özellikle oyun sektörünün çok fazla gelişmesiyle bu konu üzerinde ilerleme de gayet hızlı olmuştur. Bu kadar girizgahtan sonra çarpışma algılama algoritmaları geliştirirken göz önünde bulundurulan kriterlere değinelim :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ölçeklenebilirlik : Üzerlerinde çarpışma kontrolü yapılacak olan nesne sayısının azaltılıp arttıralabilmesi durumudur. Az sayıda nesne üzerinde iyi sonuçlar verebilen bir algoritmanın çok fazla sayıda nesne üzerinde işe yarayacağının garantisi yoktur. Örneğin elinizle sanal ortamdaki kısıtlı sayıda nesnelerle etkileşime girmenizi sağlayan bir sanal gerçeklik uygulaması için gerekli olan algoritma ile yüzlerce aracın içerisinde bulunduğu trafiği simüle etmek için gerekli olan algoritma ölçeklenebilirlik açısından farklı olabilir.&lt;/li&gt;
-&lt;li&gt;Performans : Bir önceki kriterle doğrudan ilintili olan bir problemdir. Geliştirdiğiniz çözüm yöntemi belki binlerce nesne üzerinde çalışabilir fakat bunu saniyeler mertebesinde yapıyorsa çoğu zaman kullanışsızdır. Çarpışma algılama algoritmalarının kullanıldığı uygulamaların büyük çoğunluğu gerçek zamanlıdır. Yani hesaplamalrı en kötü ihtimalle 60 hetz&amp;rsquo;de yapılabiliyor olması gereklidir. Bu da sistemdeki tüm işlemler için elinizde yaklaşık olarak 1000ms/60 = 16.67 mili saniye var demektir. Bir işlemci için bu zaman uzun olmakla beraber çözdüğünüz problem yüzlerce hatta binlerce nesneyi içeriyorsa ciddi bir problemle karşı karşıyasınız demektir.&lt;/li&gt;
-&lt;li&gt;Güvenilirlik : Bu tür algoritmalar doğası gereği çok fazla sayıda ondalık sayı işlemi gerektirir. Bu da her zaman için hataya açık bir konu olmuştur. Geometrik nesnelerin tanımlanmasından kaynaklanan hatalarda sistemi kararsız hala getirebilir. Bu tür sorunlar gözönünde bulundurulduğunda çok çeşitli çarpışma sorgu girdisine karşı algoritmanın her zaman aynı güvenilirlikte sonuç vermesi azami önem taşımaktadır.&lt;/li&gt;
-&lt;li&gt;Hassasiyet : Yine yukarıdaki kriteri tamamlar niteliktedir. Uygulamanın türüne göre hassasiyet belirlemek mümkündür. Örneğin cerrahi bir simülatör için mm hassasiyet bile yeterli olmayabilecekken basit bir oyunda 10-15 cm hassasiyet sorun olmayacaktır.
-En temelde geometrik sorulara cevap aradığımız için temel lineer cebir bilgisi şarttır. Çok sayıda matris ve vektör işlemi yapacağımızdan bu işlemleri destekleyen kütüphanelerden yararlanmak işinizi büyük oranda kolaylaştıracaktır. Java tarafında bunun için Cern araştırmaları kapsamında geliştirilen &lt;a href=&#34;http://acs.lbl.gov/software/colt/&#34;&gt;Colt&lt;/a&gt; kütüphanesini önerebilirim (yazacağım örneklerde bu kütüphaneyi kullanacağım). Bu kütüphaneyi kullanarak matris işlemleri yapmayı bir örnekle görelim. [java] void doSampleOperations() { DoubleFactory2D f1 = DoubleFactory2D.dense; DoubleMatrix2D m2d = f1.random(3, 3); System.out.println(&amp;ldquo;Rastgele matrix:&amp;ldquo;); System.out.println(m2d.toString()); Algebra a = new Algebra(); DoubleMatrix2D m2d2 = a.transpose(m2d); System.out.println(&amp;ldquo;Transpose alınmış hali:&amp;ldquo;); System.out.println(m2d2); DoubleMatrix2D m2dInverse = a.inverse(m2d); System.out.println(&amp;ldquo;Tersi:&amp;ldquo;); System.out.println(m2dInverse); System.out.println(a.det(m2d)); System.out.println(a.det(m2d2)); } [/java] [ad#Yazi Ici]&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;comments&#34;&gt;Comments&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4349&#34; title=&#34;2010-11-18 04:44:49&#34;&gt;vantutiri&lt;/a&gt;:&lt;/strong&gt; Harika bi yazı.Bu yazının devamını bekleyemiyorum&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;#4209&#34; title=&#34;2010-10-30 01:37:41&#34;&gt;KayL&lt;/a&gt;:&lt;/strong&gt; Yazı için teşekkürler.Sabırsızlıkla bekliyoruz&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://orhanbalci.github.io/post/dependency-injection-guice/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://orhanbalci.github.io/post/dependency-injection-guice/</guid>
-      <description>
-
-&lt;p&gt;title: Dependency Injection : Guice
-link: &lt;a href=&#34;http://orhanbalci.net/tr/?p=1326&#34;&gt;http://orhanbalci.net/tr/?p=1326&lt;/a&gt;
-author: Orhan Balci
-description:
-post_id: 1326
-created: 2014/11/21 21:22:46
-created_gmt: 2014/11/21 18:22:46
-comment_status: open
-post_name: dependency-injection-guice
-status: publish
-post_type: post&lt;/p&gt;
-
-&lt;h1 id=&#34;dependency-injection-guice&#34;&gt;Dependency Injection : Guice&lt;/h1&gt;
-
-&lt;p&gt;Dependency Injection test edilebilir, esnek, ve kontrol edilebilir kod geliştirmek için kullanılan bir tasarım kalıbıdır. Geliştirdiğiniz sınıfların bağımlılıklarının,kullanması gereken servislerin bir arayüz vasıtasıyla dışarıdan verilmesine olanak tanır. Bu makalede google tarafından geliştirilen Guice Dependency Injection kütüphanesi ile bir örnek göstereceğim. Örneğimiz yapay sinir ağlarında kullanılan nöronlar ve bunların bağımlı olduğu aktivasyon fonksiyonlarının implementasyonu şeklinde olacak. Öncelikle bağımlı olunan aktivasyon fonksiyonu için bir arayüz tanımlayalım : [java] public interface ActivationFunction { public abstract double apply(double inp); public abstract double reverse(double output); } [/java] Bu arayüzü gerçekleyen iki tane aktivasyon fonksiyon sınıfı yazalım : [java] public class ReluFunction implements ActivationFunction { @Override public double apply(double inp) { return Math.log(1 + Math.exp(inp)); } @Override public double reverse(double input) { return 1d / (1 + Math.exp(-input)); } } [/java] [java] public class IdentityFunction implements ActivationFunction { @Override public double apply(double inp) { return inp; } @Override public double reverse(double output) { return output; } } [/java] Şimdi de bu aktivasyon fonksiyonlarını kullanacak olan yapay sinir ağının nöron sınıfını geliştirelim. Bu sınıfı temel injection yöntemi olan constructor (yapıcı method) üzerinden inject edelim. &lt;strong&gt;ActivationFunction&lt;/strong&gt; bağımlılğını constructor parametresi olarak geçmeliyiz ve bu constructoru &lt;strong&gt;@inject&lt;/strong&gt; annotasyonu ile işaretleyelim. Dikkat etmemiz gereken noktalar constructor parametresi ve @inject annotasyonu. [java] import com.google.inject.Inject; public class Neuron { private ActivationFunction af; @Inject public Neuron(ActivationFunction pAf){ af = pAf; } public double getResult(double inp){ return af.apply(inp); } }[/java] Sonraki adımımız Guice&amp;rsquo;e Neuron nesneleri oluştururken kullanması gereken ActivationFunction implementasyon tipini bildirmek. İleride dependency değişimi yapmak gerekirse tek yapmamız gereken bu sınıfı değiştirmek olacaktır. &lt;strong&gt;Module&lt;/strong&gt; arayüzünü gerçekleyen bir sınıf yazıyoruz. Burada Guice&amp;rsquo;e ActivationFunction bağımlılığı için IdentityFunction implementasyonunu kullanmasını söylüyoruz. [java] import com.google.inject.Binder; import com.google.inject.Module; public class NeuralNetworkModule implements Module { @Override public void configure(Binder binder) { binder.bind(ActivationFunction.class).to(IdentityFunction.class); } } [/java] Yeni bir Neuron nesnesi oluşturmak istediğimizde &lt;strong&gt;Injector&lt;/strong&gt; sınıfının &lt;strong&gt;getInstance&lt;/strong&gt; methodunu kullanıyoruz. Dependency Injection kullanırken new ile herhangi bir nesne oluşturmuyoruz. [java] import com.google.inject.Guice; import com.google.inject.Injector; public class Main { public static void main(String[] args) { Injector inj = Guice.createInjector(new NeuralNetworkModule()); Neuron n = inj.getInstance(Neuron.class); System.out.println(n.getResult(5)); } } [/java] [ad#Yazi Ici Buyuk]&lt;/p&gt;
 </description>
     </item>
     
